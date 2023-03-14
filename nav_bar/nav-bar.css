@@ -1,0 +1,463 @@
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+
+.bold-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: bold;
+}
+
+#nav {
+    position: absolute;
+    width: 260px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    border-right: 1px solid #CBCBCB;
+}
+
+#nav .logo {    
+    position: absolute;
+    width: 136px;
+    height: 39px;
+    left: 36px;
+    top: 4%;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    color: #1B0303;
+}
+
+#nav .sub-page {
+    position: absolute;
+    width: 260px;
+    height: 300px;
+    top: 130px;
+}
+
+#nav .dashboard .fa-house,
+#nav .message .fa-comment,
+#nav .task .fa-calendar-check,
+#nav .em-mn .fa-id-card,
+#nav .fa-mn .fa-list-check,
+#nav .setting .fa-gear,
+#nav .log-out .fa-right-from-bracket {
+    position: absolute;
+    left: 28px;
+}
+
+#nav .dashboard .db-txt, 
+#nav .message .mg-txt,
+#nav .task .ts-txt,
+#nav .em-mn .em-mn-txt,
+#nav .fa-mn .fa-mn-txt,
+#nav .setting .st-txt,
+#nav .log-out .lg-txt {
+    position: absolute;
+    height: 22px;
+    left: 64px;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+}
+
+/* Trang chủ */
+#nav .dashboard .bg-color {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 0px;
+    background: #F2F2F2;
+    border-radius: 13px;
+}
+
+#nav .dashboard .fa-house {
+    top: 16px;
+}
+
+#nav .dashboard .db-txt {
+    width: 88px;
+    top: 14px;
+    font-weight: 600;
+}
+
+#nav .fa-chevron-right {
+    position: absolute;
+    height: 32px;
+    left: 236px;
+    top: 15px;
+}
+
+/* Tin nhắn */
+#nav .message .bg-color {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 50px;
+    border-radius: 13px;
+}
+
+#nav .message .fa-comment {
+    top: 68px;
+}
+
+#nav .message .mg-txt {
+    width: 74px;
+    top: 64px;
+}
+
+/* Giao nhiệm vụ */
+#nav .task .bg-color {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 100px;
+    border-radius: 13px;
+}
+
+#nav .task .fa-calendar-check {
+    top: 117px;
+}
+
+#nav .task .ts-txt {
+    width: 122px;
+    top: 114px;
+}
+
+/* Quản lý nhân viên */
+#nav .em-mn .bg-color {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 150px;
+    border-radius: 13px;
+}
+
+#nav .em-mn .fa-id-card {
+    top: 167px;
+    left: 25px !important;
+}
+
+#nav .em-mn .em-mn-txt {
+    width: 152px;
+    top: 164px;
+}
+
+/* Quản lý chung */
+#nav .fa-mn .bg-color {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 200px;
+    border-radius: 13px;
+}
+
+#nav .fa-mn .fa-list-check {
+    top: 217px;
+}
+
+#nav .fa-mn .fa-mn-txt {
+    width: 122px;
+    top: 214px;
+}
+
+/* Cài đặt */
+#nav .setting .bg-color {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 250px;
+    border-radius: 13px;
+}
+
+#nav .setting .fa-gear {
+    top: 268px;
+}
+
+#nav .setting .st-txt {
+    width: 61px;
+    top: 264px;
+}
+
+/* Đăng xuất */
+#nav .log-out .fa-right-from-bracket {
+    bottom: 2.2%;
+    left: 67px !important;
+    color: red;
+}
+
+#nav .log-out .lg-txt {
+    width: 87px;
+    bottom: 2%;
+    left: 95px !important;
+    color: red;
+}
+
+
+
+
+
+/* Not use this part!!---- */
+/* Block 1 */
+#content #block1 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 902px;
+    height: 197px;
+    left: 329px;
+    top: 116px;
+    border: 1px solid #017A5B;
+    border-radius: 20px;
+}
+
+#content .bl-txt {
+    position: absolute;
+    height: 39px;
+    left: 24px;
+    top: 24px;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    color: #000000;
+}
+
+/* Side block */
+#content .side-bl1,
+#content .side-bl2,
+#content .side-bl3 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 273px;
+    height: 90px;
+    top: 84px;
+    background: #FFFFFF;
+    border: 1px solid #CECECE;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+}
+
+#content .side-bl1 {
+    left: 24px;
+}
+
+#content .side-bl2 {
+    left: 316px;
+}
+
+#content .side-bl3 {
+    left: 608px;
+}
+
+/* Nút more (xem thêm) */
+.more {
+    position: absolute;
+    width: 116px;
+    height: 32px;
+    right: 24px;
+    top: 27px;
+
+    background: #017A5B;
+    border-radius: 25px;
+}
+
+.more .more-txt {
+    color: white;
+    position: absolute;
+    top: 6px;
+    left: 21px;
+    margin: 0;
+}
+
+/* Chữ trong side-block */
+
+#content .side-bl-txt1 {
+    position: absolute;
+    width: 51px;
+    height: 22px;
+    left: 16px;
+    top: 16px;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+}
+
+#content .side-bl-txt2 {
+    position: absolute;
+    width: 51px;
+    height: 17px;
+    left: 16px;
+    top: 42px;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+}
+
+#content .side-bl-txt3 {
+    position: absolute;
+    width: 25px;
+    height: 15px;
+    left: 232px;
+    top: 42px;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+}
+
+/* Thanh bar */
+#content .side-bl-bar-grey{
+    position: absolute;
+    width: 240px;
+    height: 8px;
+    left: 16px;
+    top: 68px;
+    margin: 0;
+    background: #D9D9D9;
+    border-radius: 10px;
+}
+
+#content .side-bl1-bar-color,
+#content .side-bl2-bar-color,
+#content .side-bl3-bar-color {
+    position: absolute;
+    height: 8px;
+    left: 16px;
+    top: 68px;
+    margin: 0;
+    border-radius: 10px;
+}
+
+#content .side-bl1-bar-color{
+    width: 228px;
+    background: #EF2C2C; 
+}
+
+#content .side-bl2-bar-color {
+    width: 194px;
+    background: #ffe602;
+}
+
+#content .side-bl3-bar-color {
+    width: 144px;
+    background: #00FF19;
+}
+
+/* Block 2 */
+#content #block2 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 492px;
+    height: 290px;
+    left: 329px;
+    top: 350px;
+    border: 1px solid #017A5B;
+    border-radius: 20px;
+}
+
+/* Message in Block 2*/
+#block2 .bl2-msg1,
+#block2 .bl2-msg2 {
+    position: absolute;
+    height: 72px;
+    left: 24px;
+    right: 24px;
+    background: #F5F5F5;
+    border-radius: 10px;
+}
+
+#block2 .bl2-msg1 {
+    top: 88px;
+}
+
+#block2 .bl2-msg2 {
+    top: 180px;
+}
+
+#block2 .msg-logo {
+    position: absolute;
+    top: 12px;
+    width: 48px;
+    height: 48px;
+    left: 20px;
+    background: #017A5B;
+    border-radius: 25px;
+}
+
+#block2 .msg-txt {
+    position: absolute;
+    width: 340px;
+    height: 48px;
+    left: 84px;
+    right: 20px;
+    top: 12px;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: black;
+}
+
+/* Phần hover----- */
+
+/* hover vào tất cả thành phần */
+#nav .dashboard:hover .bg-color {
+    background: #E6E6E6;
+}
+
+#nav .dashboard:hover,
+#nav .message:hover,
+#nav .task:hover,
+#nav .em-mn:hover,
+#nav .fa-mn:hover,
+#nav .setting:hover,
+#nav .log-out:hover {
+    cursor: pointer;
+}
+
+
+#nav .message:hover .bg-color,
+#nav .task:hover .bg-color,
+#nav .em-mn:hover .bg-color,
+#nav .fa-mn:hover .bg-color,
+#nav .setting:hover .bg-color {
+    background: #F2F2F2;
+    cursor: pointer;
+}
+
+.more:hover {
+    cursor: pointer;
+}
+
+.more:active {
+    background-color: #005943;
+    transform: translateY(5px);
+}
+
+
+
+
+  
