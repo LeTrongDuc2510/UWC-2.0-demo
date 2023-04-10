@@ -1,0 +1,1079 @@
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: unset;
+    text-decoration: underline;
+}
+
+.bold-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: bold;
+}
+
+#nav {
+    position: absolute;
+    width: 260px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    border-right: 1px solid #CBCBCB;
+}
+
+#nav .logo {    
+    position: absolute;
+    width: 136px;
+    height: 39px;
+    left: 36px;
+    top: 4%;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    color: #1B0303;
+}
+
+#nav .sub-page {
+    position: absolute;
+    width: 260px;
+    height: 300px;
+    top: 20%;
+}
+
+#nav .dashboard .fa-house,
+#nav .message .fa-comment,
+#nav .task .fa-calendar-check,
+#nav .em-mn .fa-id-card,
+#nav .fa-mn .fa-list-check,
+#nav .setting .fa-gear,
+#nav .log-out .fa-right-from-bracket {
+    position: absolute;
+    left: 28px;
+}
+
+#nav .dashboard .db-txt, 
+#nav .message .mg-txt,
+#nav .task .ts-txt,
+#nav .em-mn .em-mn-txt,
+#nav .fa-mn .fa-mn-txt,
+#nav .setting .st-txt,
+#nav .log-out .lg-txt {
+    position: absolute;
+    height: 22px;
+    left: 64px;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+}
+
+/* Trang chủ */
+#nav .dashboard .bg-color {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 0px;
+    background: #F2F2F2;
+    border-radius: 13px;
+}
+
+#nav .dashboard .fa-house {
+    top: 16px;
+}
+
+#nav .dashboard .db-txt {
+    width: 88px;
+    top: 14px;
+    font-weight: 600;
+}
+
+#nav .fa-chevron-right {
+    position: absolute;
+    height: 32px;
+    left: 236px;
+    top: 15px;
+}
+
+/* Tin nhắn */
+#nav .message .bg-color {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 50px;
+    border-radius: 13px;
+}
+
+#nav .message .fa-comment {
+    top: 68px;
+}
+
+#nav .message .mg-txt {
+    width: 74px;
+    top: 64px;
+}
+
+/* Giao nhiệm vụ */
+#nav .task .bg-color {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 100px;
+    border-radius: 13px;
+}
+
+#nav .task .fa-calendar-check {
+    top: 117px;
+}
+
+#nav .task .ts-txt {
+    width: 122px;
+    top: 114px;
+}
+
+/* Quản lý nhân viên */
+#nav .em-mn .bg-color {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 150px;
+    border-radius: 13px;
+}
+
+#nav .em-mn .fa-id-card {
+    top: 167px;
+    left: 25px !important;
+}
+
+#nav .em-mn .em-mn-txt {
+    width: 152px;
+    top: 164px;
+}
+
+/* Quản lý chung */
+#nav .fa-mn .bg-color {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 200px;
+    border-radius: 13px;
+}
+
+#nav .fa-mn .fa-list-check {
+    top: 217px;
+}
+
+#nav .fa-mn .fa-mn-txt {
+    width: 122px;
+    top: 214px;
+}
+
+/* Cài đặt */
+#nav .setting .bg-color {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 250px;
+    border-radius: 13px;
+}
+
+#nav .setting .fa-gear {
+    top: 268px;
+}
+
+#nav .setting .st-txt {
+    width: 61px;
+    top: 264px;
+}
+
+/* Đăng xuất */
+#nav .log-out .fa-right-from-bracket {
+    bottom: 2.2%;
+    left: 67px !important;
+    color: red;
+}
+
+#nav .log-out .lg-txt {
+    width: 87px;
+    bottom: 2%;
+    left: 95px !important;
+    color: red;
+}
+
+/* Not use this part!!---- */
+/* Block 1 */
+
+#content {
+    position: absolute;
+    left: 260px;
+    width: calc(100% - 260px);
+    top: 0px;
+    height: 100%;
+}
+
+#content #block1 {
+    box-sizing: border-box;
+    position: absolute;
+    /* width: 1080px; */
+    
+    bottom: calc((100% - 550px)/3 + 6px);
+    height: 270px;
+    left: 70px;
+    width: 54%;
+    
+    border: 1px solid #017A5B;
+    border-radius: 20px;
+}
+
+#content .bl-txt {
+    position: absolute;
+    height: 39px;
+    left: 24px;
+    top: 22px;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 39px;
+    color: #000000;
+}
+
+/* Side block */
+/* #content .side-bl1,
+#content .side-bl2,
+#content .side-bl3 {
+    box-sizing: border-box;
+    position: absolute;
+    width: calc((100% - 20px * 2 - 15px * 2)/3  );
+    height: calc(100% - 100px - 28px);
+    top: 96px;
+    background: #FFFFFF;
+    border: 1px solid #CECECE;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+}
+
+#content .side-bl1 {
+    left: 16px;
+}
+
+#content .side-bl2 {
+    left: calc((100% - 20px * 2 - 15px * 2)/3 + 20px + 15px); 
+}
+
+#content .side-bl3 {
+    right: 16px;
+} */
+
+/* Nút more (xem thêm) */
+.more {
+    position: absolute;
+    width: 95px;
+    height: 28px;
+    right: 28px;
+    top: 24px;
+
+    background: #017A5B;
+    border-radius: 25px;
+}
+
+.more .more-txt {
+    color: white;
+    position: absolute;
+    top: 5.5px;
+    left: 15px;
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Chữ trong side-block */
+
+/* #content .side-bl-txt1 {
+    position: relative;
+    width: 51px;
+    height: 22px;
+    left: 16px;
+    top: 16px;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+}
+
+#content .side-bl-txt2 {
+    position: absolute;
+    width: 300px;
+    height: 17px;
+    left: 16px;
+    top: 50px;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 17px;
+    color: #000000;
+}
+
+#content .side-bl-txt3 {
+    position: absolute;
+    width: 25px;
+    height: 15px;
+    right: 16px;
+    top: 100px;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    color: #000000;
+} */
+
+/* Thanh bar */
+/* #content .side-bl-bar-grey{
+    position: absolute;
+    width: calc(100% - 16px * 2);
+    height: 6px;
+    left: 16px;
+    right: 16px;
+    bottom: 43px;
+    margin: 0;
+    background: #D9D9D9;
+    border-radius: 10px;
+} */
+
+/* #content .side-bl1-bar-color,
+#content .side-bl2-bar-color,
+#content .side-bl3-bar-color {
+    position: absolute;
+    height: 6px;
+    left: 16px;
+    bottom: 43px;
+    margin: 0;
+    border-radius: 10px;
+}
+
+#content .side-bl1-bar-color{
+    width: calc((100% - 16px*2) * 0.97);
+    background: #EF2C2C; 
+}
+
+#content .side-bl2-bar-color {
+    width: calc((100% - 16px*2) * 0.80);
+    background: #ffe602;
+}
+
+#content .side-bl3-bar-color {
+    width: calc((100% - 16px*2) * 0.48);
+    background: #00FF19;
+} */
+
+/* Block 2 */
+/* #content #block2 {
+    display: none;
+    box-sizing: border-box;
+    position: absolute;
+    width: 45%;
+    height: 320px;
+    left: 100px;
+    bottom: 8f%;
+    border: 1px solid #017A5B;
+    border-radius: 20px;
+} */
+
+#content #block2 {
+    /* display: none; */
+    box-sizing: border-box;
+    position: absolute;
+    /* width: 1080px; */
+    
+    bottom: calc((100% - 550px)/3 + 6px);
+    height: 270px;
+    right: 70px;
+    width: 32%;
+    
+    border: 1px solid #017A5B;
+    border-radius: 20px;
+}
+
+/* Message in Block 2*/
+
+#block2 .numberCircle {
+    position: absolute;
+    top: 34px;
+    left: 155px;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    padding: 8px;
+
+    /* background: black; */
+    /* border: 1px solid black; */
+    background-color: red;
+    border: 1px solid red;
+    
+    text-align: center;
+}
+
+#block2 .numberCircle-txt {
+    position: absolute;
+    top: 50%px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 11.5px;
+    color: white;
+}
+#block2 .bl2-msg1,
+#block2 .bl2-msg2,
+#block2 .bl2-msg3,
+#block2 .bl2-msg4 {
+    position: absolute;
+    height: 50px;
+    left: 20px;
+    right: 20px;
+    background: #F5F5F5;
+    border-radius: 10px;
+    border: 1px solid black;
+
+}
+
+#block2 .bl2-msg1 {
+    top: 80px;
+}
+
+#block2 .bl2-msg2 {
+    top: 140px;
+}
+
+#block2 .bl2-msg3 {
+    top: 200px;
+}
+
+#block2 .msg-logo {
+    position: absolute;
+    top: 8px;
+    width: 35px;
+    height: 35px;
+    left: 14px;
+    background: #017A5B;
+    border-radius: 25px;
+}
+
+
+
+#block2 .msg-txt {
+    position: absolute;
+    width: calc(100%-84px);
+    height: 48px;
+    left: 63px;
+    right: 20px;
+    top: 3px;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 15px;
+    line-height: 150%;
+    color: black;
+}
+
+#block2 span {
+    font-size: 15px;
+}
+
+#block2 .markRead {
+    position: absolute;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    right: 10px;
+    background: #017A5B;
+    border-radius: 25px;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 1;
+}
+
+/* Calendar */
+
+#content #block3 {
+    display: none;
+    box-sizing: border-box;
+    position: absolute;
+    width: 36%;
+    height: 320px;
+    right: 100px;
+    bottom: 8%;
+    border: 1px solid #017A5B;
+    border-radius: 20px;
+}
+
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.wrapper{
+    position: absolute;
+    top: 8px;
+    left: 36px;
+    width: calc(100% - 36px * 2);
+}
+.wrapper header{
+    display: flex;
+    align-items: center;
+    padding: 8px 26px 0px;
+    justify-content: space-between;
+}
+header .icons{
+    display: flex;
+}
+header .icons span{
+    height: 38px;
+    width: 38px;
+    margin: 0 1px;
+    cursor: pointer;
+    color: #878787;
+    text-align: center;
+    line-height: 38px;
+    font-size: 1.9rem;
+    user-select: none;
+    border-radius: 50%;
+}
+.icons span:last-child{
+    margin-right: -10px;
+}
+header .icons span:hover{
+    background: #f2f2f2;
+}
+header .current-date{
+    font-size: 32px;
+    font-weight: bold;
+}
+.calendar{
+    padding: 10px;
+}
+
+.calendar .days{
+    margin-bottom: 0px;
+}
+.calendar li{
+    color: #333;
+    width: calc((100% - 0px) / 7);
+    font-size: 0.9rem;
+}
+.calendar .weeks li{
+  font-weight: 500;
+  cursor: default;
+}
+
+.calendar {
+    margin-top: 10px;
+}
+
+.calendar .days li{
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 18px;
+}
+.days li.inactive{
+  color: #aaa;
+}
+.days li.active{
+  color: #fff;
+}
+.days li::before{
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.days li.active::before{
+  background: #017A5B;
+}
+.days li:not(.active):hover::before{
+  background: #f2f2f2;
+}
+
+/* block0 (charts) */
+
+
+#block0 {
+    position: absolute;
+    top: calc((100% - 560px)/3 + 6px);
+    left: 70px;
+    right: 70px;
+    /* width: calc(100% - 200px); */
+    height: 270px;
+    /* border: 1px solid #017A5B;
+    border-radius: 20px; */
+
+}
+
+#block0 #sideChart1 {
+    position: absolute;
+    display: inline-block;
+    top: 0px;
+    /* background-color: red; */
+    width: calc(0.35 * (100% - 50px));
+    height: 280px;
+    border-radius: 10px;
+    /* border: 1px solid #017A5B; */
+
+    background: #FFFFFF;
+    border: 1px solid #CECECE;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+}
+
+#block0 #sideChart2 {
+    position: absolute;
+    display: inline-block;
+    left: calc(0.35 * (100% - 50px) + 19px);
+    background-color: green;
+    width: calc(0.42 * (100% - 50px));
+    height: 280px;
+    border-radius: 10px;
+
+    background: #FFFFFF;
+    border: 1px solid #CECECE;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+}
+
+#block0 #sideChart3 {
+    float: right;
+    /* position: absolute; */
+    background-color: blue;
+    width: calc(0.24 * (100% - 50px));
+    height: 280px;
+    border-radius: 10px;
+
+    background: #FFFFFF;
+    border: 1px solid #CECECE;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+}
+
+#block0 .side3bl {
+    position: relative;
+    width: 87px;
+    height: 88px;
+    background-color: red;
+    border-radius: 15px;
+    /* padding: 5px; */
+
+    background: #FFFFFF;
+    border: 1px solid #CECECE;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+}
+
+#block0 #jnt-cnt {
+    top: 39px;
+    left: 29px;
+}
+#block0 #clt-cnt {
+    top: 39px;
+    left: 48px;
+}
+#block0 #mcp-cnt {
+    top: 54px;
+    left: 29px;
+}
+#block0 #truck-cnt {
+    top: 54px;
+    left: 48px;
+
+}
+
+#block0 #myChart1 {
+    position: relative;
+    top: 38px;
+    /* height: 200px; */
+}
+
+#block0 #myChart2 {
+    position: relative;
+    top: 30px;
+    /* height: 200px; */
+}
+
+#block0 .sideChartTXT {
+    position: relative;
+    font-size: 25px;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+#block0 .outsideCircleI {
+    position: absolute;
+    top: 0px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #017A5B;
+}
+
+
+
+#block0 button i {
+    /* color: white; */
+    position: absolute;
+    font-size: 13px;
+    left: 56px;
+    top: 30px;
+}
+
+
+#block0 .side3bl-txt1 {
+    position: absolute;
+    top: 10px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 600;
+    left: 15%;
+    /* transform: translate(-50%,0); */
+}
+
+#block0 .side3bl-txt2 {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    font-size: 15px;
+    /* font-weight: 600; */
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 80px;
+}
+
+#clt-cnt .fa-solid {
+    /* color: white; */
+    position: absolute;
+    font-size: 13px;
+    left: 58px;
+    top: 30px;
+}
+
+
+#clt-cnt .side3bl-txt1 {
+    left: 15%;
+}
+
+#mcp-cnt .fa-solid {
+    /* color: white; */
+    position: absolute;
+    font-size: 13px;
+    left: 62px;
+    top: 30px;
+}
+
+
+#mcp-cnt .side3bl-txt1 {
+    left: 13%;
+}
+
+
+#truck-cnt .fa-solid {
+    /* color: white; */
+    position: absolute;
+    font-size: 13px;
+    left: 60px;
+    top: 30px;
+}
+
+
+#truck-cnt .side3bl-txt1 {
+    left: 13%;
+}
+
+
+#notiBtn {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    height: 50px;
+    width: 45px;
+    background-color: red;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background: #FFFFFF;
+    border: 1px solid #CECECE;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.15);
+    line-height: 50px;
+    z-index: 1;
+}
+
+#notiBtn i {
+    position: relative;
+    left: 13px;
+    font-size: 20px;
+    width: 10px;
+    top: 0px
+}
+
+#notiBtn #notiCnt {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    font-size: 13px;
+}
+
+
+#notiModal {
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+}
+
+#notiModal-content {
+
+    position: absolute;
+    top: 8%;
+    bottom: 8%;
+    left: 15%;
+    right: 15%;
+    /* background-color: #fefefe; */
+    background-color: #f8f9fd;
+    border-radius: 18px;
+    animation: fadeIn ease 0.5s;
+}
+
+
+/* Phần hover----- */
+
+/* hover vào tất cả thành phần */
+#nav .dashboard:hover .bg-color {
+    background: #E6E6E6;
+}
+
+#nav .dashboard:hover,
+#nav .message:hover,
+#nav .task:hover,
+#nav .em-mn:hover,
+#nav .fa-mn:hover,
+#nav .setting:hover,
+#nav .log-out:hover {
+    cursor: pointer;
+}
+
+
+#nav .message:hover .bg-color,
+#nav .task:hover .bg-color,
+#nav .em-mn:hover .bg-color,
+#nav .fa-mn:hover .bg-color,
+#nav .setting:hover .bg-color {
+    background: #F2F2F2;
+    cursor: pointer;
+}
+
+#notiBtn:hover, .more:hover {
+    cursor: pointer;
+}
+
+.more:active {
+    background-color: #005943;
+    transform: translateY(5px);
+}
+
+.side3bl:active {
+    background-color: #005943;
+    transform: translateY(5px);
+}
+
+.wrapper{
+    position: absolute;
+    width:100%;
+    padding-top: 35px;
+    text-align:center;
+    left: 0px;
+    top: 50px;
+    
+  }
+
+  .carousel{
+    width: 90%;
+    margin:0px auto;
+    background: #FFFFFF;
+    border: 1px solid #CECECE;
+    /* box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.15); */
+    border-radius: 15px;
+
+  }
+  .slick-slide{
+    margin: 10px;
+    /* width: 200px !important; */
+  }
+
+  .slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+
+  .wrapper .slick-dots li button:before {
+    font-size:20px;
+    color:white;
+  }
+  
+  
+   .side-bl1,
+   .side-bl2,
+   .side-bl3 {
+      box-sizing: border-box;
+      /* position: absolute; */
+      /* width: calc((100% - 20px * 3)/4); 273px */
+      width: calc((100% - 20px * 2 - 15px * 2)/3  ); /*273px*/
+      height: 100px !important;
+      /* background: #FFFFFF; */
+      background-color: white;
+      border: 1px solid #CECECE;
+      box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.15);
+      border-radius: 20px;
+  }
+  
+  
+  .side-bl-txt1 {
+    position: relative;
+    width: 51px;
+    height: 22px;
+    left: 10px;
+    top: 8px;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+  }
+  
+   .side-bl-txt2 {
+    position: relative;
+    width: fit-content;
+    height: 17px;
+    left: 12px;
+    top: 12px;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
+    color: #000000;
+  }
+  
+   .side-bl-txt3 {
+    position: relative;
+    width: 25px;
+    height: 15px;
+    right: 12px;
+    float: right;
+    top: 24px;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+  }
+  
+  /* Thanh bar */
+   .side-bl-bar-grey{
+    position: relative;
+    width: calc(100% - 10px * 2);
+    /* width: 10px; */
+    height: 6px;
+    left: 10px;
+    right: 16px;
+    /* bottom: -36px; */
+    top: 20px;
+    margin: 0;
+    background: #D9D9D9;
+    border-radius: 10px;
+  }
+  
+   .side-bl1-bar-color,
+   .side-bl2-bar-color,
+   .side-bl3-bar-color {
+    position: relative;
+    height: 6px;
+    left: 10px;
+    /* bottom: 43px; */
+    top: 14px;
+    margin: 0;
+    border-radius: 10px;
+  }
+  
+   .side-bl1-bar-color{
+    width: calc((100% - 10px*2) * 0.97);
+    /* width: 10px; */
+    background: #EF2C2C; 
+  }
+  
+  .side-bl2-bar-color {
+    width: calc((100% - 10px*2) * 0.80);
+    /* width: 10px; */
+    background: #ffe602;
+  }
+  
+  .side-bl3-bar-color {
+    width: calc((100% - 10px*2) * 0.48);
+    /* width: 10px; */
+    background: #00FF19;
+  }
+  
