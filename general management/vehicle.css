@@ -2,226 +2,225 @@
 @supports (font-variation-settings: normal) {
   :root { font-family: 'Inter var', sans-serif; }
 }
-body{
-    height: 100%;
+
+*{
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-    /* NAV BAR */
+button {
+    all: unset;
+    cursor: pointer;
+}
 
-.nav {
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: unset;
+    text-decoration: underline;
+}
+
+.bold-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: bold;
+}
+
+#nav {
     position: absolute;
-    width: 280px;
+    width: 260px;
     height: 100%;
     left: 0px;
     top: 0px;
     border-right: 1px solid #CBCBCB;
 }
-.nav .home{
+
+#nav .logo {    
     position: absolute;
     width: 136px;
     height: 39px;
     left: 36px;
-    top: 20px;
-
+    top: 4%;
+    margin: 0;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
     line-height: 39px;
+    color: #1B0303;
 }
-.nav #homepage{
-    top: 30px;
-    left: 60px;
-}
-.nav #homepage .fa-house{
+
+#nav .sub-page {
     position: absolute;
-    width: 33px;
-    height: 30px;
+    width: 260px;
+    height: 300px;
+    top: 20%;
+}
+
+#nav .dashboard .fa-house,
+#nav .message .fa-comment,
+#nav .task .fa-calendar-check,
+#nav .em-mn .fa-id-card,
+#nav .fa-mn .fa-list-check,
+#nav .setting .fa-gear,
+#nav .log-out .fa-right-from-bracket {
+    position: absolute;
     left: 28px;
-    top: 143px;
 }
-.nav #homepage #hm-txt{
-    position: absolute;
-    left: 64px;
-    top: 142px;
-    margin:0;
 
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    color: #000000;
-}
-.nav .nav_element .fa-comment{
+#nav .dashboard .db-txt, 
+#nav .message .mg-txt,
+#nav .task .ts-txt,
+#nav .em-mn .em-mn-txt,
+#nav .fa-mn .fa-mn-txt,
+#nav .setting .st-txt,
+#nav .log-out .lg-txt {
     position: absolute;
-    width: 28px;
-    height: 28px;
-    left: 28px;
-    top: 201px;
-}
-.nav .nav_element #me-txt{
-    position: absolute;
-    left: 64px;
-    top: 198px;
-    margin: 0;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    /* identical to box height */
-
-
-    color: #000000;
-}
-.nav .nav_element .fa-calendar-check{
-    position: absolute;
-    width: 27px;
-    height: 27px;
-    left: 28px;
-    top: 261px;
-}
-.nav .nav_element #mis-txt{
-    position: absolute;
-    width: 122px;
     height: 22px;
     left: 64px;
-    top: 260px;
     margin: 0;
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
-    /* identical to box height */
-
-
     color: #000000;
 }
-.nav .nav_element .fa-id-card{
+
+/* Trang chủ */
+#nav .dashboard .bg-color {
     position: absolute;
-    width: 26px;
-    height: 26px;
-    left: 28px;
-    top: 320px;
-}
-.nav .nav_element #stf-txt{
-    position: absolute;
-    width: 152px;
-    height: 22px;
-    left: 64px;
-    top: 318px;
-    margin: 0;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    /* identical to box height */
-
-
-    color: #000000;
-}
-.nav .nav_element .background
-{
-    position: absolute;
-    width: 280px;
-    height: 51px;
-    left: 1px;
-    top: 368px;
-
+    width: 260px;
+    height: 50px;
+    top: 0px;
     background: #F2F2F2;
+    border-radius: 13px;
 }
-.nav .nav_element .fa-list-check{
-    position: absolute;
-    width: 27px;
-    height: 27px;
-    left: 28px;
-    top: 385px;
-}
-.nav .nav_element #mag-txt{
-    position: absolute;
-    width: 125px;
-    height: 22px;
-    left: 64px;
-    top: 382px;
-    margin: 0;
 
-    font-family: 'Inter';
-    font-style: normal;
+#nav .dashboard .fa-house {
+    top: 16px;
+}
+
+#nav .dashboard .db-txt {
+    width: 88px;
+    top: 14px;
     font-weight: 600;
-    font-size: 18px;
-    line-height: 22px;
-    /* identical to box height */
-
-
-    color: #000000;
 }
-.nav .nav_element .fa-chevron-right{
+
+#nav .fa-chevron-right {
     position: absolute;
-    width: 32px;
     height: 32px;
-    left: 248px;
-    top: 386px;
-    cursor: pointer;
+    left: 236px;
+    top: 15px;
 }
 
-.nav .nav_element .fa-gear{
+/* Tin nhắn */
+#nav .message .bg-color {
     position: absolute;
-    width: 28px;
-    height: 28px;
-    left: 28px;
-    top: 437px;
+    width: 260px;
+    height: 50px;
+    top: 50px;
+    border-radius: 13px;
 }
-.nav .nav_element #set-txt{
+
+#nav .message .fa-comment {
+    top: 68px;
+}
+
+#nav .message .mg-txt {
+    width: 74px;
+    top: 64px;
+}
+
+/* Giao nhiệm vụ */
+#nav .task .bg-color {
     position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 100px;
+    border-radius: 13px;
+}
+
+#nav .task .fa-calendar-check {
+    top: 117px;
+}
+
+#nav .task .ts-txt {
+    width: 122px;
+    top: 114px;
+}
+
+/* Quản lý nhân viên */
+#nav .em-mn .bg-color {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 150px;
+    border-radius: 13px;
+}
+
+#nav .em-mn .fa-id-card {
+    top: 167px;
+    left: 25px !important;
+}
+
+#nav .em-mn .em-mn-txt {
+    width: 152px;
+    top: 164px;
+}
+
+/* Quản lý chung */
+#nav .fa-mn .bg-color {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 200px;
+    border-radius: 13px;
+}
+
+#nav .fa-mn .fa-list-check {
+    top: 217px;
+}
+
+#nav .fa-mn .fa-mn-txt {
+    width: 122px;
+    top: 214px;
+}
+
+/* Cài đặt */
+#nav .setting .bg-color {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 250px;
+    border-radius: 13px;
+}
+
+#nav .setting .fa-gear {
+    top: 268px;
+}
+
+#nav .setting .st-txt {
     width: 61px;
-    height: 22px;
-    left: 64px;
-    top: 434px;
-    margin: 0;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    /* identical to box height */
-
-
-    color: #000000;
+    top: 264px;
 }
-.nav .nav_element .fa-right-from-bracket{
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    left: 75px;
-    top: 678px;
 
-    /* transform: matrix(-1, 0, 0, 1, 0, 0); */
+/* Đăng xuất */
+#nav .log-out .fa-right-from-bracket {
+    bottom: 2.2%;
+    left: 67px !important;
+    color: red;
 }
-.nav .nav_element #lo-txt{
-    position: absolute;
+
+#nav .log-out .lg-txt {
     width: 87px;
-    height: 22px;
-    left: 106px;
-    top: 676px;
-    margin: 0;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    /* identical to box height */
-
-
-    color: #000000;
+    bottom: 2%;
+    left: 95px !important;
+    color: red;
 }
 
     /* DETAILS */
@@ -230,23 +229,25 @@ body{
     position: absolute;
     width: 331px;
     height: 720px;
-    left: 280px;
+    left: 259px;
     top: 0px;
 
     background: #FFFFFF;
     border: 1px solid #CBCBCB;
+    border-top: none;
+    border-bottom: none;
 }
 .detail .option{
     position: static;
-    width: 331px;
+    width: 330px;
     height: 179px;
-    left: 280px;
+    left: 260px;
     top: 0px;
 
     background: #FFFFFF;
-    /* border: 1px solid #CBCBCB; */
-    /* border-left: #FFFFFF; */
-    border-bottom: 1px solid #CBCBCB;
+    border: 1px solid #CBCBCB;
+    border-left: none;
+    border-top: none;
 }
 /* Show List */
 .btn{
@@ -258,8 +259,8 @@ body{
     gap: 20px;
 
     position: absolute;
-    width: 236px;
-    height: 30px;
+    width: 260px;
+    height: 34px;
     left: 50%;
     transform: translateX(-50%);
     top: 40px;
@@ -294,11 +295,10 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 7px 24px;
-    gap: 20px;
 
-    width: 200px;
-    height: 26px;
-    top: 88px;
+    width: 240px;
+    height: 34px;
+    top: 76px;
     left: 50%;
     transform: translateX(-50%);
 
@@ -321,11 +321,11 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 7px 24px;
-    gap: 20px;
+    gap: 0px;
 
-    width: 200px;
-    height: 26px;
-    top: 132px;
+    width: 240px;
+    height: 34px;
+    top: 112px;
     left: 50%;
     transform: translateX(-50%);
 
@@ -708,13 +708,86 @@ body{
     background-color: #dbe4de;
 }
     /* More */
-.detail .more{
+.more {
     position: absolute;
-    bottom: 10px;
+    width: 95px;
+    height: 28px;
+    right: 28px;
+    bottom: 8px;
+
+    background: #017A5B;
+    border-radius: 25px;
     cursor: pointer;
-    right: 20px;
-    font-size: 18px;
 }
+
+.more .more-txt {
+    color: white;
+    position: absolute;
+    top: 5.5px;
+    left: 15px;
+    margin: 0;
+    font-size: 14px;
+}
+    /* Noti Button */
+
+#notiBtn {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    height: 50px;
+    width: 45px;
+    background-color: red;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background: #FFFFFF;
+    border: 1px solid #CECECE;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.15);
+    line-height: 50px;
+    z-index: 1;
+}
+
+#notiBtn i {
+    position: relative;
+    left: 13px;
+    font-size: 20px;
+    width: 10px;
+    top: 0px
+}
+
+#notiBtn #notiCnt {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    font-size: 13px;
+}
+
+
+#notiModal {
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+}
+
+#notiModal-content {
+    position: absolute;
+    top: 8%;
+    bottom: 8%;
+    left: 15%;
+    right: 15%;
+    /* background-color: #fefefe; */
+    background-color: #f8f9fd;
+    border-radius: 18px;
+    animation: fadeIn ease 0.5s;
+}
+
     /* CONTENT */
 
 .content{
@@ -722,7 +795,7 @@ body{
 }
 .content-name{
     position: absolute;
-    width: 111px;
+    width: 130px;
     height: 67px;
     left: 700px;
     top: 50px;
@@ -779,7 +852,7 @@ body{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 17px;
     /* identical to box height */
 
