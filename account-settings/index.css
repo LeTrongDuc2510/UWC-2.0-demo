@@ -396,12 +396,12 @@ a:hover {
   display: flex;
   align-items: center;
 }
-input {
-  border: none;
-  background: transparent;
-}
+
 input[type="text"] {
   color: black;
+  border: none;
+  border-color: transparent;
+  background: transparent;
   padding-left: 5px;
   font-size: 16px;
   display: flex;
@@ -414,6 +414,10 @@ input[type="text"] {
   display: flex;
   align-items: center;
 }
+input:focus {
+  outline: none;
+}
+
 /* Phần avatar */
 
 #avatar {
