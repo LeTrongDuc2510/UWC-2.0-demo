@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <title>Document</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="./vehicle.css">
-    <script src="https://kit.fontawesome.com/2129409946.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <script src="https://kit.fontawesome.com/74bc185944.js" crossorigin="anonymous"></script>
     <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
     <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
 </head>
@@ -75,43 +78,245 @@
             </div>
         </div>
         <div class="data">
-            <i class="fa-solid fa-truck"></i>
-            <p class="total">Tổng cộng: 50</p>
-            <div class="green-box"></div>
-            <p class="online">Đang hoạt động: 10</p>
-            <div class="block1">
-                <div class="circle"></div>
-                <div class="block-green-box"></div>
-                <p class="name">Xe 1</p>
-                <p class="id">Mã số xe: #PT1234</p>
-                <p class="route">Tuyến đường:</p>
-                <i class="fa-solid fa-diamond" id="d1"></i>
-                <i class="fa-solid fa-grip-lines-vertical" id="l1"></i>
-                <i class="fa-solid fa-diamond" id="d2"></i>
-                <i class="fa-solid fa-grip-lines-vertical" id="l2"></i>
-                <i class="fa-solid fa-diamond" id="d3"></i>
-                <div class="location1">MCP1</div>
-                <div class="location2">MCP2</div>
-                <div class="location3">MCP3</div>
+            <div class="total-truck">
+                <i class="fa-solid fa-truck"></i>
+                <p class="total">Tổng cộng: 50</p>
             </div>
-            <div class="block2">
-                <div class="circle"></div>
-                <div class="block-red-box"></div>
-                <p class="name">Xe 2</p>
-                <p class="id">Mã số xe: #PT1234</p>
-                <p class="route">Tuyến đường:</p>
-                <i class="fa-solid fa-diamond" id="d1"></i>
-                <i class="fa-solid fa-grip-lines-vertical" id="l1"></i>
-                <i class="fa-solid fa-diamond" id="d2"></i>
-                <i class="fa-solid fa-grip-lines-vertical" id="l2"></i>
-                <i class="fa-solid fa-diamond" id="d3"></i>
-                <div class="location1">MCP5</div>
-                <div class="location2">MCP1</div>
-                <div class="location3">MCP10</div>
+            <div class="online-status">
+                <div class="green-box"></div>
+                <p class="online">Đang hoạt động: 10</p>
             </div>
-        </div>
-        <div class="more">
-            <div class="more-txt">Xem thêm</div>
+            <div class="block">
+                <div class="block-heading">
+                    <p class="name">Xe 1</p>
+                    <div class="circle">
+                        <div class="block-color-box"></div>
+                    </div>
+                </div>
+                <p class="id">Mã số xe: #PT1234</p>
+                <div class="route">
+                    <span>Tuyến đường:</span>
+                    
+                    <div class="route-inner">
+                        <div class="route-name">
+                            <i class="fa-solid fa-diamond" id="d1"></i>
+                            <div class="location1">MCP1</div>
+                        </div>
+                        <span class="line-vertical">|</span>
+                        <!-- <i class="fa-solid fa-grip-lines-vertical" id="l1"></i> -->
+                        <div class="route-name">
+                            <i class="fa-solid fa-diamond" id="d2"></i>
+                            <div class="location2">MCP2</div>
+                        </div>
+                        <span class="line-vertical">|</span>
+                        <!-- <i class="fa-solid fa-grip-lines-vertical" id="l2"></i> -->
+                        <div class="route-name">
+                            <i class="fa-solid fa-diamond" id="d3"></i>
+                            <div class="location3">MCP3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-heading">
+                    <p class="name">Xe 2</p>
+                    <div class="circle">
+                        <div class="block-color-box"></div>
+                    </div>
+                </div>
+                <p class="id">Mã số xe: #PT1235</p>
+                <div class="route">
+                    <span>Tuyến đường:</span>
+                    
+                    <div class="route-inner">
+                        <div class="route-name">
+                            <i class="fa-solid fa-diamond" id="d1"></i>
+                            <div class="location1">MCP5</div>
+                        </div>
+                        <span class="line-vertical">|</span>
+                        <!-- <i class="fa-solid fa-grip-lines-vertical" id="l1"></i> -->
+                        <div class="route-name">
+                            <i class="fa-solid fa-diamond" id="d2"></i>
+                            <div class="location2">MCP1</div>
+                        </div>
+                        <span class="line-vertical">|</span>
+                        <!-- <i class="fa-solid fa-grip-lines-vertical" id="l2"></i> -->
+                        <div class="route-name">
+                            <i class="fa-solid fa-diamond" id="d3"></i>
+                            <div class="location3">MCP10</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-heading">
+                    <p class="name">Xe 3</p>
+                    <div class="circle">
+                        <div class="block-color-box" id="red-box"></div>
+                    </div>
+                </div>
+                <p class="id">Mã số xe: #PT1236</p>
+                <div class="route">
+                    <span>Tuyến đường:</span>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-heading">
+                    <p class="name">Xe 4</p>
+                    <div class="circle">
+                        <div class="block-color-box"></div>
+                    </div>
+                </div>
+                <p class="id">Mã số xe: #PT1237</p>
+                <div class="route">
+                    <span>Tuyến đường:</span>
+                    
+                    <div class="route-inner">
+                        <div class="route-name">
+                            <i class="fa-solid fa-diamond" id="d1"></i>
+                            <div class="location1">MCP3</div>
+                        </div>
+                        <span class="line-vertical">|</span>
+                        <!-- <i class="fa-solid fa-grip-lines-vertical" id="l1"></i> -->
+                        <div class="route-name">
+                            <i class="fa-solid fa-diamond" id="d2"></i>
+                            <div class="location2">MCP2</div>
+                        </div>
+                        <span class="line-vertical">|</span>
+                        <!-- <i class="fa-solid fa-grip-lines-vertical" id="l2"></i> -->
+                        <div class="route-name">
+                            <i class="fa-solid fa-diamond" id="d3"></i>
+                            <div class="location3">MCP14</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block hidden">
+                <div class="block-heading">
+                    <p class="name">Xe 5</p>
+                    <div class="circle">
+                        <div class="block-color-box"></div>
+                    </div>
+                </div>
+                <p class="id">Mã số xe: #PT1238</p>
+                <div class="route">
+                    <span>Tuyến đường:</span>
+                    <div class="route-inner">
+                        <div class="route-name">
+                            <i class="fa-solid fa-diamond" id="d1"></i>
+                            <div class="location1">MCP4</div>
+                        </div>
+                        <span class="line-vertical">|</span>
+                        <!-- <i class="fa-solid fa-grip-lines-vertical" id="l1"></i> -->
+                        <div class="route-name">
+                            <i class="fa-solid fa-diamond" id="d2"></i>
+                            <div class="location2">MCP5</div>
+                        </div>
+                        <span class="line-vertical">|</span>
+                        <!-- <i class="fa-solid fa-grip-lines-vertical" id="l2"></i> -->
+                        <div class="route-name">
+                            <i class="fa-solid fa-diamond" id="d3"></i>
+                            <div class="location3">MCP6</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block hidden">
+                <div class="block-heading">
+                    <p class="name">Xe 6</p>
+                    <div class="circle">
+                        <div class="block-color-box"></div>
+                    </div>
+                </div>
+                <p class="id">Mã số xe: #PT1239</p>
+                <div class="route">
+                    <span>Tuyến đường:</span>
+                    
+                    <div class="route-inner">
+                        <div class="route-name">
+                            <i class="fa-solid fa-diamond" id="d1"></i>
+                            <div class="location1">MCP5</div>
+                        </div>
+                        <span class="line-vertical">|</span>
+                        <!-- <i class="fa-solid fa-grip-lines-vertical" id="l1"></i> -->
+                        <div class="route-name">
+                            <i class="fa-solid fa-diamond" id="d2"></i>
+                            <div class="location2">MCP6</div>
+                        </div>
+                        <span class="line-vertical">|</span>
+                        <!-- <i class="fa-solid fa-grip-lines-vertical" id="l2"></i> -->
+                        <div class="route-name">
+                            <i class="fa-solid fa-diamond" id="d3"></i>
+                            <div class="location3">MCP7</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block hidden">
+                <div class="block-heading">
+                    <p class="name">Xe 7</p>
+                    <div class="circle">
+                        <div class="block-color-box"></div>
+                    </div>
+                </div>
+                <p class="id">Mã số xe: #PT1240</p>
+                <div class="route">
+                    <span>Tuyến đường:</span>
+                    
+                    <div class="route-inner">
+                        <div class="route-name">
+                            <i class="fa-solid fa-diamond" id="d1"></i>
+                            <div class="location1">MCP6</div>
+                        </div>
+                        <span class="line-vertical">|</span>
+                        <!-- <i class="fa-solid fa-grip-lines-vertical" id="l1"></i> -->
+                        <div class="route-name">
+                            <i class="fa-solid fa-diamond" id="d2"></i>
+                            <div class="location2">MCP7</div>
+                        </div>
+                        <span class="line-vertical">|</span>
+                        <!-- <i class="fa-solid fa-grip-lines-vertical" id="l2"></i> -->
+                        <div class="route-name">
+                            <i class="fa-solid fa-diamond" id="d3"></i>
+                            <div class="location3">MCP8</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block hidden">
+                <div class="block-heading">
+                    <p class="name">Xe 8</p>
+                    <div class="circle">
+                        <div class="block-color-box"></div>
+                    </div>
+                </div>
+                <p class="id">Mã số xe: #PT1241</p>
+                <div class="route">
+                    <span>Tuyến đường:</span>
+                    
+                    <div class="route-inner">
+                        <div class="route-name">
+                            <i class="fa-solid fa-diamond" id="d1"></i>
+                            <div class="location1">MCP7</div>
+                        </div>
+                        <span class="line-vertical">|</span>
+                        <!-- <i class="fa-solid fa-grip-lines-vertical" id="l1"></i> -->
+                        <div class="route-name">
+                            <i class="fa-solid fa-diamond" id="d2"></i>
+                            <div class="location2">MCP8</div>
+                        </div>
+                        <span class="line-vertical">|</span>
+                        <!-- <i class="fa-solid fa-grip-lines-vertical" id="l2"></i> -->
+                        <div class="route-name">
+                            <i class="fa-solid fa-diamond" id="d3"></i>
+                            <div class="location3">MCP9</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="more">
+                <div class="more-txt">Xem thêm</div>
+            </div>
         </div>
     </div>
     <!-- Phần Content -->
@@ -119,21 +324,36 @@
         <p class="content-name">Xe 1</p>
         <p class="content-id">#PT1234</p>
         <div class="content-online">
-            <p class="on-txt">Đang hoạt động</p>
-            <div class="green-box"></div>
+            <p class="content-on-txt">Đang hoạt động</p>
+            <div class="content-color-box"></div>
         </div>
         <div class="content-capacity">Sức chứa: 8900kg</div>
         <div class="content-fuel">Nhiên liệu: 18 / 22 L</div>
-        <div class="content-route">Tuyến đường</div>
-        <i class="fa-solid fa-diamond" id="d1"></i>
-        <i class="fa-solid fa-grip-lines-vertical" id="l1"></i>
-        <i class="fa-solid fa-diamond" id="d2"></i>
-        <i class="fa-solid fa-grip-lines-vertical" id="l2"></i>
-        <i class="fa-solid fa-diamond" id="d3"></i>
-        <div class="content-location1">MCP1</div>
-        <div class="content-location2">MCP2</div>
-        <div class="content-location3">MCP3</div>
+        <div class="content-route">
+            <span>Tuyến đường:</span>
+            <div class="content-route-inner">
+                <div class="content-route-name">
+                    <i class="fa-solid fa-diamond" id="content-d1"></i>
+                    <div class="content-location1">MCP3</div>
+                </div>
+                <span class="content-line-vertical">|</span>
+                <div class="content-route-name">
+                    <i class="fa-solid fa-diamond" id="content-d2"></i>
+                    <div class="content-location2">MCP2</div>
+                </div>
+                <span class="content-line-vertical">|</span>
+                <div class="content-route-name">
+                    <i class="fa-solid fa-diamond" id="content-d3"></i>
+                    <div class="content-location3">MCP14</div>
+                </div>
+            </div>
+        </div>
         <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5115109694375!2d106.65571311456334!3d10.772080262220088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ec3c161a3fb%3A0xef77cd47a1cc691e!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBCw6FjaCBraG9hIC0gxJDhuqFpIGjhu41jIFF14buRYyBnaWEgVFAuSENN!5e0!3m2!1svi!2s!4v1678725532065!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <!-- Xoá phương tiện -->
+        <div class="delete">
+            <i class="fa-solid fa-list-check"></i>
+            <p>Xoá phương tiện</p>
+        </div>
     </div>  
     <!-- Phần cái chuông bên phải -->
     
@@ -158,7 +378,7 @@
     </script>
     <!-- Phần Modal -->
     <div class="modal hidden">
-        <div class="listmcp">Danh sách các MCP</div>
+        <div class="listmcp">Danh sách các xe</div>
         <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Tìm kiếm" title="Type in a name">
         <button class="close-button">&times;</button>
         <table id="myTable">
@@ -212,11 +432,48 @@
                 <td id="fuel5">19 / 22 L</td>
             </tr>
         </table>
+        <div class="add">
+            <i class="fa-solid fa-plus"></i>
+            <div class="add-txt">Thêm phương tiện mới</div>
+        </div>
+        <!-- Multi Pagination -->
         <span class="multi-pagination">1 - 5 trên 50</span>
         <i class="fa-solid fa-chevron-right" id="next"></i>
         <i class="fa-solid fa-chevron-left" id="prev"></i>
     </div>
     <div class="overlay hidden"></div>
+    <!-- Modal thêm phương tiện -->
+    <div class="add-modal hidden">
+        <button class="add-close-button">&times;</button>
+        <div class="id-vehicle">
+            <p>ID phương tiện</p>
+            <input type="text" name="" id="add-input" placeholder="Ví dụ: #PT1234">
+        </div>
+        <div class="brand">
+            <p>Hãng xe</p>
+            <input type="text" name="" id="add-input" placeholder="Ví dụ: Thaco">
+        </div>
+        <div class="fuel">
+            <p>Dung tích nhiên liệu</p>
+            <input type="text" name="" id="add-input" placeholder="Ví dụ: 500 lít">
+        </div>
+        <div class="capacity">
+            <p>Tải trọng</p>
+            <input type="text" name="" id="add-input" placeholder="Ví dụ: 20 tấn">
+        </div>
+        <div class="sign">
+            Biển số
+            <input type="text" name="" id="add-input" placeholder="Ví dụ: 12A-12345">
+        </div>
+        <div class="accept-cover">
+            <div class="accept">
+                <div class="accept-txt">Xác nhận</div>
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+        </div>
+    </div>
+    <div class="add-overlay hidden"></div>
+
     <div class="" id="mapbox"></div>
 </body>
 <script src="./vehicle.js"></script>

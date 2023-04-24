@@ -4,6 +4,7 @@ const list=document.querySelector(".list");
 const arrowDown=document.querySelector("#arrow");
 const chosen=document.querySelector(".chosen");
 const unchosen=document.querySelector(".unchosen");
+var flag=1;
 
 /* Show Table */
 function sortTable(n) {
@@ -63,7 +64,7 @@ function sortTable(n) {
 
 /* Open Modal */
 const modal = document.querySelector(".modal");
-const overlay = document.querySelector('.overlay');
+const overlay = document.querySelector(".overlay");
 const closeButton = document.querySelector(".close-button");
 const more = document.querySelector(".more");
 
@@ -280,33 +281,190 @@ prev.addEventListener("click",function(){
 });
 
 /* Click Block */
-block1=document.querySelector(".block1");
-block2=document.querySelector(".block2");
-block1.addEventListener("click",function(){
+block1=document.querySelectorAll(".block")[0];
+block2=document.querySelectorAll(".block")[1];
+block3=document.querySelectorAll(".block")[2];
+block4=document.querySelectorAll(".block")[3];
+block5=document.querySelectorAll(".block")[4];
+block6=document.querySelectorAll(".block")[5];
+block7=document.querySelectorAll(".block")[6];
+block8=document.querySelectorAll(".block")[7];
+changeblock1=function(){
+  flag=1;
   document.querySelector(".content-name").innerHTML="Xe 1";
   document.querySelector(".content-id").innerHTML="#PT1234";
   document.querySelector(".content-capacity").innerHTML="Sức chứa: 8900kg";
-  colorBar=document.querySelector(".content-fuel").innerHTML="Nhiên liệu: 18 / 22 L";
+  document.querySelector(".content-fuel").innerHTML="Nhiên liệu: 18 / 22 L";
   document.querySelector(".content-location1").innerHTML="MCP1";
   document.querySelector(".content-location2").innerHTML="MCP2";
   document.querySelector(".content-location3").innerHTML="MCP3";
-})
-block2.addEventListener("click",function(){
+  document.querySelector(".content-on-txt").innerHTML="Đang hoạt động";
+  colorBox=document.querySelector(".content-color-box");
+  colorBox.style.background="#61FF00";
+  document.querySelector(".content-route").classList.remove("hidden");
+  document.querySelector(".content-d1").style.display="block";
+  document.querySelector(".content-d2").style.display="block";
+  document.querySelector(".content-d3").style.display="block";
+  document.querySelector(".content-l1").style.display="block";
+  document.querySelector(".content-l2").style.display="block";
+  document.querySelector(".content-location1").classList.remove("hidden");
+  document.querySelector(".content-location2").classList.remove("hidden");
+  document.querySelector(".content-location3").classList.remove("hidden");
+}
+changeblock2=function(){
+  flag=2;
   document.querySelector(".content-name").innerHTML="Xe 2";
   document.querySelector(".content-id").innerHTML="#PT1235";
   document.querySelector(".content-capacity").innerHTML="Sức chứa: 7000kg";
-  colorBar=document.querySelector(".content-fuel").innerHTML="Nhiên liệu: 17 / 22 L";
+  document.querySelector(".content-fuel").innerHTML="Nhiên liệu: 17 / 22 L";
   document.querySelector(".content-location1").innerHTML="MCP5";
   document.querySelector(".content-location2").innerHTML="MCP1";
   document.querySelector(".content-location3").innerHTML="MCP10";
-})
+  document.querySelector(".content-on-txt").innerHTML="Đang hoạt động";
+  colorBox=document.querySelector(".content-color-box");
+  colorBox.style.background="#61FF00";
+  document.querySelector(".content-route").classList.remove("hidden");
+  document.querySelector(".content-d1").style.display="block";
+  document.querySelector(".content-d2").style.display="block";
+  document.querySelector(".content-d3").style.display="block";
+  document.querySelector(".content-l1").style.display="block";
+  document.querySelector(".content-l2").style.display="block";
+  document.querySelector(".content-location1").classList.remove("hidden");
+  document.querySelector(".content-location2").classList.remove("hidden");
+  document.querySelector(".content-location3").classList.remove("hidden");
+}
+changeblock3=function(){
+  flag=3;
+  document.querySelector(".content-name").innerHTML="Xe 3";
+  document.querySelector(".content-id").innerHTML="#PT1236";
+  document.querySelector(".content-capacity").innerHTML="Sức chứa: 10000kg";
+  document.querySelector(".content-fuel").innerHTML="Nhiên liệu: 15 / 22 L";
+  document.querySelector(".content-on-txt").innerHTML="Không hoạt động";
+  colorBox=document.querySelector(".content-color-box");
+  colorBox.style.background="red";
+  document.querySelector(".content-route").classList.add("hidden");
+  document.querySelector(".content-d1").style.display="none";
+  document.querySelector(".content-d2").style.display="none";
+  document.querySelector(".content-d3").style.display="none";
+  document.querySelector(".content-l1").style.display="none";
+  document.querySelector(".content-l2").style.display="none";
+  document.querySelector(".content-location1").classList.add("hidden");
+  document.querySelector(".content-location2").classList.add("hidden");
+  document.querySelector(".content-location3").classList.add("hidden");
+}
+changeblock4=function(){
+  flag=4;
+  document.querySelector(".content-name").innerHTML="Xe 4";
+  document.querySelector(".content-id").innerHTML="#PT1237";
+  document.querySelector(".content-capacity").innerHTML="Sức chứa: 5600kg";
+  document.querySelector(".content-fuel").innerHTML="Nhiên liệu: 18 / 32 L";
+  document.querySelector(".content-location1").innerHTML="MCP3";
+  document.querySelector(".content-location2").innerHTML="MCP2";
+  document.querySelector(".content-location3").innerHTML="MCP14";
+  document.querySelector(".content-on-txt").innerHTML="Đang hoạt động";
+  colorBox=document.querySelector(".content-color-box");
+  colorBox.style.background="#61FF00";
+  document.querySelector(".content-route").classList.remove("hidden");
+  document.querySelector(".content-d1").style.display="block";
+  document.querySelector(".content-d2").style.display="block";
+  document.querySelector(".content-d3").style.display="block";
+  document.querySelector(".content-l1").style.display="block";
+  document.querySelector(".content-l2").style.display="block";
+  document.querySelector(".content-location1").classList.remove("hidden");
+  document.querySelector(".content-location2").classList.remove("hidden");
+  document.querySelector(".content-location3").classList.remove("hidden");
+}
+const changeblockRandom=function(number){
+  flag=number;
+  document.querySelector(".content-name").innerHTML="Xe "+`${number}`;
+  document.querySelector(".content-id").innerHTML="#PT" + (1233+number);
+  document.querySelector(".content-capacity").innerHTML="Sức chứa: " + Math.floor(Math.random() * (100-50)+50) + "00kg";
+  var capacity=Math.floor(Math.random() * (30-20)+20);
+  var rest=Math.floor(Math.random() * capacity);
+  document.querySelector(".content-fuel").innerHTML="Nhiên liệu: " + rest + " / " + capacity + " L";
+  document.querySelector(".content-location1").innerHTML="MCP"+(number-1);
+  document.querySelector(".content-location2").innerHTML="MCP"+(number);
+  document.querySelector(".content-location3").innerHTML="MCP"+(number+1);
+  document.querySelector(".content-on-txt").innerHTML="Đang hoạt động";
+  colorBox=document.querySelector(".content-color-box");
+  colorBox.style.background="#61FF00";
+  document.querySelector(".content-route").classList.remove("hidden");
+  document.querySelector(".content-d1").style.display="block";
+  document.querySelector(".content-d2").style.display="block";
+  document.querySelector(".content-d3").style.display="block";
+  document.querySelector(".content-l1").style.display="block";
+  document.querySelector(".content-l2").style.display="block";
+  document.querySelector(".content-location1").classList.remove("hidden");
+  document.querySelector(".content-location2").classList.remove("hidden");
+  document.querySelector(".content-location3").classList.remove("hidden");
+}
+block1.addEventListener("click",changeblock1);
+block2.addEventListener("click",changeblock2);
+block3.addEventListener("click",changeblock3);
+block4.addEventListener("click",changeblock4);
+block5.addEventListener("click",()=>{changeblockRandom(5)});
+block6.addEventListener("click",()=>{changeblockRandom(6)});
+block7.addEventListener("click",()=>{changeblockRandom(7)});
+block8.addEventListener("click",()=>{changeblockRandom(8)});
+//Cannot use block5.addEventListener("click",changeblock5(5)) because the function will be executed immediately when the line gets parsed
 
-// Map Box
-L.mapbox.accessToken = '<your access token here>';
-var map = L.mapbox.map('mapbox')
-    .setView([40, -74.50], 9)
-    .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
+/* Add Vehicle (Open new modal) */
+const addModal=document.querySelector(".add-modal");
+const addOverlay = document.querySelector(".add-overlay");
+const addCloseButton = document.querySelector(".add-close-button");
+const add=document.querySelector(".add");
+const accept=document.querySelector(".accept");
 
-L.mapbox.accessToken = '<your access token here>';
-// Create a map in the div #map
-L.mapbox.map('mapbox', 'mapbox.streets');
+const openAddModal = function () {
+  addModal.classList.remove('hidden');
+  addOverlay.classList.remove('hidden');
+  console.log("hello");
+};
+
+const closeAddModal = function () {
+  addModal.classList.add('hidden');
+  addOverlay.classList.add('hidden');
+};
+
+add.addEventListener("click", openAddModal);
+addCloseButton.addEventListener('click', closeAddModal);
+addOverlay.addEventListener('click', closeAddModal);
+accept.addEventListener("click",closeAddModal);
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !addModal.classList.contains('hidden')) {
+    closeAddModal();
+  }
+});
+
+/* Delete Vehicle */
+var countDelete=0;
+var array=[];
+for (i=0;i<8;i++)
+{
+  array[i]=false;
+}
+const deleteVehicle = document.querySelector(".delete");
+deleteVehicle.addEventListener("click",function(){
+  countDelete++;
+  array[flag-1]=true;
+  document.querySelectorAll(".block")[flag-1].classList.add("hidden");
+  if (countDelete<=4) document.querySelectorAll(".block")[3+countDelete].classList.remove("hidden");
+  flag++; // change to next vehicle
+  var c=flag-1; // c is the variable to check the nearest block that hasn't been deleted
+  while (array[c]==true) c++;
+  c++; // switch c from an index to a right order of block
+  switch(c)
+  {
+    case 1:
+    changeblock1();
+    case 2:
+    changeblock2();
+    case 3:
+    changeblock3();
+    case 4:
+    changeblock4();
+    case 5: case 6: case 7: case 8:
+    changeblockRandom(c);
+  }
+});

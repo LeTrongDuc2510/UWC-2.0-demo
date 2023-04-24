@@ -228,7 +228,7 @@ a:hover {
 .detail{
     position: absolute;
     width: 331px;
-    height: 720px;
+    height: 100%;
     left: 259px;
     top: 0px;
 
@@ -395,58 +395,68 @@ a:hover {
     transform: translateY(-50%); /* top và transform để canh giữa theo trục Y (phải có position)*/
     cursor: pointer; /*chuyển về trỏ bàn tay*/
 }
-.detail .data .fa-truck{
-    position: absolute;
-    top: 205px;
-    left: 30px;
-    margin: 0;
+.total-truck{
+    display: flex;
+    padding: 20px 20px;
+
 }
-.detail .data .total{
-    position: absolute;
-    top: 206px;
-    left: 62px;
-    margin: 0;
+.detail .data .fa-truck{
+    margin-right: 10px;
+}
+.online-status{
+    display: flex;
+    padding: 0px 20px 10px;
 }
 .detail .data .green-box{
-    position: absolute;
+    /* position: relative; */
     width: 16px;
     height: 16px;
-    top: 249px;
-    left: 30px;
-    margin: 0;
+    margin-right: 14px;
     background: #61FF00;
 }
 .detail .data .online{
-    position: absolute;
-    top: 248px;
+    /* position: relative; */
+    top: 12px;
     left: 62px;
     margin: 0;
 }
+    /* DATA (contain all blocks)*/
+.detail .data
+{
+    position: relative;
+    width: 100%;
+    height: 538px;
+    overflow: scroll;
+}
+    /* BLOCK */
 
-    /* BLOCK 1 */
-
-.block1{
+.block{
     box-sizing: border-box;
 
-    position: absolute;
+    /* position: absolute; */
     width: 241px;
-    height: 181px;
-    left: 45px;
-    top: 280px;
-
+    /* height: 181px; */
+    margin:10px auto;
     background: #FFFFFF;
     border: 1px solid #CECECE;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
     cursor: pointer;
+    padding: 20px;
+    /* margin-bottom: 20px; */
 }
-.block1 .name{
-    position: absolute;
-    top: 24px;
-    left: 24px;
-    margin: 0;
+
+.block-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.block .name{
+    /* position: relative; */
     font-weight: bold;
 
+    /* top: 25px;
+    left: 24px; */
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -457,51 +467,51 @@ a:hover {
 
     color: #1B0303;
 }
-.block1 .id{
-    position: absolute;
-    top: 62px;
-    left: 31px;
-    margin: 0;
-
+.block .id{
+    /* position: relative; */
+    /* margin: 0; */
+    /* top: 20px; */
+    /* top: 63px;
+    left: 31px; */
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
+    margin: 10px 0 0 10px;
     /* identical to box height */
 
 
     color: #1B0303;
 }
-.block1 .circle{
+.block .circle{
+    /* position: absolute; */
     box-sizing: border-box;
-
-    position: absolute;
     width: 29px;
     height: 29px;
-    left: 196px;
-    top: 24px;
 
     background: #FFFFFF;
     border: 1px solid #017A5B;
     border-radius: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.block1 .block-green-box{
-    position: absolute;
+.block .block-color-box{
+    /* position: absolute; */
     width: 12px;
     height: 12px;
-    left: 204.5px;
-    top: 32.5px;
 
     background: #61FF00;
 }
-.block1 .route{
-    position: absolute;
-    width: 93px;
-    height: 17px;
-    left: 31px;
-    top: 91px;
-    margin: 0;
+#red-box{
+    background: red;
+}
+.block .route{
+    /* position: relative; */
+    /* width: 93px; */
+    /* height: 17px; */
+    margin: 10px 0 0 10px;
 
     font-family: 'Inter';
     font-style: normal;
@@ -509,224 +519,54 @@ a:hover {
     font-size: 14px;
     line-height: 17px;
     /* identical to box height */
-
-
     color: #1B0303;
+    display: flex;
 
 }
-.block1 #d1{
-    position: absolute;
-    top: 90px;
-    left: 130px;
+.route-inner {
+    /* position: absolute; */
+    margin-left: 10px;
+}
+.route-name {
+    display: flex;
+    align-items: center;
+}
+.route-name i {
+    scale: 0.5;
+}
+.line-vertical {
+    margin-left: 3px;
+}
+#d1, #d2, #d3 {
     font-size: 12px;
 }
-.block1 #d2{
-    position: absolute;
-    top: 109px;
-    left: 130px;
-    font-size: 12px;
-}
-.block1 #d3{
-    position: absolute;
-    top: 127px;
-    left: 130px;
-    font-size: 12px;
-}
-.block1 #l1{
-    position: absolute;
-    top: 100px;
-    left: 133.5px;
-    font-size: 12px;
-}
-.block1 #l2{
-    position: absolute;
-    top: 118px;
-    left: 133.5px;
-    font-size: 12px;
-}
-.block1 .location1{
-    position: absolute;
+#location1, #location2, #location3 {
     font-size: 14px;
-    top: 88px;
-    left: 144px;
 }
-.block1 .location2{
-    position: absolute;
-    font-size: 14px;
-    top: 107px;
-    left: 144px;
-}
-.block1 .location3{
-    position: absolute;
-    font-size: 14px;
-    top: 125px;
-    left: 144px;
-}
-.block1:hover{
+
+.block:hover{
     background-color: #dbe4de;
 }
-    /* BLOCK 2 */
-
-.block2{
-    box-sizing: border-box;
-
-    position: absolute;
-    width: 241px;
-    height: 181px;
-    left: 45px;
-    top: 492px;
-
-    background: #FFFFFF;
-    border: 1px solid #CECECE;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 20px;
-    cursor: pointer;
-}
-.block2 .name{
-    position: absolute;
-    top: 24px;
-    left: 24px;
-    margin: 0;
-    font-weight: bold;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
-    /* identical to box height */
-
-
-    color: #1B0303;
-}
-.block2 .id{
-    position: absolute;
-    top: 61px;
-    left: 31px;
-    margin: 0;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 17px;
-    /* identical to box height */
-
-
-    color: #1B0303;
-}
-.block2 .circle{
-    box-sizing: border-box;
-
-    position: absolute;
-    width: 29px;
-    height: 29px;
-    left: 196px;
-    top: 24px;
-
-    background: #FFFFFF;
-    border: 1px solid #017A5B;
-    border-radius: 23px;
-}
-.block2 .block-red-box{
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    left: 204.5px;
-    top: 32.5px;
-
-    background: #FD0F00;
-}
-.block2 .route{
-    position: absolute;
-    width: 93px;
-    height: 17px;
-    left: 31px;
-    top: 91px;
-    margin: 0;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 17px;
-    /* identical to box height */
-
-
-    color: #1B0303;
-
-}
-.block2 #d1{
-    position: absolute;
-    top: 90px;
-    left: 130px;
-    font-size: 12px;
-}
-.block2 #d2{
-    position: absolute;
-    top: 109px;
-    left: 130px;
-    font-size: 12px;
-}
-.block2 #d3{
-    position: absolute;
-    top: 127px;
-    left: 130px;
-    font-size: 12px;
-}
-.block2 #l1{
-    position: absolute;
-    top: 100px;
-    left: 133.5px;
-    font-size: 12px;
-}
-.block2 #l2{
-    position: absolute;
-    top: 118px;
-    left: 133.5px;
-    font-size: 12px;
-}
-.block2 .location1{
-    position: absolute;
-    font-size: 14px;
-    top: 88px;
-    left: 144px;
-}
-.block2 .location2{
-    position: absolute;
-    font-size: 14px;
-    top: 107px;
-    left: 144px;
-}
-.block2 .location3{
-    position: absolute;
-    font-size: 14px;
-    top: 125px;
-    left: 144px;
-}
-.block2:hover{
-    background-color: #dbe4de;
-}
+    
     /* More */
 .more {
-    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.more .more-txt {
     width: 95px;
     height: 28px;
-    right: 28px;
-    bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     background: #017A5B;
     border-radius: 25px;
     cursor: pointer;
-}
-
-.more .more-txt {
     color: white;
-    position: absolute;
-    top: 5.5px;
-    left: 15px;
-    margin: 0;
-    font-size: 14px;
 }
     /* Noti Button */
 
@@ -842,7 +682,7 @@ a:hover {
     border: 1px solid #017A5B;
     border-radius: 23px;
 }
-.content .on-txt{
+.content-on-txt{
     position: absolute;
     /* left: 15px; */
     right: 29px;
@@ -859,7 +699,7 @@ a:hover {
 
     color: #1B0303;
 }
-.content .green-box{
+.content-color-box{
     position: absolute;
     width: 12px;
     height: 12px;
@@ -868,6 +708,7 @@ a:hover {
     margin: 0;
 
     background: #61FF00;
+    /* background: red; */
 }
 .content-capacity{
     position: absolute;
@@ -905,78 +746,67 @@ a:hover {
 }
 .content-route{
     position: absolute;
-    width: 115px;
-    height: 22px;
-    right: 90px;
+    width: auto;
+    height: auto;
+    right: 120px;
     top: 201px;
     margin: 0;
 
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
-    line-height: 22px;
     /* identical to box height */
-
+    padding:10px;
     color: #1B0303;
 }
-.content #d1{
-    position: absolute;
-    top: 236px;
-    right: 150px;
-    font-size: 12px;
+.content-route span{
+    font-size: 18px;
 }
-.content #d2{
-    position: absolute;
-    top: 254px;
-    right: 150px;
-    font-size: 12px;
+.content-route-inner{
+    margin-left: 50px;
 }
-.content #d3{
-    position: absolute;
-    top: 272px;
-    right: 150px;
-    font-size: 12px;
+.content-route-name {
+    display: flex;
+    align-items: center;
 }
-.content #l1{
-    position: absolute;
-    top: 245px;
-    right: 153.5px;
+#content-d1, #content-d2, #content-d3{
     font-size: 12px;
+    scale: 0.5;
 }
-.content #l2{
-    position: absolute;
-    top: 263px;
-    right: 153.5px;
+.content-line-vertical{
     font-size: 12px;
+    margin-left: 3px;
 }
-.content-location1{
-    position: absolute;
+.content-location1, .content-location2, .content-location3{
     font-size: 14px;
-    top: 234px;
-    right: 100px;
-}
-.content-location2{
-    position: absolute;
-    font-size: 14px;
-    top: 252px;
-    right: 100px;
-}
-.content-location3{
-    position: absolute;
-    font-size: 14px;
-    top: 270px;
-    right: 100px;
 }
 #map{
     position: absolute;
-    width: 650px;
-    height: 350px;
+    width: 600px;
+    height: 300px;
     /* left: 660px; */
-    right: 90px;
-    bottom: 30px;
-
+    right: 110px;
+    bottom: 70px;
+    padding-top: 0;
     /* background: url(image.png); */
+}
+/* Delete vehicle */
+.delete{
+    position: absolute;
+    width: 180px;
+    height: 30px;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 12px;
+    border: 1px solid;
+    background: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+
 }
 /* Modal */
 .hidden{
@@ -1089,4 +919,104 @@ background-color: #f2f2f2
 .noHover{
     pointer-events: none;
     color: gray;
+}
+
+    /* Add Vehicle */
+.add{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 38px;
+    left:50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+
+    background: #017A5B;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.add i{
+    position: absolute;
+    left: 20px;
+    color: white;
+}
+.add .add-txt{
+    position: absolute;
+    color: white;
+}
+
+    /* Add Modal */
+.add-modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 40px;
+    width: 50%;
+    height:fit-content;
+    border-radius: 0.5rem;
+    z-index: 6;
+}
+.add-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 5;
+}
+.add-close-button {
+    position: absolute; 
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* Add Modal Content */
+.id-vehicle, .brand, .fuel, .capacity, .sign{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    padding: 20px 20px;
+}
+#add-input{
+    border-radius: 20px;
+    width: 60%;
+    height: 35px;
+    padding: 10px;
+    font-size: 16px ;
+}
+.accept-cover
+{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 0;
+}
+.accept{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 35px;
+    background: lightgray;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.accept-txt{
+    margin-right: 10px;
+}
+.accept:hover{
+    background: #017A5B;
 }

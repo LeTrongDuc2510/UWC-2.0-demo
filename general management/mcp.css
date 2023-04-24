@@ -228,7 +228,7 @@ a:hover {
 .detail{
     position: absolute;
     width: 331px;
-    height: 720px;
+    height: 100%;
     left: 259px;
     top: 0px;
 
@@ -396,37 +396,34 @@ a:hover {
     transform: translateY(-50%); /* top và transform để canh giữa theo trục Y (phải có position)*/
     cursor: pointer; /*chuyển về trỏ bàn tay*/
 }
+.total-location{
+    display: flex;
+    padding: 20px;
+}
 .fa-location-dot{
-    position: absolute;
-    top: 205px;
-    left: 30px;
-    margin: 0;
+    margin-right: 10px;
 }
-.detail .data .total{
-    position: absolute;
-    top: 206px;
-    left: 62px;
-    margin: 0;
+    /* DATA (contain all blocks) */
+.data{
+    position: relative;
+    width: 100%;
+    height: 538px;
+    overflow: scroll;
 }
-
-    /* BLOCK 1 */
-.block1{
+    /* BLOCK  */
+.block{
     box-sizing: border-box;
-
-    position: absolute;
     width: 241px;
-    height: 100px;
-    left: 45px;
-    top: 280px;
-
+    margin:20px auto;
     background: #FFFFFF;
     border: 1px solid #CECECE;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
     cursor: pointer;
+    padding: 20px;
+    /* margin-bottom: 20px; */
 }
-.block1 .name{
-    position: absolute;
+.block .name{
     top: 16px;
     left: 24px;
     margin: 0;
@@ -442,33 +439,24 @@ a:hover {
 
     color: #1B0303;
 }
-.block1 #area{
-    position: absolute;
-    top: 38px;
-    left: 24px;
-    margin: 0;
-
-    font-family: 'Inter';
-    font-style: normal;
+.cover{
+    display: flex;
+    justify-content: space-between;
+    padding: 5 0px;
     font-size: 14px;
-    line-height: 17px;
-    /* identical to box height */
-
-
-    color: #1B0303;
 }
-.block1 .bar{
-    position: absolute;
+/* .cover-bar{
+    display: ;
+} */
+.block .bar{
     width: 200px;
     height: 10px;
-    left: 24px;
-    top: 60px;
+    margin-top: 5px;
 
     background: #D9D9D9;
     border-radius: 10px;
 }
-.block1 .green-bar{
-    position: absolute;
+#block1-color-bar{
     width: 194px;
     height: 10px;
     left: 24px;
@@ -477,204 +465,29 @@ a:hover {
     background: green;
     border-radius: 10px;
 }
-.block1 .percent{
-    position: absolute;
-    top: 38px;
-    right: 24px;
-    margin: 0;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-size: 14px;
-    line-height: 17px;
-}
-.block1:hover{
+.block:hover{
     background-color: #dbe4de;
 }
-    /* BLOCK 2 */
-.block2{
-    box-sizing: border-box;
 
-    position: absolute;
-    width: 241px;
-    height: 100px;
-    left: 45px;
-    top: 400px;
-
-    background: #FFFFFF;
-    border: 1px solid #CECECE;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 20px;
-    cursor: pointer;
-}
-.block2 .name{
-    position: absolute;
-    top: 16px;
-    left: 24px;
-    margin: 0;
-    font-weight: bold;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
-    /* identical to box height */
-
-
-    color: #1B0303;
-}
-.block2 #area{
-    position: absolute;
-    top: 38px;
-    left: 24px;
-    margin: 0;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-size: 14px;
-    line-height: 17px;
-    /* identical to box height */
-
-
-    color: #1B0303;
-}
-.block2 .bar{
-    position: absolute;
-    width: 200px;
-    height: 10px;
-    left: 24px;
-    top: 60px;
-
-    background: #D9D9D9;
-    border-radius: 10px;
-}
-.block2 .yellow-bar{
-    position: absolute;
-    width: 160px;
-    height: 10px;
-    left: 24px;
-    top: 60px;
-
-    background: yellow;
-    border-radius: 10px;
-}
-.block2 .percent{
-    position: absolute;
-    top: 38px;
-    right: 24px;
-    margin: 0;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-size: 14px;
-    line-height: 17px;
-}
-.block2:hover{
-    background-color: #dbe4de;
-}
-    /* BLOCK 3 */
-.block3{
-    box-sizing: border-box;
-
-    position: absolute;
-    width: 241px;
-    height: 100px;
-    left: 45px;
-    top: 520px;
-
-    background: #FFFFFF;
-    border: 1px solid #CECECE;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 20px;
-    cursor: pointer;
-}
-.block3 .name{
-    position: absolute;
-    top: 16px;
-    left: 24px;
-    margin: 0;
-    font-weight: bold;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
-    /* identical to box height */
-
-
-    color: #1B0303;
-}
-.block3 #area{
-    position: absolute;
-    top: 38px;
-    left: 24px;
-    margin: 0;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-size: 14px;
-    line-height: 17px;
-    /* identical to box height */
-
-
-    color: #1B0303;
-}
-.block3 .bar{
-    position: absolute;
-    width: 200px;
-    height: 10px;
-    left: 24px;
-    top: 60px;
-
-    background: #D9D9D9;
-    border-radius: 10px;
-}
-.block3 .red-bar{
-    position: absolute;
-    width: 100px;
-    height: 10px;
-    left: 24px;
-    top: 60px;
-
-    background: red;
-    border-radius: 10px;
-}
-.block3 .percent{
-    position: absolute;
-    top: 38px;
-    right: 24px;
-    margin: 0;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-size: 14px;
-    line-height: 17px;
-}
-.block3:hover{
-    background-color: #dbe4de;
-}
     /* MORE */
 .more {
-    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.more .more-txt {
     width: 95px;
     height: 28px;
-    right: 28px;
-    bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     background: #017A5B;
     border-radius: 25px;
     cursor: pointer;
-}
-
-.more .more-txt {
     color: white;
-    position: absolute;
-    top: 5.5px;
-    left: 15px;
-    margin: 0;
-    font-size: 14px;
 }
     /* Noti Button */
 #notiBtn {
@@ -821,13 +634,32 @@ a:hover {
 }
 .content iframe{
     position: absolute;
-    width: 650px;
-    height: 350px;
+    width: 600px;
+    height: 300px;
     /* left: 660px; */
-    right: 90px;
-    bottom: 30px;
+    right: 110px;
+    bottom: 70px;
+    padding-top: 0;
 
     /* background: url(image.png); */
+}
+/* Delete MCP */
+.delete{
+    position: absolute;
+    width: 130px;
+    height: 30px;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 12px;
+    border: 1px solid;
+    background: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+
 }
 /* Modal */
 .hidden{
