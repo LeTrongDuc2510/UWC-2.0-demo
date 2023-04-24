@@ -1,10 +1,88 @@
+const mcpData = [
+  {
+    name: 'MCP1',
+    area: 'Khu vực 1',
+    percent: '97',
+    color: 'green'
+  },
+  {
+    name: 'MCP2',
+    area: 'Khu vực 2',
+    percent: '84',
+    color: 'yellow'
+  },
+  {
+    name: 'MCP3',
+    area: 'Khu vực 3',
+    percent: '48',
+    color: 'red'
+  },
+  {
+    name: 'MCP4',
+    area: 'Khu vực 4',
+    percent: '100',
+    color: 'green'
+  },
+  {
+    name: 'MCP5',
+    area: 'Khu vực 5',
+    percent: '100',
+    color: 'green'
+  },
+  {
+    name: 'MCP6',
+    area: 'Khu vực 6',
+    percent: '32',
+    color: 'red'
+  },
+  {
+      name: 'MCP7',
+      area: 'Khu vực 7',
+      percent: '50',
+      color: 'yellow'
+  },
+  {
+      name: 'MCP8',
+      area: 'Khu vực 8',
+      percent: '78',
+      color: 'yellow'
+  },
+  {
+      name: 'MCP9',
+      area: 'Khu vực 9',
+      percent: '54',
+      color: 'yellow'
+  },
+  {
+      name: 'MCP10',
+      area: 'Khu vực 10',
+      percent: '67',
+      color: 'yellow'
+  }
+]
 var flag=1;
 const randomAddress=[
-  "497, Hoà Hảo, phường 7, quận 10, TP.HCM",
-  "268 Lý Thường Kiệt, Phường 14, Quận 10, Thành phố Hồ Chí Minh",
-  "279 Nguyễn Tri Phương, Phường 5, Quận 10, Thành phố Hồ Chí Minh",
-  "2 Dương Quang Trung, Phường 12, Quận 10, Thành phố Hồ Chí Minh",
-  "217 Đ. Hồng Bàng, Phường 11, Quận 5, Thành phố Hồ Chí Minh"
+  {
+    location: "497, Hoà Hảo, phường 7, quận 10, Thành phố Hồ Chí Minh",
+    map: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15678.674591160663!2d106.6620321!3d10.7600001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752eefc9c265e9%3A0x5801541ce0809648!2zS8O9IHTDumMgeMOhIMSQ4bqhaSBo4buNYyBCw6FjaCBLaG9h!5e0!3m2!1svi!2s!4v1680775906505!5m2!1svi!2s"
+  },
+  {
+    location: "268 Lý Thường Kiệt, Phường 14, Quận 10, Thành phố Hồ Chí Minh",
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5115109694375!2d106.65571311456333!3d10.77208026222009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ec3c161a3fb%3A0xef77cd47a1cc691e!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBCw6FjaCBraG9hIC0gxJDhuqFpIGjhu41jIFF14buRYyBnaWEgVFAuSENN!5e0!3m2!1svi!2s!4v1680776230560!5m2!1svi!2s"
+  },
+  {
+    location: "279 Nguyễn Tri Phương, Phường 5, Quận 10, Thành phố Hồ Chí Minh",
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.654887744777!2d106.66616931456335!3d10.761058462420339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ee4595019ad%3A0xf2a1b15c6af2c1a6!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBLaW5oIHThur8gVFAuIEjhu5MgQ2jDrSBNaW5oIChDxqEgc-G7nyBCKQ!5e0!3m2!1svi!2s!4v1680776283262!5m2!1svi!2s"
+  },
+  {
+    location: "2 Dương Quang Trung, Phường 12, Quận 10, Thành phố Hồ Chí Minh",
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4924452791533!2d106.6633196746726!3d10.77354505924763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752edc6b75aa67%3A0xa77d949e40bc80e0!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBZIGtob2EgUGjhuqFtIE5n4buNYyBUaOG6oWNo!5e0!3m2!1svi!2s!4v1682094628042!5m2!1svi!2s"
+  },
+  {
+    location: "217 Đ. Hồng Bàng, Phường 11, Quận 5, Thành phố Hồ Chí Minh",
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.7417891463833!2d106.66073777467236!3d10.754372659600925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ef09222b00b%3A0xb02f0a86479b4d8f!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBZIGTGsOG7o2MgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oIChVTVAp!5e0!3m2!1svi!2s!4v1682094745162!5m2!1svi!2s"
+  }
+  
 ]
 
 /* Show Table */
@@ -120,109 +198,13 @@ unchosen.addEventListener("click",function(){
   window.location="vehicle.html"; 
 })
 
-/* Click block */
-block1=document.querySelectorAll(".block")[0];
-block2=document.querySelectorAll(".block")[1];
-block3=document.querySelectorAll(".block")[2];
-block4=document.querySelectorAll(".block")[3];
-block5=document.querySelectorAll(".block")[4];
-changeblock1=function(){
-  document.querySelector(".content-name").innerHTML="MCP1";
-  document.querySelector(".content-area").innerHTML="Khu vực 1";
-  document.querySelector(".content-location").innerHTML="497, Hoà Hảo, phường 7, quận 10, TP.HCM";
-  colorBar=document.querySelector(".content-color-bar");
-  colorBar.style.background="green";
-  colorBar.style.width="295px";
-  document.querySelector(".content-percent").innerHTML="97%";
-  document.querySelector("#map").src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15678.674591160663!2d106.6620321!3d10.7600001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752eefc9c265e9%3A0x5801541ce0809648!2zS8O9IHTDumMgeMOhIMSQ4bqhaSBo4buNYyBCw6FjaCBLaG9h!5e0!3m2!1svi!2s!4v1680775906505!5m2!1svi!2s";
-}
-changeblock2=function(){
-  document.querySelector(".content-name").innerHTML="MCP2";
-  document.querySelector(".content-area").innerHTML="Khu vực 2";
-  document.querySelector(".content-location").innerHTML="268 Lý Thường Kiệt, Phường 14, Quận 10, Thành phố Hồ Chí Minh";
-  colorBar=document.querySelector(".content-color-bar");
-  colorBar.style.background="yellow";
-  colorBar.style.width="255px";
-  document.querySelector(".content-percent").innerHTML="84%";
-  document.querySelector("#map").src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5115109694375!2d106.65571311456333!3d10.77208026222009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ec3c161a3fb%3A0xef77cd47a1cc691e!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBCw6FjaCBraG9hIC0gxJDhuqFpIGjhu41jIFF14buRYyBnaWEgVFAuSENN!5e0!3m2!1svi!2s!4v1680776230560!5m2!1svi!2s";
-}
-changeblock3=function(){
-  document.querySelector(".content-name").innerHTML="MCP3";
-  document.querySelector(".content-area").innerHTML="Khu vực 3";
-  document.querySelector(".content-location").innerHTML="279 Nguyễn Tri Phương, Phường 5, Quận 10, Thành phố Hồ Chí Minh";
-  colorBar=document.querySelector(".content-color-bar")
-  colorBar.style.background="red";
-  colorBar.style.width="146px";
-  document.querySelector(".content-percent").innerHTML="48%";
-  document.querySelector("#map").src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.654887744777!2d106.66616931456335!3d10.761058462420339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ee4595019ad%3A0xf2a1b15c6af2c1a6!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBLaW5oIHThur8gVFAuIEjhu5MgQ2jDrSBNaW5oIChDxqEgc-G7nyBCKQ!5e0!3m2!1svi!2s!4v1680776283262!5m2!1svi!2s";
-}
-changeblock4=function(){
-  document.querySelector(".content-name").innerHTML="MCP4";
-  document.querySelector(".content-area").innerHTML="Khu vực 4";
-  document.querySelector(".content-location").innerHTML="2 Dương Quang Trung, Phường 12, Quận 10, Thành phố Hồ Chí Minh";
-  colorBar=document.querySelector(".content-color-bar")
-  colorBar.style.background="green";
-  colorBar.style.width="304px";
-  document.querySelector(".content-percent").innerHTML="100%";
-  document.querySelector("#map").src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4924452791533!2d106.6633196746726!3d10.77354505924763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752edc6b75aa67%3A0xa77d949e40bc80e0!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBZIGtob2EgUGjhuqFtIE5n4buNYyBUaOG6oWNo!5e0!3m2!1svi!2s!4v1682094628042!5m2!1svi!2s";
-}
-changeblock5=function(){
-  document.querySelector(".content-name").innerHTML="MCP5";
-  document.querySelector(".content-area").innerHTML="Khu vực 5";
-  document.querySelector(".content-location").innerHTML="217 Đ. Hồng Bàng, Phường 11, Quận 5, Thành phố Hồ Chí Minh";
-  colorBar=document.querySelector(".content-color-bar")
-  colorBar.style.background="green";
-  colorBar.style.width="304px";
-  document.querySelector(".content-percent").innerHTML="100%";
-  document.querySelector("#map").src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.7417891463833!2d106.66073777467236!3d10.754372659600925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ef09222b00b%3A0xb02f0a86479b4d8f!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBZIGTGsOG7o2MgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oIChVTVAp!5e0!3m2!1svi!2s!4v1682094745162!5m2!1svi!2s";
-}
-changeblockRandom=function(number){
-  document.querySelectorAll(".block")[i];
-  document.querySelector(".content-name").innerHTML="MCP"+number;
-  document.querySelector(".content-area").innerHTML="Khu vực "+number;
-  document.querySelector(".content-location").innerHTML="";
-  colorBar=document.querySelector(".content-color-bar")
-  colorBar.style.background="green";
-  colorBar.style.width="304px";
-  document.querySelector(".content-percent").innerHTML="100%";
-  document.querySelector("#map").src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.7417891463833!2d106.66073777467236!3d10.754372659600925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ef09222b00b%3A0xb02f0a86479b4d8f!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBZIGTGsOG7o2MgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oIChVTVAp!5e0!3m2!1svi!2s!4v1682094745162!5m2!1svi!2s";
-}
-block1.addEventListener("click",changeblock1);
-block2.addEventListener("click",changeblock2);
-block3.addEventListener("click",changeblock3);
-block4.addEventListener("click",changeblock4);
-block5.addEventListener("click",changeblock5);
-block6.addEventListener("click",()=>{changeblockRandom(6)});
-block7.addEventListener("click",()=>{changeblockRandom(7)});
-block8.addEventListener("click",()=>{changeblockRandom(8)});
-block9.addEventListener("click",()=>{changeblockRandom(9)});
-block10.addEventListener("click",()=>{changeblockRandom(10)});
-/* Filter Table */
-function filterTable() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.querySelector("#myInput");
-  filter = input.value.toUpperCase();
-  table = document.querySelector("#myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }       
-  }
-}
 
 /* Multi Pagination */
 
 const changeAddress=function(address)
 {
   var randIndex= Math.floor(Math.random() * Object.keys(randomAddress).length);
-  var rand=randomAddress[randIndex];
+  var rand=randomAddress[randIndex].location;
   address.innerHTML=rand;
 }
 const changeColor=function(percent,colorBar)
@@ -231,7 +213,7 @@ const changeColor=function(percent,colorBar)
   {
     colorBar.style.background="green";
   }
-  else if (percent<90 && percent>=60)
+  else if (percent<90 && percent>=50)
   {
     colorBar.style.background="yellow";
   }
@@ -339,36 +321,96 @@ prev.addEventListener("click",function(){
   data();
 });
 
-/* Delete MCP */
+/* Write block */
+const wrapperBlock = document.querySelector('.wrapper-block')
+for (let i = 0; i < mcpData.length; i++) {
+  var w=(200/100*`${mcpData[i].percent}`); // we can't use signal % to calculate, because computer think that is a character
+  if (i<5)
+  {
+    wrapperBlock.innerHTML += `
+    <div class="block">
+      <p class="name">${mcpData[i].name}</p>
+      <div class="cover">
+          <p id="area">${mcpData[i].area}</p>
+          <div class="percent">${mcpData[i].percent}%</div>
+      </div>
+      <div class="bar">
+          <div class="color-bar" style="background:${mcpData[i].color}; width: ${w}px; height: 10px; border-radius: 10px"></div>
+      </div>
+    </div>`
+  }
+  else
+  {
+    wrapperBlock.innerHTML += `
+    <div class="block hidden">
+      <p class="name">${mcpData[i].name}</p>
+      <div class="cover">
+          <p id="area">${mcpData[i].area}</p>
+          <div class="percent">${mcpData[i].percent}%</div>
+      </div>
+      <div class="bar">
+        <div class="color-bar" style="background:${mcpData[i].color}; width: ${w}px; height: 10px; border-radius: 10px"></div>
+      </div>
+    </div>`
+  }
+}
+
+/* Change Content */
 var countDelete=0;
 var array=[];
 for (i=0;i<10;i++)
 {
   array[i]=false;
 }
-const deleteVehicle = document.querySelector(".delete");
-deleteVehicle.addEventListener("click",function(){
+deleteBlock=function(){
+  console.log(flag+"hello");
   countDelete++;
-  array[flag-1]=true;
+  array[flag-1]=true; //true means that the block has been hidden
   document.querySelectorAll(".block")[flag-1].classList.add("hidden");
-  if (countDelete<=5) document.querySelectorAll(".block")[3+countDelete].classList.remove("hidden");
+  if (countDelete<=5) document.querySelectorAll(".block")[4+countDelete].classList.remove("hidden");
+  var c=flag; // c is the variable to check the nearest block that hasn't been deleted
   flag++; // change to next vehicle
-  var c=flag-1; // c is the variable to check the nearest block that hasn't been deleted
   while (array[c]==true) c++;
-  c++; // switch c from an index to a right order of block
-  switch(c)
-  {
-    case 1:
-    changeblock1();
-    case 2:
-    changeblock2();
-    case 3:
-    changeblock3();
-    case 4:
-    changeblock4();
-    case 5: 
-    changeblock5();
-    case 6: case 7: case 8: case 9: case 10:
-    changeblockRandom(c);
-  }
-});
+  changeContent(c);
+}
+const wrapperContent=document.querySelector(".wrapper-content");
+i=1;
+changeContent=function(i)
+{
+  flag=i+1; // because i is index of array, and flag is the order of block
+  var w=(304/100*`${mcpData[i].percent}`);
+  rand=Math.floor(Math.random() * Object.keys(randomAddress).length); // random location and map
+  wrapperContent.innerHTML=`
+    <p class="content-name">${mcpData[i].name}</p>
+    <p class="content-area">${mcpData[i].area}</p>
+    <b id="bold-location">Địa điểm:</b>
+    <div class="content-location"> ${randomAddress[rand].location}</div>
+    <div class="content-state"><b>Trạng thái:</b></div>
+    <div class="content-bar"></div>
+    <div class="content-color-bar" style="background:${mcpData[i].color}; width: ${w}px; height: 6px; border-radius: 10px"></div>
+    <div class="content-percent">${mcpData[i].percent}%</div>
+    <iframe id="map" src="${randomAddress[rand].map}" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="delete">
+        <i class="fa-solid fa-list-check"></i>
+        <p>Xoá MCP</p>
+    </div>
+  `
+  del = document.querySelector(".delete");
+  del.addEventListener("click",deleteBlock);
+}
+
+document.querySelectorAll(".block")[0].addEventListener("click",()=>{changeContent(0)});
+document.querySelectorAll(".block")[1].addEventListener("click",()=>{changeContent(1)});
+document.querySelectorAll(".block")[2].addEventListener("click",()=>{changeContent(2)});
+document.querySelectorAll(".block")[3].addEventListener("click",()=>{changeContent(3)});
+document.querySelectorAll(".block")[4].addEventListener("click",()=>{changeContent(4)});
+document.querySelectorAll(".block")[5].addEventListener("click",()=>{changeContent(5)});
+document.querySelectorAll(".block")[6].addEventListener("click",()=>{changeContent(6)});
+document.querySelectorAll(".block")[7].addEventListener("click",()=>{changeContent(7)});
+document.querySelectorAll(".block")[8].addEventListener("click",()=>{changeContent(8)});
+document.querySelectorAll(".block")[9].addEventListener("click",()=>{changeContent(9)});
+//Cannot use addEventListener("click",changeContent(1)) because the function will be executed immediately when the line gets parsed
+/* Delete MCP */
+
+
+
