@@ -355,6 +355,34 @@ for (let i = 0; i < mcpData.length; i++) {
   }
 }
 
+/* Add MCP (Open new modal) */
+const addModal=document.querySelector(".add-modal");
+const addOverlay = document.querySelector(".add-overlay");
+const addCloseButton = document.querySelector(".add-close-button");
+const add=document.querySelector(".add");
+const accept=document.querySelector(".accept");
+
+const openAddModal = function () {
+  addModal.classList.remove('hidden');
+  addOverlay.classList.remove('hidden');
+};
+
+const closeAddModal = function () {
+  addModal.classList.add('hidden');
+  addOverlay.classList.add('hidden');
+};
+
+add.addEventListener("click", openAddModal);
+addCloseButton.addEventListener('click', closeAddModal);
+addOverlay.addEventListener('click', closeAddModal);
+accept.addEventListener("click",closeAddModal);
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !addModal.classList.contains('hidden')) {
+    closeAddModal();
+  }
+});
+
 /* Change Content */
 var countDelete=0;
 var array=[];
@@ -374,7 +402,10 @@ deleteBlock=function(){
   changeContent(c);
 }
 const wrapperContent=document.querySelector(".wrapper-content");
-i=1;
+/* Delete for initial MCP (MCP1) */
+del = document.querySelector(".delete");
+del.addEventListener("click",deleteBlock);
+/* Delete when click on one MCP */
 changeContent=function(i)
 {
   flag=i+1; // because i is index of array, and flag is the order of block

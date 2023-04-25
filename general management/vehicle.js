@@ -418,7 +418,6 @@ const accept=document.querySelector(".accept");
 const openAddModal = function () {
   addModal.classList.remove('hidden');
   addOverlay.classList.remove('hidden');
-  console.log("hello");
 };
 
 const closeAddModal = function () {

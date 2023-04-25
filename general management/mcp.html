@@ -186,12 +186,38 @@
                 <td id="address5">217 Đ. Hồng Bàng, Phường 11, Quận 5, Thành phố Hồ Chí Minh</td>
             </tr>
         </table>
+        <div class="add">
+            <i class="fa-solid fa-plus"></i>
+            <div class="add-txt">Thêm MCP mới</div>
+        </div>
         <span class="multi-pagination">1 - 5 trên 20</span>
         <i class="fa-solid fa-chevron-right" id="next"></i>
         <i class="fa-solid fa-chevron-left" id="prev"></i>
     </div>
     <div class="overlay hidden"></div>
-
+    <!-- Modal thêm MCP -->
+    <div class="add-modal hidden">
+        <button class="add-close-button">&times;</button>
+        <div class="nameMCP">
+            <p>Tên MCP</p>
+            <input type="text" name="" id="add-input" placeholder="Ví dụ: MCP1">
+        </div>
+        <div class="locationMCP">
+            <p>Vị trí, địa chỉ</p>
+            <input type="text" name="" id="add-input" placeholder="Ví dụ: 497 Hoà Hảo, phường 7, quận 10">
+        </div>
+        <div class="capacityMCP">
+            <p>Khả năng chứa</p>
+            <input type="text" name="" id="add-input" placeholder="Ví dụ: 10000kg">
+        </div>
+        <div class="accept-cover">
+            <div class="accept">
+                <div class="accept-txt">Xác nhận</div>
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+        </div>
+    </div>
+    <div class="add-overlay hidden"></div>
 </body>
 <script src="./mcp.js"></script>
 </html>
