@@ -1,0 +1,396 @@
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background: url("./not_signin/Garbage-truck.jpg") no-repeat;
+    background-size: cover;
+}
+#nav {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    left: 0px;
+    top: 0px;
+
+    background-color: white;
+}
+
+#nav .uwc {
+    position: absolute;
+    width: 136px;
+    height: 39px;
+    left: 36px;
+    top: 20px;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+    color: #1B0303;
+}
+
+#nav .signin-btn {
+float: right;
+
+position: absolute;
+width: 150px;
+height: 32px;
+right: 28px;
+top: 25px;
+
+background: #017A5B;
+border-radius: 25px;
+}
+
+#nav .signin-btn:hover {
+    border: 1px solid #1B0303;
+    filter: drop-shadow(0px 0px 5px rgba(0, 178, 169, 0.5));
+    background-color: #00a078;
+}
+
+#nav .signin-btn .btn-text {
+    position: absolute;
+    top: -2.5px;
+    left: 1px;
+    width: 92px;
+height: 22px;
+margin: 0;
+padding: 7px 0 0 24px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+
+
+}
+
+#nav .fa-solid {
+    color: white;
+    position: absolute;
+    top: 9px;
+    right: 22px;
+    font-size: 14px;
+
+}
+
+
+#news {
+    /* Rectangle 3 */
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 879px;
+    height: 510px;
+    left: 325px;
+    top: 140px;
+
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0.08) 0%, rgba(217, 217, 217, 0) 100%);
+    border: 1px solid #FFE2E2;
+    backdrop-filter: blur(3px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 20px;
+}
+
+#news .news-txt {
+    position: absolute;
+height: 47px;
+left: 50%;
+transform: translate(-50%, 0);
+top: 35px;
+margin: 0;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 48px;
+/* identical to box height, or 47px */
+
+
+color: #FFFFFF;
+}
+
+#news .news1 {
+    position: absolute;
+    left: 91px;
+    top: 130px;
+    width: 697px;
+    height: 140px;
+
+background: #FFFFFF;
+/* Neutral / Neutral 8 */
+
+border: 1px solid #EBEEF2;
+border-radius: 25px;
+cursor: pointer;
+
+}
+
+#news .news1-txt1 {
+    position: absolute;
+    left: 40px;
+    top: 23px;
+    width: 620px;
+    height: 29px;
+    margin: 0;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+
+    color: #09101D;
+}
+
+
+
+#news .news2 {
+    position: absolute;
+    left: 91px;
+    top: 305px;
+    width: 697px;
+    height: 140px;
+
+    background: #FFFFFF;
+    border: 1px solid #EBEEF2;
+    border-radius: 25px;
+    cursor: pointer;
+
+}
+
+#news .news2-txt1 {
+    position: absolute;
+    left: 40px;
+    top: 23px;
+    width: 620px;
+    height: 29px;
+    margin: 0;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+
+    color: #09101D;
+}
+
+#news .news1:hover, #news .news2:hover {
+    border: 2px solid #017A5B;
+    filter: drop-shadow(5px 5px 5px rgb(0, 255, 110, 0.25));
+}
+
+#news .logo1 {
+    position: absolute;
+    top: 71px;
+    left: 40px;
+  height: 46px;
+  width: 46px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  background-image: url(./not_signin/vtvlogo.png);
+  border: 1px solid black;
+
+}
+
+#news .logo2 {
+    position: absolute;
+    top: 71px;
+    left: 40px;
+  height: 46px;
+  width: 46px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  background-image: url(./not_signin/thanhnienlogo.png);
+    border: 1px solid black;
+}
+
+#news .news1-txt2 {
+    position: absolute;
+   top: 85px;
+   left: 110px;
+height: 24px;
+margin: 0;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 150%;
+/* identical to box height, or 24px */
+
+color: black
+}
+
+#news .news2-txt2 {
+    position: absolute;
+   top: 85px;
+   left: 110px;
+height: 24px;
+margin: 0;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 150%;
+
+color: black
+}
+
+#news .news1-time, #news .news2-time {
+    position: absolute;
+    float: right;
+    right: 36px;
+    top: 84px;
+    width: 110px;
+    height: 21px;
+    padding: 2px 0;
+    margin: 0;
+    border: 1px solid black;
+    border-radius: 25px;
+    color: black;
+}
+
+#news .news1-txt3 {
+    position: relative;
+    color: black;
+    left: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    margin: 0;
+
+}
+
+#news .news2-txt3 {
+    position: relative;
+    color: black;
+    left: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    margin: 0;
+
+}
+
+
+#nav .signin-btn:hover, #nav .uwc:hover {
+    cursor: pointer;
+}
+
+#nav .signin-btn:active {
+    background-color: #005943;
+    transform: translateY(5px);
+}
+  
+
+.navBall {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    background-color: white;
+    border-radius: 50%;
+    bottom: 80px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.ball1 {
+    left: calc(50% - 50px);
+    transform: translate(-50%,0);
+}
+
+.ball2 {
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+.ball3 {
+    left: calc(50% + 50px);
+    transform: translate(-50%,0);
+}
+
+.subnavBall {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.subball1 {
+    background-color: #017A5B;
+}
+
+#newsNavArr {
+    position: absolute;
+    width: 500px;
+    top: 410px;
+    left: 100px;
+    cursor: pointer;
+}
+
+.navArr {
+    position: absolute;
+    top: 0px;
+    width: 20px;
+    height: 33px;
+    background-color: white;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.arr1 {
+    left: 260px;
+}
+
+.arr2 {
+    left: 1050px;
+}
+
+.navArr i {
+    color: black;
+    position: absolute;
+    font-weight: bolder;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Deadly final CSS */
+.uwc {
+    left: 73px !important;
+}
+
+.logoImg {
+    position: relative;
+    top: 20px;
+    left: 25px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}

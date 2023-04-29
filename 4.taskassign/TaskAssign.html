@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nhiệm vụ | UWC 2.0</title>
+        <meta charset="utf-8">
+        <link rel = "icon" href = 
+        "../0.notsignin/not_signin/Logo.png" 
+                type = "image/x-icon">
+        <script src="https://kit.fontawesome.com/74bc185944.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./TaskAssign.css">
+        <link rel="preconnect" href="https://rsms.me/">
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font Link for Icons -->
+    <!-- Google Fonts -->
+        <link
+        href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+        rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <script src="./TaskAssscript.js"></script>
+        
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet'/>
+
+    </head>
+    <body>
+        
+
+          <div id="nav">
+            <p class="logo">UWC 2.0</p>
+            <img class="logoImg" src="../0.notsignin/not_signin/Logo.png" alt="UWC 2.0 logo"> 
+            <div class="trigger boxAvatar" onclick="function myFunc5() { window.location.href = '../7.setting/setting.html'; } myFunc5();">
+                <p class="trigger textBig text1Big">Đinh Lê Dũng</p>
+                <p class="trigger textBig text2Big">#BO0909</p>
+                <img class="trigger avatarBig" src="../0.notsignin/not_signin/finalAvatar.jpg" alt="Avatar">
+            </div>
+
+
+            <div class="sub-page">
+                
+                <div class="dashboard navEle" onclick="function myFunc1() { window.location.href = '../2.homepage/homepage.html'; } myFunc1();">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-house nav-icon"></i>
+                    <p class="db-txt nav-txt">Trang chủ</p>
+                    <i class="fa-solid fa-chevron-right" id="navSelect"></i>
+                </div>
+                <div class="message navEle" onclick="function myFunc2() { window.location.href = '../3.message/message.html'; } myFunc2();">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-comment nav-icon"></i>
+                    <p class="mg-txt nav-txt">Tin nhắn</p>
+                </div>
+                <div class="task navEle">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-calendar-check nav-icon"></i>
+                    <p class="ts-txt nav-txt">Nhiệm vụ</p>
+                </div>
+                <div class="subTask subnavEle1" onclick="subTask1()">
+                    <div class="bg-color"></div>
+                    <!-- <i class="fa-solid fa-calendar-check"></i> -->
+                    <p class="ts-txt subNav-txt">Giao nhiệm vụ</p>
+                </div>
+                <div class="subTask subnavEle2" onclick="subTask2(); setUPP()">
+                    <div class="bg-color"></div>
+                    <!-- <i class="fa-solid fa-calendar-check"></i> -->
+                    <p class="ts-txt subNav-txt">Quản lí nhiệm vụ</p>
+                </div>
+                <div class="em-mn navEle" onclick="function myFunc3() { window.location.href = '../5.emManage/EmMan.html'; } myFunc3();">
+                    <div class="bg-color"></div>
+                    <i class="fa-regular fa-id-card nav-icon"></i>
+                    <p class="em-mn-txt nav-txt">Quản lý nhân viên</p>
+                </div>
+
+
+                <div class="fa-mn navEle"  onclick="function myFunc10() { window.location.href = '../6.general management/mcp.html'; } myFunc10();">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-list-check nav-icon"></i>
+                    <p class="fa-mn-txt nav-txt">Quản lý chung</p>
+                </div>
+                <div class="setting navEle" onclick="function myFunc5() { window.location.href = '../7.setting/setting.html'; } myFunc5();">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-gear nav-icon"></i>
+                    <p class="st-txt nav-txt">Cài đặt</p>
+                </div>
+            </div>
+
+            <a class="log-out" href="../index.html">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <p class="lg-txt">Đăng xuất</p>
+            </a>
+        </div>
+
+        <!-- Khúc này trở xuống là của phần content / DO NOT USE :)) -->
+
+
+        <button id="notiBtn" onclick="">
+            <p id="notiCnt">2</p>
+            <i class="fa-solid fa-bell fa-shake" id="notiIcon"></i>
+        </button>
+
+        <div id="notiModal">
+            <div id="notiModal-content">
+
+            </div>
+        </div>
+
+
+
+        <div id="content">
+            <p id="blockAllTitle">Tạo nhiệm vụ mới</p>
+            <i class="fa-solid fa-list-check tsIconic"></i>
+            <div id="block1">
+                <p class="bl-txt1">Nhân viên</p>
+                <p class="bl-txt2" id ="bl1Txt">Vui lòng chọn nhân viên!</p>
+                <button class="bl-btn learn-more" onclick="openModal(0)">
+                    <p class="bl-btn-txt">Thêm nhân viên</p>
+                    <i class="fa-solid fa-user"></i>
+                </button>
+                <!-- <div id="Modal1-miniTable">
+                    <h1>Nhân viên đã chọn</h1> 
+                </div> -->
+            </div>
+
+            <div id="block2">
+                <p class="bl-txt1">Lịch trình</p>
+                <p class="bl-txt2" id="bl2TXT">Vui lòng chọn ngày làm việc, ca làm việc và các MCPs!</p>
+                <button class="bl-btn" onclick="openModal(1)">
+                    <p class="bl-btn-txt">Thêm lịch trình</p>
+                    <i class="fa-solid fa-calendar-days"></i>
+                </button>
+            </div>
+
+            <div id="block4">
+                <p class="bl-txt1">Lời nhắn</p>
+                <p class="bl-txt2" id="bl3Txt">Để lại lời nhắn! (không bắt buộc)</p>
+                <button class="bl-btn" onclick="openModal(2)">
+                    <p class="bl-btn-txt">Thêm lời nhắn</p>
+                    <i class="fa-solid fa-note-sticky"></i>
+                </button>
+            </div>
+
+            <button id="submit" onclick="">
+                <p class="sm-txt">Gửi nhiệm vụ</p>
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </div>
+
+
+        <div id="modal1" class="modal">
+            <div id="modal1-content" >
+                <i class="fa-solid fa-xmark md-exitbtn" onclick="closeModal(0)"></i>
+                <!-- <button class="bl-btn" id = "btn-modal1" onclick="func()">
+                    <p class="bl-btn-txt txt1-modal1">Janitor</p>
+                    <i class="fa-solid fa-caret-down"></i>
+                </button> -->
+
+                <div class="block-btn continue" onclick="closeModal(0); checkEmptyTextBox()">
+                    <p class="block-btn-txt">Tiếp tục</p>
+                    <i class="fa-solid fa-angles-right"></i>
+                </div>
+
+
+                <p class="sta-select">Chọn loại nhân viên:</p>
+                <select name="staff-type" id="st-type" onchange="alertx()">
+                    <option value="jan">Nhân viên quét dọn</option>
+                    <option value="collector">Nhân viên lái xe</option>
+                    
+                </select>
+
+                <p class="sta1-select">Tìm kiếm nhân viên:</p>
+
+                <!-- <div class="bl-btn pop-down" id = "btn2-modal">
+                    <p class="bl-btn-txt txt2-modal1">Collector</p>
+                    <i class="fa-solid fa-caret-up"></i>
+                </div> -->
+
+
+                <form id="search">
+                    <input required='' type='text' class ="search" id="Modal1myInput" onkeyup="searchFunc()">
+                    <label alt='Tìm kiếm theo tên' placeholder=' Đang tìm kiếm '></label>
+                </form>    
+
+                <!-- <input class ="search" id="myInput" type="text" onkeyup="searchFunc()" placeholder="Tìm kiếm tên"> -->
+           
+                <!-- Table -->
+                <table id="Modal1myTable">
+                    <tr class="modal1-table-row-0">
+                    <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->  
+                    
+                        <th>
+                            <input type="checkbox" name="main-tb-row" id="modal1-row-0" onchange="checkAll()">
+                        </th>
+                        <th class ="tb-row-0" onclick="sortTable(1)">Họ và tên</th>
+                        <th class ="tb-row-0" onclick="sortTable(2)">Mã số nhân viên</th>
+                        <th class ="tb-row-0" onclick="sortTable(3)">MCP gần nhất</th>
+                        <th class ="tb-row-0" onclick="sortTable(4)">Trạng thái</th>
+                    </tr>
+                    
+                    <tr class="modal1-page">
+                        <td class="modal1-tdTag"> <input type="checkbox" name="modal1-tb-row" class="page-1" onchange="countRow()"></td>
+                        <td class="modal1-tdTag">
+                            <img src="./taskAss-img/chanhtri.jpg" alt="">
+                            <p class="avatarName">Cao Chánh Trí</p>  
+                        
+                        </td>
+                        <td class="modal1-tdTag">&nbsp &nbsp &nbsp #CL7367</td>
+                        <td class="modal1-tdTag">
+                            <div class="nearestMCP">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="nearestTXT">MCP1</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag">
+                            <div class="em-status-busy">
+                                <div class="em-status-dot-busy"></div>
+                                <p class="em-status-txt-busy">Không hoạt động</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="modal1-page">
+                        <td class="modal1-tdTag"> <input type="checkbox" name="modal1-tb-row" class="page-1"  onchange="countRow()"></td>
+                        <td class="modal1-tdTag">
+                            <img src="./taskAss-img/khoituan.jpg" alt="">
+                            <p class="avatarName">Trần Hoàng Khôi Tuấn &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</p>  
+
+                        </td>
+                        <td class="modal1-tdTag">&nbsp &nbsp &nbsp #JN2334</td>
+                        <td class="modal1-tdTag">
+                            <div class="nearestMCP">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="nearestTXT">MCP3</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag">
+                            <div class="em-status-free">
+                                <div class="em-status-dot-free"></div>
+                                <p class="em-status-txt-free">Đang hoạt động</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="modal1-page">
+                        <td class="modal1-tdTag"> <input type="checkbox" name="modal1-tb-row" class="page-1" onchange="countRow()"></td>
+                        <td class="modal1-tdTag">
+                            <img src="./taskAss-img/dangkhanh.jpg" alt="">
+                            <p class="avatarName">Mai Tôn Đăng Khánh</p>  
+                        </td>
+                        <td class="modal1-tdTag">&nbsp &nbsp &nbsp #CL4731</td>
+                        <td class="modal1-tdTag">
+                            <div class="nearestMCP">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="nearestTXT">MCP1</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag">
+                            <div class="em-status-busy">
+                                <div class="em-status-dot-busy"></div>
+                                <p class="em-status-txt-busy">Không hoạt động</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="modal1-page">
+                        <td class="modal1-tdTag"> <input type="checkbox" name="modal1-tb-row" class="page-1" onchange="countRow()"></td>
+                        <td class="modal1-tdTag">
+                            <img src="./taskAss-img/letrongduc.JPG" alt="">
+                            <p class="avatarName">Lê Trọng Đức</p>  
+                        </td>
+                        <td class="modal1-tdTag">&nbsp &nbsp &nbsp #JN8484</td>
+                        <td class="modal1-tdTag">
+                            <div class="nearestMCP">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="nearestTXT">MCP2</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag">
+                            <div class="em-status-busy">
+                                <div class="em-status-dot-busy"></div>
+                                <p class="em-status-txt-busy">Không hoạt động</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="modal1-page">
+                        <td class="modal1-tdTag"> <input type="checkbox" name="modal1-tb-row" class="page-1" onchange="countRow()"></td>
+                        <td class="modal1-tdTag">
+                            <img src="./taskAss-img/hienho.jpg" alt="">
+                            <p class="avatarName">Hồ Thị Hiền</p>  
+                        </td>
+                        <td class="modal1-tdTag">&nbsp &nbsp &nbsp #CL6363</td>
+                        <td class="modal1-tdTag">
+                            <div class="nearestMCP">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="nearestTXT">MCP1</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag">
+                            <div class="em-status-free">
+                                <div class="em-status-dot-free"></div>
+                                <p class="em-status-txt-free">Đang hoạt động</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="modal1-page">
+                        <td class="modal1-tdTag"> <input type="checkbox" name="modal1-tb-row" class="page-1" onchange="countRow()"></td>
+                        <td class="modal1-tdTag">
+                            <img src="./taskAss-img/damhung.jpg" alt="">
+                            <p class="avatarName">Đàm Vĩnh Hưng</p>  
+                        </td>
+                        <td class="modal1-tdTag">&nbsp &nbsp &nbsp #JN4589</td>
+                        <td class="modal1-tdTag">
+                            <div class="nearestMCP">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="nearestTXT">MCP4</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag">
+                            <div class="em-status-free">
+                                <div class="em-status-dot-free"></div>
+                                <p class="em-status-txt-free">Đang hoạt động</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="modal1-page">
+                        <td class="modal1-tdTag"> <input type="checkbox" name="modal1-tb-row" class="page-1" onchange="countRow()"></td>
+                        <td class="modal1-tdTag">
+                            <img src="./taskAss-img/jack.jpeg" alt="">
+                            <p class="avatarName">Trịnh Trần Phương Tuấn</p>  
+                        </td>
+                        <td class="modal1-tdTag">&nbsp &nbsp &nbsp #CL9797</td>
+                        <td class="modal1-tdTag">
+                            <div class="nearestMCP">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="nearestTXT">MCP1</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag">
+                            <div class="em-status-busy">
+                                <div class="em-status-dot-busy"></div>
+                                <p class="em-status-txt-busy">Không hoạt động</p>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="modal1-page">
+                        <td class="modal1-tdTag"> <input type="checkbox" name="modal1-tb-row" class="page-1" onchange="countRow()"></td>
+                        <td class="modal1-tdTag">
+                            <img src="./taskAss-img/hoailinh.jpeg" alt="">
+                            <p class="avatarName">Võ Hoài Linh</p>  
+                        </td>
+                        <td class="modal1-tdTag">&nbsp &nbsp &nbsp #JN3475</td>
+                        <td class="modal1-tdTag">
+                            <div class="nearestMCP">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="nearestTXT">MCP1</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag">
+                            <div class="em-status-busy">
+                                <div class="em-status-dot-busy"></div>
+                                <p class="em-status-txt-busy">Không hoạt động</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="modal1-page">
+                        <td class="modal1-tdTag"> <input type="checkbox" name="modal1-tb-row" class="page-1"  onchange="countRow()"></td>
+                        <td class="modal1-tdTag">
+                            <img src="./taskAss-img/sharkbinh.jpg" alt="">
+                            <p class="avatarName">Nguyễn Hòa Bình</p>  
+
+                        </td>
+                        <td class="modal1-tdTag">&nbsp &nbsp &nbsp #CL1294</td>
+                        <td class="modal1-tdTag">
+                            <div class="nearestMCP">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="nearestTXT">MCP1</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag">
+                            <div class="em-status-free">
+                                <div class="em-status-dot-free"></div>
+                                <p class="em-status-txt-free">Đang hoạt động</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="modal1-page">
+                        <td class="modal1-tdTag"> <input type="checkbox" name="modal1-tb-row" class="page-1" onchange="countRow()"></td>
+                        <td class="modal1-tdTag">
+                            <img src="./taskAss-img/tranthanh.jpg" alt="">
+                            <p class="avatarName">Huỳnh Trấn Thành</p>  
+                        </td>
+                        <td class="modal1-tdTag">&nbsp &nbsp &nbsp #JN7693</td>
+                        <td class="modal1-tdTag">
+                            <div class="nearestMCP">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="nearestTXT">MCP5</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag">
+                            <div class="em-status-busy">
+                                <div class="em-status-dot-busy"></div>
+                                <p class="em-status-txt-busy">Không hoạt động</p>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                                    
+
+                    <tr class="modal1-page">
+                        <td class="modal1-tdTag"> <input type="checkbox" name="modal1-tb-row" class="page-1" onchange="countRow()"></td>
+                        <td class="modal1-tdTag">
+                            <img src="./taskAss-img/vohalinh.png" alt="">
+                            <p class="avatarName">Võ Hà Linh</p>  
+                        </td>
+                        <td class="modal1-tdTag">312345</td>
+                        <td class="modal1-tdTag">
+                            <div class="nearestMCP">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="nearestTXT">MCP1</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag">
+                            <div class="em-status-busy">
+                                <div class="em-status-dot-busy"></div>
+                                <p class="em-status-txt-busy">Không hoạt động</p>
+                            </div>
+                        </td>
+                    </tr>
+                
+                </table>
+                
+                <p id="Modal1-sl-count">Đã chọn: 0</p>
+                <p id="Modal1-page-count">1 - 7 trên 50</p>
+                <div id="Modal1-outterleftPage" onmouseenter="pageBGBtn(0)" onmouseleave="pageBGBtn(2)" onclick="updatepageBtn(0)">
+                    <div class="fa-solid fa-chevron-left" id ="Modal1-leftPage"></div>
+                </div>
+                <div id="Modal1-outterrightPage" onmouseenter="pageBGBtn(1)" onmouseleave="pageBGBtn(3)" onclick="updatepageBtn(1)">
+                    <div class="fa-solid fa-chevron-right" id ="Modal1-rightPage"></div>
+                </div>
+                
+
+           
+            </div>
+        </div>
+
+        <div id="modal2" class="modal">
+            <div id='map'>
+                <i class="fa-solid fa-xmark md-exitbtn" onclick="closeModal(0)"></i>
+            </div>
+            <div id="modal2-content">
+                <p id="Modal1-sl-countxx">Đã chọn: 0</p>
+                <p id="Modal1-page-countxx">1 - 5 trên 5</p>
+                <div id="Modal1-outterleftPagexx" onmouseenter="pageBGBtn(0)" onmouseleave="pageBGBtn(2)" onclick="updatepageBtn(0)">
+                    <div class="fa-solid fa-chevron-left" id ="Modal1-leftPagexx"></div>
+                </div>
+                <div id="Modal1-outterrightPagexx" onmouseenter="pageBGBtn(1)" onmouseleave="pageBGBtn(3)" onclick="updatepageBtn(1)">
+                    <div class="fa-solid fa-chevron-right" id ="Modal1-rightPagexx"></div>
+                </div>
+
+                <div class="block-btn continue" onclick="closeModal(1); checkEmptyTextBox()">
+                    <p class="block-btn-txt">Tiếp tục</p>
+                    <i class="fa-solid fa-angles-right"></i>
+                </div>
+                <i class="fa-solid fa-xmark md-exitbtn" onclick="closeModal(1)"></i>
+                <p class="date-select">Chọn ngày làm việc:</p>
+                <input type="date" name="" id="dt-sl">
+                <p class="shift-select">Chọn ca làm việc:</p>
+                <select name="shift-names" id="sh-sl">
+                    <option value="Ca 1">Ca 1 (6:00 - 8:00)</option>
+                    <option value="Ca 2">Ca 2 (8:00 - 10:00)</option>
+                    <option value="Ca 3">Ca 3 (13:00 - 15:00)</option>
+                    <option value="Ca 4">Ca 4 (15:00 - 17:00)</option>
+                </select>
+
+                <p class="ve-select">Chọn phương tiện:</p>
+                <select name="ve-names" id="ve-sl">
+                    <option value="Xe chở rác 1 (72D - 221.09)">Xe chở rác 1 (72D - 221.09)</option>
+                    <option value="Xe chở rác 2 (50A - 127.45)">Xe chở rác 2 (50A - 127.45)</option>
+                    <option value="Xe chở rác 3 (51F - 689.20)">Xe chở rác 3 (51F - 689.20)</option>
+                    <option value="Xe chở rác 4 (63G - 342.58)">Xe chở rác 4 (63G - 342.58)</option>
+                    <option value="Xe chở rác 5 (52A - 483.34)">Xe chở rác 5 (52A - 483.34)</option>
+                    <option value="Xe chở rác 6 (55C - 294.29)">Xe chở rác 6 (55C - 294.29)</option>
+                
+                </select>
+
+                <div class="path-show">
+                    <p id="path">Chọn <span class="bold-text">MCPs</span> để hình thành tuyến đường!</p>
+                    <button class="bl-btn" id="gen-shortest-path" onclick="OpString()">  
+                        <p class="bl-btn-txt txt1-modal1">Tạo đường đi</p>
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </button>
+
+                    <button class="bl-btn" id="show-OpMAP" onclick="showOpMap()">  
+                        <i class="fa-solid fa-location-dot"></i>
+                    </button>
+                </div>
+                <table id="myTable1">
+                    <tr class>
+                    <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->  
+                    
+                        <th>
+                        </th>
+                        <th class ="tb1-row-0" onclick="sortTable1(1)">Tên MCPs</th>
+                        <th class ="tb1-row-0" onclick="sortTable1(2)">Trạng thái</th>
+                        <th class ="tb1-row-0" onclick="">Địa chỉ</th>
+                    </tr>
+                    <tr class="modal2-page">
+                        <td class="modal2-tdTag"> <input type="checkbox" name="tb1-row" class ="cbox1 allBTNcheck" onchange="func(0)"></td>
+                        <td class="modal2-tdTag">MCP1</td>
+                        <td class="modal2-progress-bar modal2-tdTag">
+                            <div class="row-bar">
+                                <div class="row-bar-small1"></div>
+                            </div>
+                            <p>95%</p>
+                        </td>
+                        <td class="modal2-tdTag">497 Hòa Hảo, Phường 7, Quận 10, TPHCM.</td>
+                    </tr>
+                    <tr class="modal2-page">
+                        <td class="modal2-tdTag"> <input type="checkbox" name="tb1-row" class ="cbox1 allBTNcheck"  onchange="func(1)"></td>
+                        <td class="modal2-tdTag">MCP2</td>
+                        <td class="modal2-progress-bar modal2-tdTag">
+                            <div class="row-bar">
+                                <div class="row-bar-small2"></div>
+                            </div>
+                            <p>83%</p>
+                        </td>
+                        <td class="modal2-tdTag">120 Hồng Bàng, Phường 12, Quận 5, TPHCM.</td>
+                    </tr>
+                    <tr class="modal2-page">
+                        <td class="modal2-tdTag"> <input type="checkbox" name="tb1-row" class ="cbox1 allBTNcheck" onchange="func(2)"></td>
+                        <td class="modal2-tdTag">MCP3</td>
+                        <td class="modal2-progress-bar modal2-tdTag">
+                            <div class="row-bar">
+                                <div class="row-bar-small3"></div>
+                            </div>
+                            <p>71%</p>
+                        </td>
+                        <td class="modal2-tdTag"> 520A Thành Thái, Phường 12, Quận 10, TPHCM.</td>
+                    </tr>
+                    <tr class="modal2-page">
+                        <td class="modal2-tdTag"> <input type="checkbox" name="tb1-row" class ="cbox1 allBTNcheck" onchange="func(3)"></td>
+                        <td class="modal2-tdTag">MCP4</td>
+                        <td class="modal2-progress-bar modal2-tdTag">
+                            <div class="row-bar">
+                                <div class="row-bar-small4"></div>
+                            </div>
+                            <p>45%</p>
+                        </td>
+                        <td class="modal2-tdTag">16A/A1 Lê Hồng Phong, Phường 12, Quận 10, TPHCM.</td>
+                    </tr>
+                    <tr class="modal2-page">
+                        <td class="modal2-tdTag"> <input type="checkbox" name="tb1-row" class ="cbox1 allBTNcheck" onchange="func(4)"></td>
+                        <td class="modal2-tdTag">MCP5</td>
+                        <td class="modal2-progress-bar modal2-tdTag">
+                            <div class="row-bar">
+                                <div class="row-bar-small5"></div>
+                            </div>
+                            <p>32%</p>
+                        </td>
+                        <td class="modal2-tdTag">279 Nguyễn Tri Phương, Phường 5, Quận 10, TPHCM.</td>
+                    </tr>
+                    <!-- <tr class="modal2-page">
+                        <td> <input type="checkbox" name="tb-row" class="page-1" onchange="countRow()"></td>
+                        <td>Đinh Lê Dũng6</td>
+                        <td>536127</td>
+                        <td>Mở mic khi lên meet</td>
+                    </tr>
+                    <tr class="modal2-page">
+                        <td> <input type="checkbox" name="tb-row" class="page-1" onchange="countRow()"></td>
+                        <td>Đinh Lê Dũng7</td>
+                        <td>538495</td>
+                        <td>Mở mic khi lên meet</td>
+                    </tr> -->
+                    <!-- <tr class="modal1-page">
+                        <td> <input type="checkbox" name="tb-row" class="page-1" onchange="countRow()"></td>
+                        <td>Đinh Lê Dũng8</td>
+                        <td>2152483</td>
+                        <td>Đang hoạt động</td>
+                    </tr>
+                    <tr class="modal1-page">
+                        <td> <input type="checkbox" name="tb-row" class="page-1"  onchange="countRow()"></td>
+                        <td>Đinh Lê Dũng9</td>
+                        <td>212324</td>
+                        <td>Không hoạt động</td>
+                    </tr>
+                    <tr class="modal1-page">
+                        <td> <input type="checkbox" name="tb-row" class="page-1" onchange="countRow()"></td>
+                        <td>Đinh Lê Dũng10</td>
+                        <td>312345</td>
+                        <td>Đang đánh răng</td>
+                    </tr>
+                    <tr class="modal1-page">
+                        <td> <input type="checkbox" name="tb-row" class="page-1" onchange="countRow()"></td>
+                        <td>Đinh Lê Dũng11</td>
+                        <td>545857</td>
+                        <td>Đau bụng</td>
+                    </tr>
+                    <tr class="modal1-page">
+                        <td> <input type="checkbox" name="tb-row" class="page-1" onchange="countRow()"></td>
+                        <td>Đinh Lê Dũng12</td>
+                        <td>513486</td>
+                        <td>Mở mic khi lên meet</td>
+                    </tr>
+                    <tr class="modal1-page">
+                        <td> <input type="checkbox" name="tb-row" class="page-1" onchange="countRow()"></td>
+                        <td>Đinh Lê Dũng13</td>
+                        <td>536127</td>
+                        <td>Mở mic khi lên meet</td>
+                    </tr>
+                    <tr class="modal1-page">
+                        <td> <input type="checkbox" name="tb-row" class="page-1" onchange="countRow()"></td>
+                        <td>Đinh Lê Dũng14</td>
+                        <td>538495</td>
+                        <td>Mở mic khi lên meet</td>
+                    </tr> -->
+                </table>
+
+
+            </div>
+        </div>
+
+        <div id="modal3" class="modal">
+            <div id="modal3-content">
+                <i class="fa-solid fa-xmark md-exitbtn" onclick="closeModal(2); checkEmptyTextBox()"></i>
+
+                <div class="block-btn continue" onclick="closeModal(2); checkEmptyTextBox()">
+                    <p class="block-btn-txt">Tiếp tục</p>
+                    <i class="fa-solid fa-angles-right"></i>
+                </div>
+                
+                <div class="container">
+                    <div class="options">
+                        <!-- Text Format -->
+                        <button id="bold" class="option-button format">
+                            <i class="fa-solid fa-bold"></i>
+                        </button>
+                        <button id="italic" class="option-button format">
+                            <i class="fa-solid fa-italic"></i>
+                        </button>
+                        <button id="underline" class="option-button format">
+                            <i class="fa-solid fa-underline"></i>
+                        </button>
+                        <button id="strikethrough" class="option-button format">
+                            <i class="fa-solid fa-strikethrough"></i>
+                        </button>
+                        <button id="superscript" class="option-button script">
+                            <i class="fa-solid fa-superscript"></i>
+                        </button>
+                        <button id="subscript" class="option-button script">
+                            <i class="fa-solid fa-subscript"></i>
+                        </button>
+                        <!-- List -->
+                        <button id="insertOrderedList" class="option-button">
+                            <div class="fa-solid fa-list-ol"></div>
+                        </button>
+                        <button id="insertUnorderedList" class="option-button">
+                            <i class="fa-solid fa-list"></i>
+                        </button>
+                        <!-- Undo/Redo -->
+                        <button id="undo" class="option-button">
+                            <i class="fa-solid fa-rotate-left"></i>
+                        </button>
+                        <button id="redo" class="option-button">
+                            <i class="fa-solid fa-rotate-right"></i>
+                        </button>
+                        <!-- Link -->
+                        <button id="createLink" class="adv-option-button">
+                            <i class="fa fa-link"></i>
+                        </button>
+                        <button id="unlink" class="option-button">
+                            <i class="fa fa-unlink"></i>
+                        </button>
+                        <!-- Alignment -->
+                        <button id="justifyLeft" class="option-button align">
+                            <i class="fa-solid fa-align-left"></i>
+                        </button>
+                        <button id="justifyCenter" class="option-button align">
+                            <i class="fa-solid fa-align-center"></i>
+                        </button>
+                        <button id="justifyRight" class="option-button align">
+                            <i class="fa-solid fa-align-right"></i>
+                        </button>
+                        <button id="justifyFull" class="option-button align">
+                            <i class="fa-solid fa-align-justify"></i>
+                        </button>
+                        <button id="indent" class="option-button spacing">
+                            <i class="fa-solid fa-indent"></i>
+                        </button>
+                        <button id="outdent" class="option-button spacing">
+                            <i class="fa-solid fa-outdent"></i>
+                        </button>
+                        <!-- Headings -->
+                        <select id="formatBlock" class="adv-option-button" >
+                            <option value="H1">H1</option>
+                            <option value="H2">H2</option>
+                            <option value="H3">H3</option>
+                            <option value="H4">H4</option>
+                            <option value="H5">H5</option>
+                            <option value="H6">H6</option>
+                        </select>
+                        <!-- Font -->
+                        <select id="fontName" class="adv-option-button"></select>
+                        <select id="fontSize" class="adv-option-button"></select>
+                        <!-- Color -->
+                        <div class="input-wrapper">
+                            <input type="color" id="foreColor" class="adv-option-button" />
+                            <label for="foreColor">Font Color</label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="color" id="backColor" class="adv-option-button" />
+                            <label for="backColor">Highlight Color</label>
+                        </div>
+                    </div>
+                    <div id="text-input" contenteditable="true" tabindex="1"></div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div id="modal4" class="modal">
+            <div id='map'>
+                <i class="fa-solid fa-xmark md-exitbtn" onclick="closeModal(3)"></i>
+            </div>
+            <div id="modal4-content">
+                <p id="Modal1-page-countx">1 - 5 trên 5</p>
+                <div id="Modal1-outterleftPagex" onmouseenter="pageBGBtn(0)" onmouseleave="pageBGBtn(2)" onclick="updatepageBtn(0)">
+                    <div class="fa-solid fa-chevron-left" id ="Modal1-leftPagex"></div>
+                </div>
+                <div id="Modal1-outterrightPagex" onmouseenter="pageBGBtn(1)" onmouseleave="pageBGBtn(3)" onclick="updatepageBtn(1)">
+                    <div class="fa-solid fa-chevron-right" id ="Modal1-rightPagex"></div>
+                </div>
+                    
+                <div class="block-btn continue" onclick="closeModal(3); checkEmptyTextBox(); printX()">
+                    <p class="block-btn-txt">Tiếp tục</p>
+                    <i class="fa-solid fa-angles-right"></i>
+                </div>
+
+                <i class="fa-solid fa-xmark md-exitbtn" onclick="closeModal(3)"></i>
+                <p class="date-select">Chọn ngày làm việc:</p>
+                <input type="date" name="" id="dt-slx">
+                <p class="shift-select">Chọn ca làm việc:</p>
+                <select name="shift-names" id="sh-slx">
+                    <option value="Ca 1">Ca 1 (6:00 - 8:00)</option>
+                    <option value="Ca 2">Ca 2 (8:00 - 10:00)</option>
+                    <option value="Ca 3">Ca 3 (13:00 - 15:00)</option>
+                    <option value="Ca 4">Ca 4 (15:00 - 17:00)</option>
+                </select>
+
+                <p class="ve-select">Chọn xe đẩy:</p>
+                <select name="ve-names" id="ve-slx">
+                    <option value="Xe đẩy 1 (XĐ - 001)">Xe đẩy 1 (XĐ - 001)</option>
+                    <option value="Xe đẩy 2 (XĐ - 002)">Xe đẩy 2 (XĐ - 002)</option>
+                    <option value="Xe đẩy 3 (XĐ - 003)">Xe đẩy 3 (XĐ - 003)</option>
+                    <option value="Xe đẩy 4 (XĐ - 004)">Xe đẩy 4 (XĐ - 004)</option>
+                   
+                
+                </select>
+
+                <div class="path-show">
+                    <p id="pathx">Chọn <span class="bold-text">MCPs</span> để chỉ định cho Janitor!</p>
+                </div>
+                <table id="myTable2">
+                    <tr class>
+                    <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->  
+                    
+                        <th>
+                        </th>
+                        <th class ="tb1-row-0" onclick="sortTable1(1)">Tên MCPs</th>
+                        <th class ="tb1-row-0" onclick="sortTable1(2)">Trạng thái</th>
+                        <th class ="tb1-row-0" onclick="">Địa chỉ</th>
+                    </tr>
+                    <tr class="modal4-page">
+                        <td class="modal4-tdTag"> 
+                            <input type="radio" name="mcpChosing" class="cbox10" onchange="funcx(0)">
+                        </td>
+                        <td class="modal4-tdTag">MCP1</td>
+                        <td class="modal4-progress-bar modal4-tdTag">
+                            <div class="row-bar">
+                                <div class="row-bar-small1"></div>
+                            </div>
+                            <p>95%</p>
+                        </td>
+                        <td class="modal4-tdTag">497 Hòa Hảo, Phường 7, Quận 10, TPHCM.</td>
+                    </tr>
+                    <tr class="modal4-page">
+                        <td class="modal4-tdTag"> <input type="radio" name="mcpChosing" class="cbox10" onchange="funcx(1)"></td>
+                        <td class="modal4-tdTag">MCP2</td>
+                        <td class="modal4-progress-bar modal4-tdTag">
+                            <div class="row-bar">
+                                <div class="row-bar-small2"></div>
+                            </div>
+                            <p>83%</p>
+                        </td>
+                        <td class="modal4-tdTag">120 Hồng Bàng, Phường 12, Quận 5, TPHCM.</td>
+                    </tr>
+                    <tr class="modal4-page">
+                        <td class="modal4-tdTag"> <input type="radio" name="mcpChosing" class="cbox10" onchange="funcx(2)"></td>
+                        <td class="modal4-tdTag">MCP3</td>
+                        <td class="modal4-progress-bar modal4-tdTag">
+                            <div class="row-bar">
+                                <div class="row-bar-small3"></div>
+                            </div>
+                            <p>71%</p>
+                        </td>
+                        <td class="modal4-tdTag"> 520A Thành Thái, Phường 12, Quận 10, TPHCM.</td>
+                    </tr>
+                    <tr class="modal4-page">
+                        <td class="modal4-tdTag"><input type="radio" name="mcpChosing" class="cbox10" onchange="funcx(3)"></td>
+                        <td class="modal4-tdTag">MCP4</td>
+                        <td class="modal4-progress-bar modal4-tdTag">
+                            <div class="row-bar">
+                                <div class="row-bar-small4"></div>
+                            </div>
+                            <p>45%</p>
+                        </td>
+                        <td class="modal4-tdTag">16A/A1 Lê Hồng Phong, Phường 12, Quận 10, TPHCM.</td>
+                    </tr>
+                    <tr class="modal4-page">
+                        <td class="modal4-tdTag"> <input type="radio" name="mcpChosing" class="cbox10" onchange="funcx(4)"></td>
+                        <td class="modal4-tdTag">MCP5</td>
+                        <td class="modal4-progress-bar modal4-tdTag">
+                            <div class="row-bar">
+                                <div class="row-bar-small5"></div>
+                            </div>
+                            <p>32%</p>
+                        </td>
+                        <td class="modal4-tdTag">279 Nguyễn Tri Phương, Phường 5, Quận 10, TPHCM.</td>
+                    </tr>
+                </table>
+
+
+            </div>
+        </div>
+
+        <div id="taskMan">
+            <div id="taskMan-bgColor">
+                
+            </div>
+            <p class="bl-txt1">Các nhiệm vụ đã giao</p>
+
+
+            <p class="sta-select">Chọn loại nhân viên:</p>
+                <select name="staff-type" id="st-typex" onchange="alertxx()">
+                    <option value="jan">Janitor</option>
+                    <option value="collector">Collector</option>
+                    
+                </select>
+
+            <table id="tsManTable">
+                <tr class="ManTable-row manRowTab-0">
+                    <th class ="tb-row-0xx" onclick="sortTable(3)"></th>
+                    <th class ="tb-row-0xx" onclick="sortTable(0)">ID nhiệm vụ</th>
+                    <th class ="tb-row-0xx" onclick="sortTable(1)">Nhân viên thực hiện</th>
+                    <th class ="tb-row-0xx" onclick="sortTable(2)">Thời gian</th>
+                    <th class ="tb-row-0xx" onclick="sortTable(3)">Quét dọn tại</th>
+                    <th class ="tb-row-0xx" onclick="sortTable(3)">Trạng thái</th>
+                </tr>
+                <tr class="ManTable-row manRowTab">
+                    <td class="ManTable-tdTag">
+                        <input type="checkbox" name="manTable-tb-row" class="manChBox"  onchange="delManRow()">
+                    </td>
+                    <td class="ManTable-tdTag">#JNT001</td>
+                    <td class="ManTable-tdTag">
+                        <img src="./taskAss-img/damhung.jpg" alt="">
+                        <p class="avatarName">Đàm Vĩnh Hưng</p>  
+                    </td>
+                    <td class="ManTable-tdTag">26/4/2023 - Ca 1</td>
+                    <td class="ManTable-tdTag">&nbsp &nbsp &nbsp MCP4</td>
+                    <td class="ManTable-tdTag">
+                        <div class="tsStatus-free">
+                            <div class="tsStatus-dot-free"></div>
+                            <p class="tsStatus-txt-free">Hoàn thành</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="ManTable-row manRowTab">
+                    <td class="ManTable-tdTag">
+                         <input type="checkbox" name="manTable-tb-row" class="manChBox"  onchange="delManRow()">
+                    </td>
+                    <td class="ManTable-tdTag">#JNT002</td>
+                    <td class="ManTable-tdTag">
+                        <img src="./taskAss-img/tranthanh.jpg" alt="">
+                        <p class="avatarName">Huỳnh Trấn Thành</p>
+                    </td>
+                    <td class="ManTable-tdTag">25/4/2023 - Ca 2</td>
+                    <td class="ManTable-tdTag">&nbsp &nbsp &nbsp MCP5</td>
+                    <td class="ManTable-tdTag">
+                        <div class="tsStatus-free">
+                            <div class="tsStatus-dot-free"></div>
+                            <p class="tsStatus-txt-free">Hoàn thành</p>
+                        </div>
+                    </td>
+                    
+                </tr>
+                <tr class="ManTable-row manRowTab">
+                    <td class="ManTable-tdTag">
+                         <input type="checkbox" name="manTable-tb-row" class="manChBox"  onchange="delManRow()">
+                    </td>
+                    <td class="ManTable-tdTag">#JNT003</td>
+                    <td class="ManTable-tdTag">
+                        <img src="./taskAss-img/hoailinh.jpeg" alt="">
+                        <p class="avatarName">Võ Hoài Linh</p>
+                    </td>
+                    <td class="ManTable-tdTag">24/4/2023 - Ca 3</td>
+                    <td class="ManTable-tdTag">&nbsp &nbsp &nbsp MCP1</td>
+                    <td class="ManTable-tdTag">
+                        <div class="tsStatus-doing">
+                            <div class="tsStatus-dot-doing"></div>
+                            <p class="tsStatus-txt-doing">Thực hiện</p>
+                        </div>
+                    </td>
+                    
+                </tr>
+                <tr class="ManTable-row manRowTab">
+                    <td class="ManTable-tdTag">
+                         <input type="checkbox" name="manTable-tb-row" class="manChBox"  onchange="delManRow()">
+                    </td>
+                    <td class="ManTable-tdTag">#JNT004</td>
+                    <td class="ManTable-tdTag">
+                        <img src="./taskAss-img/letrongduc.JPG" alt="">
+                        <p class="avatarName">Lê Trọng Đức</p>
+                    </td>
+                    <td class="ManTable-tdTag">23/4/2023 - Ca 1</td>
+                    <td class="ManTable-tdTag">&nbsp &nbsp &nbsp MCP2</td>
+                    <td class="ManTable-tdTag">
+                        <div class="tsStatus-free">
+                            <div class="tsStatus-dot-free"></div>
+                            <p class="tsStatus-txt-free">Hoàn thành</p>
+                        </div>
+                    </td>
+                    
+                </tr>
+                <tr class="ManTable-row manRowTab">
+                    <td class="ManTable-tdTag">
+                         <input type="checkbox" name="manTable-tb-row" class="manChBox"  onchange="delManRow()">
+                    </td>
+                    <td class="ManTable-tdTag">#JNT005</td>
+                    <td class="ManTable-tdTag">
+                        <img src="./taskAss-img/damhung.jpg" alt="">
+                        <p class="avatarName">Đàm Vĩnh Hưng</p>
+                    </td>
+                    <td class="ManTable-tdTag">20/4/2023 - Ca 4</td>
+                    <td class="ManTable-tdTag">&nbsp &nbsp &nbsp MCP4</td>
+                    <td class="ManTable-tdTag">
+                        <div class="tsStatus-doing">
+                            <div class="tsStatus-dot-doing"></div>
+                            <p class="tsStatus-txt-doing">Thực hiện</p>
+                        </div>
+                    </td>
+                    
+                </tr>
+
+
+                <tr class="ManTable-row manRowTab">
+                    <td class="ManTable-tdTag">
+                         <input type="checkbox" name="manTable-tb-row" class="manChBox"  onchange="delManRow()">
+                    </td>
+                    <td class="ManTable-tdTag">#CLT001</td>
+                    <td class="ManTable-tdTag">
+                        <img src="./taskAss-img/hienho.jpg" alt="">
+                        <p class="avatarName">Hồ Thị Hiền</p>
+                    </td>
+                    <td class="ManTable-tdTag">26/4/2023 - Ca 2</td>
+                    <td class="ManTable-tdTag">Trụ sở ⇨ MCP3 ⇨ MCP5 ⇨ Trụ sở</td>
+                    <td class="ManTable-tdTag">
+                        <div class="tsStatus-free">
+                            <div class="tsStatus-dot-free"></div>
+                            <p class="tsStatus-txt-free">Hoàn thành</p>
+                        </div>
+                    </td>
+                    
+                </tr>
+
+                
+
+                <tr class="ManTable-row manRowTab">
+                    <td class="ManTable-tdTag">
+                         <input type="checkbox" name="manTable-tb-row" class="manChBox"  onchange="delManRow()">
+                    </td>
+                    <td class="ManTable-tdTag">#CLT002</td>
+                    <td class="ManTable-tdTag">
+                        <img src="./taskAss-img/chanhtri.jpg" alt="">
+                        <p class="avatarName">Cao Chánh Trí</p>
+                    </td>
+                    <td class="ManTable-tdTag">25/4/2023 - Ca 3</td>
+                    <td class="ManTable-tdTag">Trụ sở ⇨ MCP2 ⇨ MCP4 ⇨ Trụ sở</td>
+                    <td class="ManTable-tdTag">
+                        <div class="tsStatus-doing">
+                            <div class="tsStatus-dot-doing"></div>
+                            <p class="tsStatus-txt-doing">Thực hiện</p>
+                        </div>
+                    </td>
+                    
+                </tr>
+
+                <tr class="ManTable-row manRowTab">
+                    <td class="ManTable-tdTag">
+                         <input type="checkbox" name="manTable-tb-row" class="manChBox"  onchange="delManRow()">
+                    </td>
+                    <td class="ManTable-tdTag">#CLT003</td>
+                    <td class="ManTable-tdTag">
+                        <img src="./taskAss-img/sharkbinh.jpg" alt="">
+                        <p class="avatarName">Nguyễn Hòa Bình</p>
+                    </td>
+                    <td class="ManTable-tdTag">24/4/2023 - Ca 4</td>
+                    <td class="ManTable-tdTag">Trụ sở ⇨ MCP1 ⇨ MCP5 ⇨ MCP2 ⇨ Trụ sở</td>
+                    <td class="ManTable-tdTag">
+                        <div class="tsStatus-free">
+                            <div class="tsStatus-dot-free"></div>
+                            <p class="tsStatus-txt-free">Hoàn thành</p>
+                        </div>
+                    </td>
+                    
+                </tr>
+
+                <tr class="ManTable-row manRowTab">
+                    <td class="ManTable-tdTag">
+                         <input type="checkbox" name="manTable-tb-row" class="manChBox"  onchange="delManRow()">
+                    </td>
+                    <td class="ManTable-tdTag">#CLT004</td>
+                    <td class="ManTable-tdTag">
+                        <img src="./taskAss-img/dangkhanh.jpg" alt="">
+                        <p class="avatarName">Mai Đăng Khánh</p>
+                    </td>
+                    <td class="ManTable-tdTag">21/4/2023 - Ca 3</td>
+                    <td class="ManTable-tdTag">Trụ sở ⇨ MCP2 ⇨ MCP1 ⇨ MCP3 ⇨ Trụ sở</td>
+                    <td class="ManTable-tdTag">
+                        <div class="tsStatus-doing">
+                            <div class="tsStatus-dot-doing"></div>
+                            <p class="tsStatus-txt-doing">Thực hiện</p>
+                        </div>
+                    </td>
+                    
+                </tr>
+
+                <tr class="ManTable-row manRowTab">
+                    <td class="ManTable-tdTag">
+                         <input type="checkbox" name="manTable-tb-row" class="manChBox"  onchange="delManRow()">
+                    </td>
+                    <td class="ManTable-tdTag">#CLT005</td>
+                    <td class="ManTable-tdTag">
+                        <img src="./taskAss-img/chanhtri.jpg" alt="">
+                        <p class="avatarName">Cao Chánh Trí</p>
+                    </td>
+                    <td class="ManTable-tdTag">20/4/2023 - Ca 1</td>
+                    <td class="ManTable-tdTag">Trụ sở ⇨ MCP1 ⇨ Trụ sở</td>
+                    <td class="ManTable-tdTag">
+                        <div class="tsStatus-free">
+                            <div class="tsStatus-dot-free"></div>
+                            <p class="tsStatus-txt-free">Hoàn thành</p>
+                        </div>
+                    </td>
+                    
+                </tr>
+
+                
+                
+            </table>
+
+            <p id="Modal1-sl-countxxx">Đã chọn: 0</p>
+            <p id="Modal1-page-countxxx">1 - 5 trên 5</p>
+            <div id="Modal1-outterleftPagexxx" onmouseenter="pageBGBtn(0)" onmouseleave="pageBGBtn(2)" onclick="updatepageBtn(0)">
+                <div class="fa-solid fa-chevron-left" id ="Modal1-leftPage"></div>
+            </div>
+            <div id="Modal1-outterrightPagexxx" onmouseenter="pageBGBtn(1)" onmouseleave="pageBGBtn(3)" onclick="updatepageBtn(1)">
+                <div class="fa-solid fa-chevron-right" id ="Modal1-rightPage"></div>
+            </div>
+
+            <div class="block-btn delMan" id="delBTNMan" onclick="delFUNC()">
+                <p class="block-btn-txt">Xóa</p>
+                <i class="fa-solid fa-list-check"></i>
+            </div>
+
+
+
+
+        </div>
+
+
+        <script>
+
+        
+            document.getElementById("taskMan").style.display = "none";
+
+            // document.getElementById("Modal1-miniTable").style.display = "none";
+            
+
+            let modals = document.getElementsByClassName("modal");
+            window.onclick = function(event) {
+                for (let i=0; i<4; i++) {
+                    if (event.target == modals[i]) {
+                        modals[i].style.display = "none";
+                        if (i==3) i = 1;
+                        document.getElementsByClassName("bl-btn-txt")[i].innerHTML = "Chỉnh sửa";
+                        document.getElementsByClassName("bl-btn-txt")[i].style.left = "40px";
+                        
+                        if (i==0)
+                        document.getElementsByClassName("fa-user")[0].style.right = "35px";
+                        if (i==1)
+                        document.getElementsByClassName("fa-calendar-days")[0].style.right = "32px";
+
+                        if (i==2)
+                        document.getElementsByClassName("fa-note-sticky")[0].style.right = "32px";
+                        
+                        if (i==1) {
+                            if (document.getElementById("dt-sl").value == "")document.getElementsByClassName("bl-txt2")[1].innerHTML = "Vui lòng chọn ngày làm việc!";
+                            let cnt =0;
+                            const checkboxes1 = document.querySelectorAll('input[name="tb1-row"]');
+                            checkboxes1.forEach((checkbox1) => {
+                                if (checkbox1.checked) cnt++;
+                            });
+                            if (cnt == 0) {
+                                if (document.getElementById("dt-sl").value == "") document.getElementsByClassName("bl-txt2")[1].innerHTML = "Vui lòng chọn ngày làm việc và các MCPs!";
+                                else document.getElementsByClassName("bl-txt2")[1].innerHTML = "Vui lòng chọn các MCPs!";
+                            }
+                        }
+                        i=3;
+                    }
+                }
+            }
+
+
+            //
+            // modals[0].style.display = "block";
+
+
+            document.getElementById("Modal1-page-count").innerHTML = "1 - " + n + " trên " + total;
+            const rowTables = document.getElementsByClassName("modal1-page");
+            for (let i=n; i<rowTables.length; i++) {
+                rowTables[i].style.display = "none";
+            }
+
+
+
+            
+
+
+        </script>
+        <script src="./TaskAssnavbarScript.js"></script>
+        <script src="./TaskAssscript1.js"></script>   
+        
+        <script>
+            
+    let locationMCP = [
+            [106.65777420175954,10.772217389800616], // this is MainHouse
+            [106.66171194583052, 10.760326648850665],
+            [106.66539608562101,10.756162742622408],
+            [106.6653967379292,10.772344800484802],
+            [106.67304826522223,10.771696327031904],
+            [106.66814165566046,10.760735144206379]
+        ]
+
+      let bigDist = [
+        [0, 2152.522, 3180.144, 2316.396, 3392.82, 2949.677],
+        [2152.522, 0, 1055.557, 1817.93, 2089.818, 821.874],
+        [3180.144, 1055.557, 0, 2512.855, 2784.744, 1296.998], 
+        [2316.396, 1817.93, 2512.855, 0, 1407.65, 1393.646],
+        [3392.82, 2089.818, 2784.744, 1407.65, 0, 1910.61],
+        [2949.677, 821.874, 1296.998, 1393.646, 1910.61,0]
+      ]
+
+      let arr = Array(100);
+           
+
+        </script>
+        <script>
+            const tmp = document.getElementsByClassName("subTask");
+            const tmp1 = document.getElementsByClassName("navEle");
+            setTimeout(function() {
+                tmp[0].style.transform = "translateY(15px)";
+                tmp[0].style.transition = "transform 800ms";
+                tmp[1].style.transform = "translateY(35px)";
+                tmp[1].style.transition = "transform 800ms";         
+                tmp1[3].style.transform = "translateY(60px)";
+                tmp1[3].style.transition = "transform 800ms";    
+                tmp1[4].style.transform = "translateY(60px)";
+                tmp1[4].style.transition = "transform 800ms"; 
+                tmp1[5].style.transform = "translateY(60px)";
+                tmp1[5].style.transition = "transform 800ms"; 
+
+
+            }, 0100);
+            subTask1();
+            resetAll();
+            
+        </script>
+        <script src="./optimizePath_script.js"></script>
+    </body>
+</html> 

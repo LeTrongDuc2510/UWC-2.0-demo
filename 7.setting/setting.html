@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cài đặt | UWC 2.0</title>
+        <meta charset="utf-8">
+        <link rel = "icon" href = 
+        "../0.notsignin/not_signin/Logo.png" 
+                type = "image/x-icon">
+        <script src="https://kit.fontawesome.com/74bc185944.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./setting.css">
+        <link rel="preconnect" href="https://rsms.me/">
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+        
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font Link for Icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+    
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+        /> 
+    </head>
+    <body>
+        <div id="nav">
+            <p class="logo">UWC 2.0</p>
+            <img class="logoImg" src="../0.notsignin/not_signin/Logo.png" alt="UWC 2.0 logo">
+            <div class="trigger boxAvatar" onclick="function myFunc5() { window.location.href = '../7.setting/setting.html'; } myFunc5();">
+                <p class="trigger textBig text1Big">Đinh Lê Dũng</p>
+                <p class="trigger textBig text2Big">#BO0909</p>
+                <img class="trigger avatarBig" src="../0.notsignin/not_signin/finalAvatar.jpg" alt="Avatar">
+            </div>
+
+            <div class="sub-page">
+                <a class="dashboard" href="../2.homepage/homepage.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-house"></i>
+                    <p class="db-txt">Trang chủ</p>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a class="message" href="../3.message/message.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-comment"></i>
+                    <p class="mg-txt">Tin nhắn</p>
+                </a>
+                <a class="task" href="../4.taskassign/TaskAssign.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <p class="ts-txt">Nhiệm vụ</p>
+                </a>
+                <a class="em-mn" href="../5.emManage/EmMan.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-regular fa-id-card"></i>
+                    <p class="em-mn-txt">Quản lý nhân viên</p>
+                </a>
+                <a class="fa-mn" href="../6.general management/mcp.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-list-check"></i>
+                    <p class="fa-mn-txt">Quản lý chung</p>
+                </a>
+                <a class="setting" href="../7.setting/setting.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-gear"></i>
+                    <p class="st-txt">Cài đặt</p>
+                </a>
+            </div>
+
+            <a class="log-out" href="../index.html">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <p class="lg-txt">Đăng xuất</p>
+            </a>
+        </div>
+
+        <!-- Khúc này trở xuống là của phần content / DO NOT USE :)) -->
+        
+        
+        
+        
+        
+        
+        
+        <!-- Phần cái chuông bên phải -->
+        
+        <button id="notiBtn" onclick="activeModal()">
+            <p id="notiCnt">2</p>
+            <i class="fa-solid fa-bell fa-shake" id="notiIcon"></i>
+        </button>
+
+        <div id="notiModal">
+            <div id="notiModal-content">
+
+            </div>
+        </div>
+
+        <!-- Content section -->
+
+        <div id="content">
+            <button id="submit" onclick="">
+                <p class="sm-txt" onclick="editAvaBig()">Lưu thông tin</p>
+                <i class="fa-solid fa-floppy-disk"></i>
+            </button>
+
+            <div id="block0">
+                <p class="bl-title">Tài khoản</p>
+                <p class="bl-TXTrow" id="bl-txtName">Họ và tên:</p>
+                <input class="inputInfo" id="inputName" type="text" placeholder="" value="Đinh Lê Dũng">
+                <i class="fa-solid fa-signature icon-bl0 icon1"></i>
+                <p class="bl-TXTrow" id="bl-txtUsr">Tên đăng nhập:</p>
+                <input class="inputInfo" id="inputUsr" type="text" placeholder="" value="dinhledung">
+                <i class="fa-solid fa-user icon-bl0 icon2"></i>
+                <p class="bl-TXTrow" id="bl-txtPass">Mật khẩu:</p>
+                <input class="inputInfo" id="inputPass" type="password" placeholder="" value="dinhledung">
+                <i class="fa-solid fa-eye-slash icon-bl0 icon3" id="passNoti" onclick="showPass()"></i>
+                <!-- <div id="readUrlWrapper">
+                    <input type='file' id="readUrl" class="custom-file-input">
+                </div> -->
+
+                <input type='file' id="readUrl" class="custom-file-input">
+            
+                <!-- <p class="more-txt" id="img-TXT-change" onclick="uploadF()">Thay đổi ảnh</p> -->
+                <button class="randGenImg" id="genImg" onclick="randImg()"></button>
+                
+                <img id="uploadedImage" src="#" alt="Uploaded Image" accept="image/png, image/jpeg" style="display:none;">
+
+                <img id="circleFace" src="./rand-img/photo1.jpg"></img>
+            </div>
+            <div id="block1">
+                <p class="bl-title">Thông tin cá nhân</p>
+                <p class="bl-TXTrow" id="bl-txtId">Mã số nhân viên:</p>
+                <input class="inputInfo" id="inputId" type="text" placeholder="" value="#BO0909" disabled>
+                <i class="fa-solid fa-id-card icon-bl1 icon6"></i>
+                <p class="bl-TXTrow" id="bl-txtRole">Chức vụ:</p>
+                <input class="inputInfo" id="inputRole" type="text" placeholder="" value="Nhân viên văn phòng" disabled>
+                <i class="fa-solid fa-clipboard-user icon-bl1 icon7"></i>
+
+                <p class="bl-TXTrow" id="bl-txtEmail">Email:</p>
+                <input class="inputInfo" id="inputEmail" type="text" placeholder="" value="dinhledung@gmail.com">
+                <i class="fa-solid fa-envelope icon-bl1 icon4"></i>
+                <p class="bl-TXTrow" id="bl-txtPhone">Số điện thoại:</p>
+                <input class="inputInfo" id="inputPhone" type="text" placeholder="" value="0123456789">
+                <i class="fa-solid fa-phone icon-bl1 icon5"></i>
+
+                <p class="bl-TXTrow" id="bl-txtGen">Giới tính:</p>
+
+                <input id="test1" class="gender-radio radio1" type="radio" name="radio-group" value="male" checked>
+                <label for="test1" class="genRow genRow1">Nam</label>
+                <input id="test2" class="gender-radio radio2" type="radio" name="radio-group" value="female">
+                <label for="test2" class="genRow genRow2">Nữ</label>
+                <input id="test3" class="gender-radio radio3" type="radio" name="radio-group" value="no">
+                <label for="test3" class="genRow genRow3">Khác</label>
+
+
+
+                <p class="bl-TXTrow" id="bl-txtLang">Ngôn ngữ:</p>
+            
+                <select name="staff-type" id="st-type" onchange="">
+                    <option value="vie">Tiếng Việt</option>
+                    <option value="eng">Tiếng Anh</option>
+                    
+                </select>
+            
+            
+            
+            </div>
+        </div>
+
+
+        <script>
+            let modal = document.getElementById("notiModal");
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+        <script src="Settingscript.js"></script>
+    </body>
+</html> 

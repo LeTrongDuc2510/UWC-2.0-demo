@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tin nhắn | UWC 2.0</title>
+        <meta charset="utf-8">
+        <link rel = "icon" href = 
+        "../0.notsignin/not_signin/Logo.png" 
+                type = "image/x-icon">
+        <script src="https://kit.fontawesome.com/74bc185944.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./message.css">
+        <link rel="preconnect" href="https://rsms.me/">
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+        <link rel="stylesheet" href="https://   use.fontawesome.com/releases/v5.12.0/css/all.css">
+    </head>
+    <body>
+        <div id="nav">
+            <p class="logo">UWC 2.0</p>
+            <img class="logoImg" src="../0.notsignin/not_signin/Logo.png" alt="UWC 2.0 logo">
+            <div class="trigger boxAvatar" onclick="function myFunc5() { window.location.href = '../7.setting/setting.html'; } myFunc5();">
+                <p class="trigger textBig text1Big">Đinh Lê Dũng</p>
+                <p class="trigger textBig text2Big">#BO0909</p>
+                <img class="trigger avatarBig" src="../0.notsignin/not_signin/finalAvatar.jpg" alt="Avatar">
+            </div>
+        
+            <div class="sub-page">
+                <a class="dashboard" href="../2.homepage/homepage.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-house"></i>
+                    <p class="db-txt">Trang chủ</p>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a class="message" href="../3.message/message.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-comment"></i>
+                    <p class="mg-txt">Tin nhắn</p>
+                </a>
+                <a class="task" href="../4.taskassign/TaskAssign.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <p class="ts-txt">Nhiệm vụ</p>
+                </a>
+                <a class="em-mn" href="../5.emManage/EmMan.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-regular fa-id-card"></i>
+                    <p class="em-mn-txt">Quản lý nhân viên</p>
+                </a>
+                <a class="fa-mn" href="../6.general management/mcp.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-list-check"></i>
+                    <p class="fa-mn-txt">Quản lý chung</p>
+                </a>
+                <a class="setting" href="../7.setting/setting.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-gear"></i>
+                    <p class="st-txt">Cài đặt</p>
+                </a>
+            </div>
+
+            <a class="log-out" href="../index.html">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <p class="lg-txt">Đăng xuất</p>
+            </a>
+        </div>
+
+        <!-- Khúc này trở xuống là của phần content / DO NOT USE :)) -->
+
+        <div id="content">
+            <!-- <div id="block1">
+                <p class="bl-txt">Top 3 MCPs</p>
+                <div class="more">
+                    <p class="more-txt">Xem thêm</p>
+                </div>
+                <div class="side-bl1">
+                    <p class="side-bl-txt1">MCP1</p>
+                    <p class="side-bl-txt2">Area 51</p>
+                    <div class="side-bl-bar">
+                        <div class="side-bl-bar-grey"></div>
+                        <div class="side-bl1-bar-color"></div>
+                    </div>
+                    <p class="side-bl-txt3">97%</p>
+                </div>
+                <div class="side-bl2">
+                    <p class="side-bl-txt1">MCP2</p>
+                    <p class="side-bl-txt2">Area 51</p>
+                    <div class="side-bl-bar">
+                        <div class="side-bl-bar-grey"></div>
+                        <div class="side-bl2-bar-color"></div>
+                    </div>
+                    <p class="side-bl-txt3">80%</p>
+                </div>
+                <div class="side-bl3">
+                    <p class="side-bl-txt1">MCP3</p>
+                    <p class="side-bl-txt2">Area 51</p>
+                    <div class="side-bl-bar">
+                        <div class="side-bl-bar-grey"></div>
+                        <div class="side-bl3-bar-color"></div>
+                    </div>
+                    <p class="side-bl-txt3">48%</p>
+                </div>
+            </div>
+            <div id="block2">
+                <p class="bl-txt">Tin nhắn mới</p>
+                <div class="more">
+                    <p class="more-txt">Xem thêm</p>
+                </div>
+                <div class="bl2-msg1">
+                    <div class="msg-logo"></div>
+                    <p class="msg-txt"><span class="bold-text">Lê Trọng Đức:</span> Tôi sẽ nhặt hết rác ở quận 10 và quận 5.</p>
+                </div>
+                <div class="bl2-msg2">
+                    <div class="msg-logo"></div>
+                    <p class="msg-txt"><span class="bold-text">Cao Chánh Trí:</span> Tôi đã hoàn thành nhiệm vụ! Chúc mọi người sớm hoàn thành!</p>
+                </div> -->
+<!-- 
+            </div> -->
+            <div class="msg">
+                <p class="head">Tin nhắn</p>
+
+                <div type="text" placeholder="Tìm kiếm" class="search_bar">
+                    <input type="text" placeholder="Tìm kiếm" class="search_text"></input>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <div class="elements__wrapper">
+                    <div class="elements">
+                        <img class="elements__avata" src="./message-img/LTD.jpg"></img>
+                        <p class="elements__name">Lê Trọng Đức (#JN8484)</p>
+                        <p class="elements__msg">Tui bao</p>
+                    </div>
+                    <div class="elements">
+                        <img class="elements__avata" src="./message-img/KT.jpg"></img>
+                        <p class="elements__name">Khôi Tuấn (#JN2334)</p>
+                        <p class="elements__msg">Bạn: Sủi quài :))))))</p>
+                    </div>
+                    <div class="elements">
+                        <img class="elements__avata" src="./message-img/MTDK.jpg"></img>
+                        <p class="elements__name">Đăng Khánh (#CL4731)</p>
+                        <p class="elements__msg">Bạn: Gánh Trí còng lưng</p>
+                    </div>
+                    <div class="elements">
+                        <img class="elements__avata" src="./message-img/TCC.jpg"></img>
+                        <p class="elements__name">Chánh Trí (#CL7367)</p>
+                        <p class="elements__msg">Dễ thương z</p>
+                    </div>
+                    <div class="elements">
+                        <img class="elements__avata" src="./message-img/amee.jpg"></img>
+                        <p class="elements__name">Đàm Hưng (#JN4589)</p>
+                        <p class="elements__msg">Meo meo meo meo...</p>
+                    </div>
+                    <div class="elements">
+                        <img class="elements__avata" src="./message-img/DBT.jpg"></img>
+                        <p class="elements__name">Hồ Thị Hiền (#CL6363)</p>
+                        <p class="elements__msg">Trả lại tâm trí toi đâyy...</p>
+                    </div>
+                    <div class="elements">
+                        <img class="elements__avata" src="./message-img/hieuthuhai.jpeg"></img>
+                        <p class="elements__name">Hoài Linh (#JN3475)</p>
+                        <p class="elements__msg">Babi nói cho anh nghe ...</p>
+                    </div>
+                    <div class="elements">
+                        <img class="elements__avata" src="./message-img/minzy.jpg"></img>
+                        <p class="elements__name">Trấn Thành (#JN7693)</p>
+                        <p class="elements__msg">Bạn: Bới làng nước ơi!!!!!!</p>
+                    </div>
+                    <!-- <div class="elements">
+                        <img class="elements__avata" src="jack.jpg"></img>
+                        <p class="elements__name">Jack - J97</p>
+                        <p class="elements__msg">Bạn: Quá trớn rồi, xích lên giùm đi...</p>
+                    </div>
+                    <div class="elements">
+                        <img class="elements__avata" src="khuaaoxanh.jpg"></img>
+                        <p class="elements__name">Áo Xanh</p>
+                        <p class="elements__msg">Hãy cứ vô tư và lạc quan lên em ơi...</p>
+                    </div> -->
+                </div>                
+            </div>
+
+            <div class="detail">
+                <div class="detail__user">
+                    <img class="detail__user--avata" width="65px" height="65px"></img>
+                    <p class="detail__user--name"></p>
+                    <i class="fa-solid fa-circle-info fa-xl"></i>
+                </div>
+                <div class="detail__msg">
+                    <!-- <div class="msg__element">
+                        <p class="center">Thứ Tư, 11:11</p>
+                    </div>
+                    <div class="msg__element">
+                        <p class="left">This is not so gud</p>
+                    </div>
+                    <div class="msg__element">
+                        <p class="left">This is not so gud</p>
+                    </div>
+                    <div class="msg__element">
+                        <p class="right">This is not so gud</p>
+                    </div>
+                    <div class="msg__element">
+                        <p class="right">This is not so gud This is not so gud This is not so gud This is not so gud This is not so gudThis is not so gudThis is not so gudThis is not so gud</p>
+                    </div>        -->
+                </div>
+
+                <div class="detail__new-msg">
+                    <input type="text" placeholder="Tin nhắn mới" class="detail__input"></input>
+                    <img class="send-icon" src="./message-img/send.png"></img>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <script src="message.js"></script>
+    </body>
+</html> 

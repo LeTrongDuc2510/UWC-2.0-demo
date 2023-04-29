@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trang chủ | UWC 2.0</title>
+        <meta charset="utf-8">
+        <link rel = "icon" href = 
+        "../0.notsignin/not_signin/Logo.png" 
+                type = "image/x-icon">
+        <script src="https://kit.fontawesome.com/74bc185944.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./homepage.css">
+        <link rel="preconnect" href="https://rsms.me/">
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+        
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font Link for Icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+    
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+        /> 
+    </head>
+    <body>
+        <div id="nav">
+            <p class="logo">UWC 2.0</p>
+
+
+            <img class="logoImg" src="../0.notsignin/not_signin/Logo.png" alt="UWC 2.0 logo">
+            <div class="boxAvatar" onclick="function myFunc5() { window.location.href = '../7.setting/setting.html'; } myFunc5();">
+                <p class="textBig text1Big">Đinh Lê Dũng</p>
+                <p class="textBig text2Big">#BO0909</p>
+                <img class="avatarBig" src="../0.notsignin/not_signin/finalAvatar.jpg" alt="Avatar">
+            </div>
+
+            <div class="sub-page">
+                <a class="dashboard" href="../2.homepage/homepage.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-house"></i>
+                    <p class="db-txt">Trang chủ</p>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a class="message" href="../3.message/message.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-comment"></i>
+                    <p class="mg-txt">Tin nhắn</p>
+                </a>
+                <a class="task" href="../4.taskassign/TaskAssign.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <p class="ts-txt">Nhiệm vụ</p>
+                </a>
+                <a class="em-mn" href="../5.emManage/EmMan.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-regular fa-id-card"></i>
+                    <p class="em-mn-txt">Quản lý nhân viên</p>
+                </a>
+                <a class="fa-mn" href="../6.general management/mcp.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-list-check"></i>
+                    <p class="fa-mn-txt">Quản lý chung</p>
+                </a>
+                <a class="setting" href="../7.setting/setting.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-gear"></i>
+                    <p class="st-txt">Cài đặt</p>
+                </a>
+            </div>
+
+            <a class="log-out" href="../index.html">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <p class="lg-txt">Đăng xuất</p>
+            </a>
+        </div>
+
+        <!-- Khúc này trở xuống là của phần content / DO NOT USE :)) -->
+        <button id="notiBtn" onclick="activeModal()">
+            <p id="notiCnt">2</p>
+            <i class="fa-solid fa-bell fa-shake" id="notiIcon"></i>
+        </button>
+
+        
+        
+
+            <div id="notiModal">
+                <div id="notiModal-content">
+                <p class="modalTXT">Thông báo</p>
+                <i class="fa-solid fa-bell notiBll"></i>
+                <i class="fa-solid fa-xmark md-exitbtn" onclick="closeModal()"></i>
+                <div id="tmp" style="overflow:auto">
+                    <table id="notiTable">
+                        <thead>
+                        <tr >
+                        <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->  
+                        
+                            <th class= "notiBtnRow">
+                                <input type="checkbox" name="main-tb1-row" id="row1-0" onchange="checkAll()">
+                            </th>
+                            <th class ="tbRow0 thMulti" onclick="">
+                                <div class="roundMulti" onclick="undoRow()" onmouseover="btnHover(0,1)" onmouseout="btnHover(0,0)">
+                                    <i class="fa-solid fa-rotate-right reload"></i>
+                                </div>
+                            </th>
+                            <th class ="tbRow0" onclick="">
+                                <!-- sortTable1(1) -->
+                                <div class="roundMulti notReload" onclick="deleteRow()" onmouseover="btnHover(1,1)" onmouseout="btnHover(1,0)">
+                                    <i class="fa-solid fa-trash-can notReloadi" ></i>
+                                </div>
+
+                                <div class="roundMulti untrash notReload" onclick="undodeleteRow()" onmouseover="btnHover(2,1)" onmouseout="btnHover(2,0)">
+                                    <i class="fa-solid fa-slash"></i>
+                                    <i class="fa-solid fa-trash-can notReloadi untrashi" ></i>
+                                    
+                                </div>
+                                    
+                                <div class="roundMulti unreadBTN notReload" onclick="markAsNotRead()" onmouseover="btnHover(3,1)" onmouseout="btnHover(3,0)">
+                                    <i class="fa-solid fa-eye notReloadi"></i>
+                                </div>
+    
+                                <div class="roundMulti readBTN notReload" onclick="markAsRead()" onmouseover="btnHover(4,1)" onmouseout="btnHover(4,0)">
+                                    <i class="fa-solid fa-eye-slash notReloadi"></i>
+                                </div>
+
+                                <div class="roundMulti filter" onclick="activefModal()" onmouseover="btnHover(5,1)" onmouseout="btnHover(5,0)">
+                                    <i class="fa-solid fa-filter"></i>
+                                </div>
+
+                                <p class="filterOutTXT" onclick="activefModal()" onmouseover="btnHover(5,1)" onmouseout="btnHover(5,0)">Tất cả</p>
+    
+                                <!-- <p class="choseNoti">Đã chọn: 0</p> -->
+
+                                
+                                
+                            </th>
+                            <th class ="tbRow0" onclick=""></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="notiRowTable">
+                            <td class="modal2-tdTag notiBtnRow"> <input type="checkbox" name="tb1-row" class ="cboxes" onchange="btnOpacity(); evaluateBtn()"></td>
+                            <td class="modal2-tdTag star-row">
+                                <input class="star" type="checkbox" checked></input>
+                            </td>
+                            <td class="modal2-tdTag">
+                                <img src="./face-img/letrongduc.JPG" alt="">
+                                <p class="row-msg-txt"><span class="bold-text">Lê Trọng Đức (#CL4731)</span> đã đưa xe chở rác 72D - 221.09 về trụ sở.</p>
+                                <p class="row-msg-txt1">15 phút trước</p>
+                                
+                            </td>
+                            <td class="modal2-tdTag needseenNoti">
+                                <div class="unseenNoti"></div>
+                            </td>
+                        </tr>
+                        <tr class="notiRowTable">
+                            <td class="modal2-tdTag notiBtnRow"> <input type="checkbox" name="tb1-row" class ="cboxes"  onchange="btnOpacity(); evaluateBtn()"></td>
+                            <td class="modal2-tdTag star-row">
+                                <input class="star" type="checkbox" checked></input>
+                            </td>
+                            <td class="modal2-tdTag">
+                                <img src="./face-img/khoituan.jpg" alt="">
+                                <p class="row-msg-txt"><span class="bold-text">Trần Hoàng Khôi Tuấn (#JN2334)</span> đã gửi cho bạn một tin nhắn.</p>
+                                <p class="row-msg-txt1">25 phút trước</p>
+                            </td>
+                            <td class="modal2-tdTag needseenNoti">
+                                <div class="unseenNoti"></div>
+                            </td>
+                        </tr>
+                        <tr class="notiRowTable">
+                            <td class="modal2-tdTag notiBtnRow"> <input type="checkbox" name="tb1-row" class ="cboxes" onchange="btnOpacity(); evaluateBtn()"></td>
+                            <td class="modal2-tdTag star-row">
+                                <input class="star" type="checkbox" checked></input>
+                            </td>
+                            <td class="modal2-tdTag">
+                                <img src="./face-img/dangkhanh.jpg" alt="">
+                                <p class="row-msg-txt"><span class="bold-text">Mai Tôn Đăng Khánh (#JN8484)</span> đã hoàn thành nhặt rác tại <i>MCP3.</i></p>
+                                <p class="row-msg-txt1">30 phút trước</p>
+                            </td>
+                            <td class="modal2-tdTag needseenNoti">
+                                <div class="unseenNoti"></div>
+                            </td>
+                        </tr>
+                        <tr class="notiRowTable">
+                            <td class="modal2-tdTag notiBtnRow"> <input type="checkbox" name="tb1-row" class ="cboxes" onchange="btnOpacity(); evaluateBtn()"></td>
+                            <td class="modal2-tdTag star-row">
+                                <input class="star" type="checkbox" checked></input>
+                            </td>
+                            <td class="modal2-tdTag">
+                                <img src="./face-img/chanhtri.jpg" alt="">
+                                <p class="row-msg-txt"><span class="bold-text">Cao Chánh Trí (#CL7367)</span> đã gửi cho bạn một tin nhắn.</p>
+                                <p class="row-msg-txt1">1 giờ trước</p>
+                            </td>
+                            <td class="modal2-tdTag needseenNoti">
+                                <div class="unseenNoti"></div>
+                            </td>
+                        </tr>
+                        <tr class="notiRowTable">
+                            <td class="modal2-tdTag notiBtnRow"> <input type="checkbox" name="tb1-row" class ="cboxes" onchange="btnOpacity(); evaluateBtn()"></td>
+                            <td class="modal2-tdTag star-row">
+                                <input class="star" type="checkbox" checked></input>
+                            </td>
+                            <td class="modal2-tdTag">
+                                <img src="./face-img/damhung.jpg" alt="">
+                                <p class="row-msg-txt"><span class="bold-text">Đàm Vĩnh Hưng (#JN4589)</span> đã gửi cho bạn một tin nhắn.</p>
+                                <p class="row-msg-txt1">1 giờ trước</p>
+                            </td>
+                            <td class="modal2-tdTag needseenNoti">
+                                <div class="unseenNoti"></div>
+                            </td>
+                        </tr>
+
+                        <tr class="notiRowTable">
+                            <td class="modal2-tdTag notiBtnRow"> <input type="checkbox" name="tb1-row" class ="cboxes" onchange="btnOpacity(); evaluateBtn()"></td>
+                            <td class="modal2-tdTag star-row">
+                                <input class="star" type="checkbox" checked></input>
+                            </td>
+                            <td class="modal2-tdTag">
+                                <img src="./face-img/hoailinh.jpeg" alt="">
+                                <p class="row-msg-txt"><span class="bold-text">Võ Hoài Linh (#JN3475)</span> đã hoàn thành nhặt rác tại <i>MCP2.</i></p>
+                                <p class="row-msg-txt1">1 giờ trước</p>
+                            </td>
+                            <td class="modal2-tdTag needseenNoti">
+                                <div class="unseenNoti"></div>
+                            </td>
+                        </tr>
+
+                        <tr class="notiRowTable">
+                            <td class="modal2-tdTag notiBtnRow"> <input type="checkbox" name="tb1-row" class ="cboxes" onchange="btnOpacity(); evaluateBtn()"></td>
+                            <td class="modal2-tdTag star-row">
+                                <input class="star" type="checkbox" checked></input>
+                            </td>
+                            <td class="modal2-tdTag">
+                                <img src="./face-img/jack.jpeg" alt="">
+                                <p class="row-msg-txt"><span class="bold-text">Trịnh Trần Phương Tuấn (#CL9797)</span> đã đưa xe chở rác 63G - 342.58 về trụ sở.</p>
+                                <p class="row-msg-txt1">2 giờ trước</p>
+                            </td>
+                            <td class="modal2-tdTag needseenNoti">
+                                <div class="unseenNoti"></div>
+                            </td>
+                        </tr>
+
+                        <tr class="notiRowTable">
+                            <td class="modal2-tdTag notiBtnRow"> <input type="checkbox" name="tb1-row" class ="cboxes" onchange="btnOpacity(); evaluateBtn()"></td>
+                            <td class="modal2-tdTag star-row">
+                                <input class="star" type="checkbox" checked></input>
+                            </td>
+                            <td class="modal2-tdTag">
+                                <img src="./face-img/tranthanh.jpg" alt="">
+                                <p class="row-msg-txt"><span class="bold-text">Huỳnh Trấn Thành (#JN7693)</span> đã gửi cho bạn một tin nhắn.</p>
+                                <p class="row-msg-txt1">2 giờ trước</p>
+                            </td>
+                            <td class="modal2-tdTag needseenNoti">
+                                <div class="unseenNoti"></div>
+                            </td>
+                        </tr>
+                        <tr class="notiRowTable">
+                            <td class="modal2-tdTag notiBtnRow"> <input type="checkbox" name="tb1-row" class ="cboxes" onchange="btnOpacity(); evaluateBtn()"></td>
+                            <td class="modal2-tdTag star-row">
+                                <input class="star" type="checkbox" checked></input>
+                            </td>
+                            <td class="modal2-tdTag">
+                                <img src="./face-img/congvinh.jpg" alt="">
+                                <p class="row-msg-txt"><span class="bold-text">Lê Công Vinh (#CL534)</span> đã gửi cho bạn một tin nhắn.</p>
+                                <p class="row-msg-txt1">3 giờ trước</p>
+                            </td>
+                            <td class="modal2-tdTag needseenNoti">
+                                <div class="unseenNoti"></div>
+                            </td>
+                        </tr>
+                        <tr class="notiRowTable">
+                            <td class="modal2-tdTag notiBtnRow"> <input type="checkbox" name="tb1-row" class ="cboxes" onchange="btnOpacity(); evaluateBtn()"></td>
+                            <td class="modal2-tdTag star-row">
+                                <input class="star" type="checkbox" checked></input>
+                            </td>
+                            <td class="modal2-tdTag">
+                                <img src="./face-img/sharkbinh.jpg" alt="">
+                                <p class="row-msg-txt"><span class="bold-text">Nguyễn Hòa Bình (#CL1294)</span> đã gửi cho bạn một tin nhắn.</p>
+                                <p class="row-msg-txt1">3 giờ trước</p>
+                            </td>
+                            <td class="modal2-tdTag needseenNoti">
+                                <div class="unseenNoti"></div>
+                            </td>
+                        </tr>
+    
+                        <!--  -->
+    
+                        
+                        </tbody>
+                        <!-- <tr class="notiRowTable">
+                            <td> <input type="checkbox" name="tb-row" class="page-1" onchange="countRow()"></td>
+                            <td>Đinh Lê Dũng6</td>
+                            <td>536127</td>
+                            <td>Mở mic khi lên meet</td>
+                        </tr>
+                        <tr class="notiRowTable">
+                            <td> <input type="checkbox" name="tb-row" class="page-1" onchange="countRow()"></td>
+                            <td>Đinh Lê Dũng7</td>
+                            <td>538495</td>
+                            <td>Mở mic khi lên meet</td>
+                        </tr> -->
+                        <!-- <tr class="modal1-page">
+                            <td> <input type="checkbox" name="tb-row" class="page-1" onchange="countRow()"></td>
+                            <td>Đinh Lê Dũng8</td>
+                            <td>2152483</td>
+                            <td>Đang hoạt động</td>
+                        </tr>
+                        <tr class="modal1-page">
+                            <td> <input type="checkbox" name="tb-row" class="page-1"  onchange="countRow()"></td>
+                            <td>Đinh Lê Dũng9</td>
+                            <td>212324</td>
+                            <td>Không hoạt động</td>
+                        </tr>
+                        <tr class="modal1-page">
+                            <td> <input type="checkbox" name="tb-row" class="page-1" onchange="countRow()"></td>
+                            <td>Đinh Lê Dũng10</td>
+                            <td>312345</td>
+                            <td>Đang đánh răng</td>
+                        </tr>
+                        <tr class="modal1-page">
+                            <td> <input type="checkbox" name="tb-row" class="page-1" onchange="countRow()"></td>
+                            <td>Đinh Lê Dũng11</td>
+                            <td>545857</td>
+                            <td>Đau bụng</td>
+                        </tr>
+                        <tr class="modal1-page">
+                            <td> <input type="checkbox" name="tb-row" class="page-1" onchange="countRow()"></td>
+                            <td>Đinh Lê Dũng12</td>
+                            <td>513486</td>
+                            <td>Mở mic khi lên meet</td>
+                        </tr>
+                        <tr class="modal1-page">
+                            <td> <input type="checkbox" name="tb-row" class="page-1" onchange="countRow()"></td>
+                            <td>Đinh Lê Dũng13</td>
+                            <td>536127</td>
+                            <td>Mở mic khi lên meet</td>
+                        </tr>
+                        <tr class="modal1-page">
+                            <td> <input type="checkbox" name="tb-row" class="page-1" onchange="countRow()"></td>
+                            <td>Đinh Lê Dũng14</td>
+                            <td>538495</td>
+                            <td>Mở mic khi lên meet</td>
+                        </tr> -->
+                    </table>
+                </div>
+                <p id="Modal1-sl-count">Đã chọn: 0</p>
+                <p id="Modal1-page-count">1 - 10 trên 10</p>
+                <div id="Modal1-outterleftPage" onmouseenter="pageBGBtn(0)" onmouseleave="pageBGBtn(2)" onclick="updatepageBtn(0)">
+                    <div class="fa-solid fa-chevron-left" id ="Modal1-leftPage"></div>
+                </div>
+                <div id="Modal1-outterrightPage" onmouseenter="pageBGBtn(1)" onmouseleave="pageBGBtn(3)" onclick="updatepageBtn(1)">
+                    <div class="fa-solid fa-chevron-right" id ="Modal1-rightPage"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="filterModal">
+            <div id="filterModal-content">
+                <div class="filChoice choice0" onclick="filChoice(0)">
+                    <p class="filChoiceTXT">Tất cả</p>
+                </div>
+                <div class="filChoice choice1" onclick="filChoice(1)">
+                    <p class="filChoiceTXT">Thông báo đã xóa</p>
+                </div>
+                <div class="filChoice choice2" onclick="filChoice(2)">
+                    <p class="filChoiceTXT">Thông báo chưa xem</p>
+                </div>
+                <div class="filChoice choice3" onclick="filChoice(3)">
+                    <p class="filChoiceTXT">Thông báo đã xem</p>
+                </div>
+                <div class="filChoice choice4" onclick="filChoice(4)">
+                    <p class="filChoiceTXT">Thông báo đánh dấu sao</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="content">
+            <div id="block0">
+                <div id="sideChart1">
+                    <p class="sideChartTXT">Tỉ lệ công việc</p>
+                    <canvas id="myChart1" style="width:100%;max-width:600px"></canvas>
+                </div>
+                <div id="sideChart2">
+                    <p class="sideChartTXT">Tổng kết nhiệm vụ</p>
+                    <canvas id="myChart2" style="width:100%;max-width:600px"></canvas>
+                </div>
+                <div id="sideChart3">
+                    <p class="sideChartTXT">Thống kê số lượng</p>
+                    <button class="side3bl" id="jnt-cnt" onclick="btnxx1()">
+                        <!-- <div class="outsideCircleI">
+                            <i class="fa-solid fa-broom"></i>
+                        </div> -->
+                        <i class="fa-solid fa-broom"></i>
+                        <p class="side3bl-txt1">15</p>
+                        <p class="side3bl-txt2">Janitor</p>
+                    </button>
+                    <button class="side3bl" id="clt-cnt" onclick="btnxx1()">
+                        <!-- <div class="outsideCircleI">
+                            <i class="fa-solid fa-truck-front"></i>
+                        </div> -->
+                        <i class="fa-solid fa-peace"></i>
+                        <p class="side3bl-txt1">10</p>
+                        <p class="side3bl-txt2">Collector</p>
+                    </button>
+                    <button class="side3bl" id="mcp-cnt" onclick="btnxx2()">                        
+                        <!-- <div class="outsideCircleI">
+                            <i class="fa-solid fa-trash"></i>
+                        </div> -->
+                        <i class="fa-solid fa-trash"></i>
+                        <p class="side3bl-txt1">20</p>
+                        <p class="side3bl-txt2">MCPs</p>
+                    </button>
+                    <button class="side3bl" id="truck-cnt" onclick="btnxx3()">
+                        <!-- <div class="outsideCircleI">
+                            <i class="fa-solid fa-truck-field"></i>
+                        </div> -->
+                        <i class="fa-solid fa-truck-field"></i>
+                        <p class="side3bl-txt1">25</p>
+                        <p class="side3bl-txt2">Xe chở</p>
+                    </button>
+                </div>
+
+
+
+            </div>
+
+            
+            <div id="block1">
+                <p class="bl-txt">Top MCPs</p>
+                <button class="more" onclick="btnxx2()">
+                    <p class="more-txt">Xem thêm</p>
+                </button>
+
+                <div class="wrapper">
+          <div class="carousel">
+            <div class="side-bl1">
+              <p class="side-bl-txt1">MCP1</p>
+              <p class="side-bl-txt2">497 Hòa Hảo, P7, Q10.</p>
+              <div class="side-bl-bar">
+                  <div class="side-bl-bar-grey"></div>
+                  <div class="side-bl1-bar-color"></div>
+              </div>
+              <p class="side-bl-txt3">95%</p>
+          </div>
+            <div class="side-bl2">
+              <p class="side-bl-txt1">MCP2</p>
+              <p class="side-bl-txt2">120 Hồng Bàng, P12, Q5.</p>
+              <div class="side-bl-bar">
+                  <div class="side-bl-bar-grey"></div>
+                  <div class="side-bl15-bar-color"></div>
+              </div>
+              <p class="side-bl-txt3">80%</p>
+            </div>
+
+            <div class="side-bl3">
+              <p class="side-bl-txt1">MCP3</p>
+              <p class="side-bl-txt2">	520A Thành Thái, P12, Q10.</p>
+              <div class="side-bl-bar">
+                  <div class="side-bl-bar-grey"></div>
+                  <div class="side-bl2-bar-color"></div>
+              </div>
+              <p class="side-bl-txt3">71%</p>
+            </div>
+            <div class="side-bl3">
+              <p class="side-bl-txt1">MCP4</p>
+              <p class="side-bl-txt2">	16A/A1 L.H.P, P12, Q10.</p>
+              <div class="side-bl-bar">
+                  <div class="side-bl-bar-grey"></div>
+                  <div class="side-bl3-bar-color"></div>
+              </div>
+              <p class="side-bl-txt3">45%</p>
+            </div>
+            <div class="side-bl3">
+              <p class="side-bl-txt1">MCP5</p>
+              <p class="side-bl-txt2">	279 N.T.P, P5, Q10.</p>
+              <div class="side-bl-bar">
+                  <div class="side-bl-bar-grey"></div>
+                  <div class="side-bl12-bar-color"></div>
+              </div>
+              <p class="side-bl-txt3">32%</p>
+            </div>
+            
+          </div>
+    </div>
+                
+
+
+            </div>
+            <div id="block2">
+                <p class="bl-txt">Thông báo</p>
+                <div class="numberCircle" id="wrappernumberTXT">
+                    <p class="numberCircle-txt" id="numberTXT">2</p>
+                </div>
+                <button class="more" onclick="activeModal()">
+                    <p class="more-txt">Xem thêm</p>
+                </button>
+                <div class="bl2-msg1">
+                    <div class="msg-logo"></div>
+                    <img src="./face-img/letrongduc.JPG" alt="">
+                    <p class="msg-txt"><span class="bold-text">Lê Trọng Đức</span> đã đưa xe 72D - 221.09 về trụ sở.</p>
+                    <div class="markRead"></div>
+                </div>
+                <div class="bl2-msg2">
+                    <div class="msg-logo"></div>
+                    <img src="./face-img/khoituan.jpg" alt="">
+                    <p class="msg-txt"><span class="bold-text">Trần Hoàng Khôi Tuấn</span> đã gửi cho bạn một tin nhắn.</p>
+                    <div class="markRead"></div>
+                </div>
+                <div class="bl2-msg3">
+                    <div class="msg-logo"></div>
+                    <img src="./face-img/dangkhanh.jpg" alt="">
+                    <p class="msg-txt"><span class="bold-text">Mai Tôn Đăng Khánh</span> đã hoàn thành nhặt rác tại <i>MCP3.</i></p>
+                </div>
+
+                <!-- <div class="bl2-msg3">
+                    <div class="msg-logo"></div>
+                    <p class="msg-txt"><span class="bold-text">Lê Trọng Đức:</span> Tôi sẽ nhặt hết rác ở quận 10 và quận 5. Chúc mọi người sớm hoàn thành!</p>
+                </div> -->
+
+                <!-- <div class="bl2-msg4">
+                    <div class="msg-logo"></div>
+                    <p class="msg-txt"><span class="bold-text">Lê Trọng Đức:</span> Tôi sẽ nhặt hết rác ở quận 10 và quận 5. Chúc mọi người sớm hoàn thành!</p>
+                </div> -->
+
+            </div>
+
+            <div id="block3">
+                <div class="wrapper">
+                    <header>
+                      <p class="current-date"></p>
+                      <div class="icons">
+                        <span id="prev" class="material-symbols-rounded">chevron_left</span>
+                        <span id="next" class="material-symbols-rounded">chevron_right</span>
+                      </div>
+                    </header>
+                    <div class="calendar">
+                      <ul class="weeks">
+                        <li>Sun</li>
+                        <li>Mon</li>
+                        <li>Tue</li>
+                        <li>Wed</li>
+                        <li>Thu</li>
+                        <li>Fri</li>
+                        <li>Sat</li>
+                      </ul>
+                      <ul class="days"></ul>
+                    </div>
+                  </div>
+
+
+            </div>
+        </div>
+        <script>
+            let modal = document.getElementById("notiModal");
+            let fmodal = document.getElementById("filterModal");
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                    fmodal.style.display = "none";
+                    document.getElementById("numberTXT").innerHTML = unread.length;
+                    document.getElementById("notiCnt").innerHTML = unread.length;
+                    if (unread.length == 0) {
+                        document.getElementById("notiIcon").className = "fa-solid fa-bell";
+                        document.getElementById("wrappernumberTXT").style.display = "none";
+                        document.getElementsByClassName("markRead")[0].style.display = "none";
+                        document.getElementsByClassName("markRead")[1].style.display = "none";
+                    } else {
+                        document.getElementById("notiIcon").className = "fa-solid fa-bell fa-shake";
+                        document.getElementById("wrappernumberTXT").style.display = "block";
+                    }
+
+                }
+
+                if (event.target == fmodal) {
+                    fmodal.style.display = "none";
+                    document.getElementById("numberTXT").innerHTML = unread.length;
+                    document.getElementById("notiCnt").innerHTML = unread.length;
+                    if (unread.length == 0) {
+                        document.getElementById("notiIcon").className = "fa-solid fa-bell";
+                        document.getElementById("wrappernumberTXT").style.display = "none";
+                        document.getElementsByClassName("markRead")[0].style.display = "none";
+                        document.getElementsByClassName("markRead")[1].style.display = "none";      
+                    } else {
+                        document.getElementById("notiIcon").className = "fa-solid fa-bell fa-shake";
+                        document.getElementById("wrappernumberTXT").style.display = "block";
+                    }
+
+                }
+            }
+
+            // window.onclick = function(event) {
+            //     if (event.target == fmodal) {
+            //         fmodal.style.display = "none";
+            //     }
+            // }
+
+            let seendot = document.getElementsByClassName("unseenNoti");
+            for (let i=2; i<seendot.length; i++) {
+                seendot[i].style.display = "none";
+            }
+
+        </script>
+
+        <script src="HomePagescript.js"></script>
+        <script src="HomePagechart.js"></script>
+        <script
+          type="text/javascript"
+          src="https://code.jquery.com/jquery-1.11.0.min.js"
+        ></script>
+        <script
+          type="text/javascript"
+          src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+        ></script>
+        <script
+          type="text/javascript"
+          src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+        ></script>
+        <script src="HomePageslick.js"></script>
+        <link rel="stylesheet" href="after.css">
+    </body>
+</html> 

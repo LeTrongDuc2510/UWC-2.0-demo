@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quản lý chung | UWC 2.0</title>
+        <meta charset="utf-8">
+        <link rel = "icon" href = 
+        "../0.notsignin/not_signin/Logo.png" 
+                type = "image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./mcp.css">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <script src="https://kit.fontawesome.com/74bc185944.js" crossorigin="anonymous"></script>
+    
+</head>
+</head>
+<body>  
+    <div id="nav">
+        <p class="logo">UWC 2.0</p>
+        <img class="logoImg" src="../0.notsignin/not_signin/Logo.png" alt="UWC 2.0 logo">
+        <div class="trigger boxAvatar" onclick="function myFunc5() { window.location.href = '../7.setting/setting.html'; } myFunc5();">
+            <p class="trigger textBig text1Big">Đinh Lê Dũng</p>
+            <p class="trigger textBig text2Big">#BO0909</p>
+            <img class="trigger avatarBig" src="../0.notsignin/not_signin/finalAvatar.jpg" alt="Avatar">
+        </div>
+
+        <div class="sub-page">
+            <a class="dashboard" href="../2.homepage/homepage.html">
+                <div class="bg-color"></div>
+                <i class="fa-solid fa-house"></i>
+                <p class="db-txt">Trang chủ</p>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+            <a class="message" href="../3.message/message.html">
+                <div class="bg-color"></div>
+                <i class="fa-solid fa-comment"></i>
+                <p class="mg-txt">Tin nhắn</p>
+            </a>
+            <a class="task" href="../4.taskassign/TaskAssign.html">
+                <div class="bg-color"></div>
+                <i class="fa-solid fa-calendar-check"></i>
+                <p class="ts-txt">Nhiệm vụ</p>
+            </a>
+            <a class="em-mn" href="../5.emManage/EmMan.html">
+                <div class="bg-color"></div>
+                <i class="fa-regular fa-id-card"></i>
+                <p class="em-mn-txt">Quản lý nhân viên</p>
+            </a>
+            <a class="fa-mn" href="../6.general management/mcp.html">
+                <div class="bg-color"></div>
+                <i class="fa-solid fa-list-check"></i>
+                <p class="fa-mn-txt">Quản lý chung</p>
+            </a>
+            <a class="setting" href="../7.setting/setting.html">
+                <div class="bg-color"></div>
+                <i class="fa-solid fa-gear"></i>
+                <p class="st-txt">Cài đặt</p>
+            </a>
+        </div>
+
+        <a class="log-out" href="../index.html">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <p class="lg-txt">Đăng xuất</p>
+        </a>
+    </div>
+    <div class="detail">
+        <select name="staff-type" id="st-type" onchange="alertx()">
+            <option value="mcp">Quản lí MCP</option>
+            <option value="vehicle">Quản lí phương tiện</option>
+            
+        </select>
+        <div class="option">
+            <div class="btn">
+                <p class="mcp">Quản lý MCP</p>
+                <i class="fa-solid fa-sort-down" id="arrow"></i>
+            </div>
+            <div class="chosen">
+                <div id="mcp-list">Quản lý MCP</div>
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="unchosen">
+                <div id="vehicle-list"> Quản lý phương tiện</div>
+            </div>
+            <div class="find">
+                <!-- <div class="background"></div> -->
+                <input class="find-txt" placeholder="Tìm kiếm MCP"/>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+        <div class="data">
+            <div class="total-location">
+                <i class="fa-solid fa-location-dot"></i>
+                <p class="total">Tổng cộng: 20 MCPs</p>
+            </div>
+            <div class="wrapper-block"></div>
+            <div class="more">
+                <div class="more-txt">Xem thêm</div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper-content">
+        <p class="content-name">MCP1</p>
+        <b id="bold-location">Địa điểm:</b>
+        <div class="content-location"> 497 Hoà Hảo, Phường 7, Quận 10, Thành phố Hồ Chí Minh.</div>
+        <b class="bold-capacity">Sức chứa:</b>
+        <div class="capacity">2 tấn.</div>
+        <div class="content-state"><b>Trạng thái:</b></div>
+        <div class="content-bar"></div>
+        <div class="content-color-bar"></div>
+        <div class="content-percent">95%</div>
+        <img id="image" src="./image/image1.jpeg">
+        <div class="delete">
+            <i class="fa-solid fa-list-check"></i>
+            <p>Xoá MCP</p>
+        </div>
+    </div>
+    <!-- Phần cái chuông bên phải -->
+    
+    <button id="notiBtn" onclick="activeModal()">
+        <p id="notiCnt">2</p>
+        <i class="fa-solid fa-bell fa-shake" id="notiIcon"></i>
+    </button>
+
+    <div id="notiModal">
+        <div id="notiModal-content">
+
+        </div>
+    </div>
+    <script>
+        let notiModal = document.getElementById("notiModal");
+
+        window.onclick = function(event) {
+            if (event.target == notiModal) {
+                notiModal.style.display = "none";
+            }
+        }
+    </script>
+    <!-- Phần Modal -->
+    <div class="modal hidden">
+        <div class="close">
+            <button class="close-button">&times;</button>
+        </div>
+        <div class="title">
+            <div class="addMCP">
+                <div class="listmcp">Danh sách các MCP</div>
+                <i class="fa-solid fa-plus addMCPs addMCPs1"></i>
+                <i class="fa-solid fa-map-location-dot addMCPs addMCPs2"></i>
+                <!-- <i class="fa-solid fa-map-pin"></i> -->
+            </div>
+            <div class="delete-modal">
+                <p>Xoá</p>
+                <i class="fa-solid fa-list-check"></i>
+            </div>
+        </div>
+        <div class="input-cover">
+            <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Tìm kiếm theo tên MCP" title="Type in a name">
+        </div>
+        <table id="myTable">
+            <tr>
+                <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->  
+                <th onclick="sortTable(0)"></th> 
+                <th onclick="sortTable(1)">Tên MCPs</th> 
+                <th onclick="sortTable(2)">Trạng thái</th>
+                <th onclick="sortTable(3)">Số nhân viên ở gần</th>
+                <th onclick="sortTable(4)">Sức chứa</th>
+                <th onclick="sortTable(5)">Địa chỉ</th>
+            </tr>
+            <tr class="row">
+                <td><input type="checkbox" class = "chk" /></td>
+                <td class="name-mcp">MCP1</td>
+                <td class="table-state color1">
+                    95%
+                </td>
+                <td class="num">25</td>
+                <td class="capacity">2 tấn</td>
+                <td class="address">497 Hoà Hảo, Phường 7, Quận 10, TP.HCM.</td>
+            </tr>
+            <tr class="row">
+                <td><input type="checkbox" class = "chk" /></td>
+                <td class="name-mcp">MCP2</td>
+                <td class="table-state color2">
+                   83%
+                </td>
+                <td class="num">02</td>
+                <td class="capacity">3 tấn</td>
+                <td class="address">120 Hồng Bàng, Phường 12, Quận 5, TPHCM.</td>
+            </tr>
+            <tr class="row">
+                <td><input type="checkbox" class = "chk" /></td>
+                <td class="name-mcp">MCP3</td>
+                <td class="table-state color2">
+                    71%
+                </td>
+                <td class="num">20</td>
+                <td class="capacity">1 tấn</td>
+                <td class="address">520A Thành Thái, Phường 12, Quận 10, TPHCM.</td>
+            </tr>
+            <tr class="row">
+                <td><input type="checkbox" class = "chk" /></td>
+                <td class="name-mcp">MCP4</td>
+                <td class="table-state color3">
+                    45%
+                </td>
+                <td class="num">03</td>
+                <td class="capacity">2.5 tấn</td>
+                <td class="address">16A/A1 Lê Hồng Phong, Phường 12, Quận 10, TPHCM.</td>
+            </tr>
+            <tr class="row">
+                <td><input type="checkbox" class = "chk" /></td>
+                <td class="name-mcp">MCP5</td>
+                <td class="table-state color3">
+                  32%
+                </td>
+                <td class="num">10</td>
+                <td class="capacity">1.5 tấn</td>
+                <td class="address">279 Nguyễn Tri Phương, Phường 5, Quận 10, TPHCM.</td>
+            </tr>
+        </table>
+        <!-- <div class="add-cover">
+            <div class="add">
+                <i class="fa-solid fa-plus"></i>
+                <div class="add-txt">Thêm MCP mới</div>
+            </div>
+        </div> -->
+        <div class="multi-pagination-cover">
+            <span class="multi-pagination">1 - 5 trên 20</span>
+            <i class="fa-solid fa-chevron-left" id="prev"></i>
+            <i class="fa-solid fa-chevron-right" id="next"></i>
+        </div>
+    </div>
+    <div class="overlay hidden"></div>
+    <!-- Modal thêm MCP -->
+    <div class="add-modal hidden">
+        <button class="add-close-button">&times;</button>
+        <div class="nameMCP">
+            <p>Tên MCP:</p>
+            <input type="text" name="" class="input-name" id="add-input" placeholder="Ví dụ: MCP1">
+        </div>
+        <div class="locationMCP">
+            <p>Vị trí:</p>
+            <input type="text" name="" class="input-location" id="add-input" placeholder="Ví dụ: 497 Hoà Hảo, Phường 7, Quận 10">
+        </div>
+        <div class="capacityMCP">
+            <p>Khả năng chứa:</p>
+            <input type="text" name="" class="input-capacity" id="add-input" placeholder="Ví dụ: 1 tấn">
+        </div>
+        <div class="accept-cover">
+            <div class="accept">
+                <div class="accept-txt">Xác nhận</div>
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+        </div>
+    </div>
+    <div class="add-overlay hidden"></div>
+    <script>
+        function alertx() {
+            if (document.getElementById("st-type").value == "mcp") {
+                window.location.href = "../6.general management/mcp.html";
+            } else {
+                window.location.href = "../6.general management/vehicle.html";
+            }
+        }
+    </script>
+</body>
+<script src="./mcp.js"></script>
+</html>

@@ -1,0 +1,883 @@
+:root {
+    font-family: "Inter", sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+    :root {
+        font-family: "Inter var", sans-serif;
+    }
+}
+
+html {
+    height: 0px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: unset;
+    text-decoration: underline;
+}
+
+.bold-text {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: bold;
+}
+
+#nav {
+    position: absolute;
+    width: 260px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    border-right: 1px solid #cbcbcb;
+}
+
+#nav .logo {
+    position: absolute;
+    width: 136px;
+    height: 39px;
+    left: 36px;
+    top: 4%;
+    margin: 0;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    color: #1b0303;
+}
+
+#nav .sub-page {
+    position: absolute;
+    width: 260px;
+    height: 300px;
+    top: 20%;
+}
+
+#nav .dashboard .fa-house,
+#nav .message .fa-comment,
+#nav .task .fa-calendar-check,
+#nav .em-mn .fa-id-card,
+#nav .fa-mn .fa-list-check,
+#nav .setting .fa-gear,
+#nav .log-out .fa-right-from-bracket {
+    position: absolute;
+    left: 28px;
+}
+
+#nav .dashboard .db-txt,
+#nav .message .mg-txt,
+#nav .task .ts-txt,
+#nav .em-mn .em-mn-txt,
+#nav .fa-mn .fa-mn-txt,
+#nav .setting .st-txt,
+#nav .log-out .lg-txt {
+    position: absolute;
+    height: 22px;
+    left: 64px;
+    margin: 0;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+}
+
+/* Trang chủ */
+#nav .dashboard .bg-color {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 0px;
+    
+    border-radius: 13px;
+}
+
+#nav .dashboard .fa-house {
+    top: 16px;
+}
+
+#nav .dashboard .db-txt {
+    width: 88px;
+    top: 14px;
+   
+}
+
+#nav .fa-chevron-right {
+    position: absolute;
+    height: 32px;
+    left: 236px;
+    top: 65px;
+    z-index: 1;
+}
+
+/* Tin nhắn */
+#nav .message .bg-color {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 50px;
+    border-radius: 13px;
+    background: #f2f2f2;
+}
+
+#nav .message .fa-comment {
+    top: 68px;
+}
+
+#nav .message .mg-txt {
+    top: 64px;
+    font-weight: 600;
+}
+
+/* Giao nhiệm vụ */
+#nav .task .bg-color {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 100px;
+    border-radius: 13px;
+}
+
+#nav .task .fa-calendar-check {
+    top: 117px;
+}
+
+#nav .task .ts-txt {
+    width: 122px;
+    top: 114px;
+}
+
+/* Quản lý nhân viên */
+#nav .em-mn .bg-color {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 150px;
+    border-radius: 13px;
+}
+
+#nav .em-mn .fa-id-card {
+    top: 167px;
+    left: 25px !important;
+}
+
+#nav .em-mn .em-mn-txt {
+    width: 152px;
+    top: 164px;
+}
+
+/* Quản lý chung */
+#nav .fa-mn .bg-color {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 200px;
+    border-radius: 13px;
+}
+
+#nav .fa-mn .fa-list-check {
+    top: 217px;
+}
+
+#nav .fa-mn .fa-mn-txt {
+    width: 122px;
+    top: 214px;
+}
+
+/* Cài đặt */
+#nav .setting .bg-color {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 250px;
+    border-radius: 13px;
+}
+
+#nav .setting .fa-gear {
+    top: 268px;
+}
+
+#nav .setting .st-txt {
+    width: 61px;
+    top: 264px;
+}
+
+/* Đăng xuất */
+#nav .log-out .fa-right-from-bracket {
+    bottom: 2.2%;
+    left: 67px !important;
+    color: red;
+}
+
+#nav .log-out .lg-txt {
+    width: 87px;
+    bottom: 2%;
+    left: 95px !important;
+    color: red;
+}
+
+/* Not use this part!!---- */
+/* Block 1 */
+#content #block1 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 902px;
+    height: 197px;
+    left: 329px;
+    top: 116px;
+    border: 1px solid #017a5b;
+    border-radius: 20px;
+}
+
+#content .bl-txt {
+    position: absolute;
+    height: 39px;
+    left: 24px;
+    top: 24px;
+    margin: 0;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    color: #000000;
+}
+
+/* Side block */
+#content .side-bl1,
+#content .side-bl2,
+#content .side-bl3 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 273px;
+    height: 90px;
+    top: 84px;
+    background: #ffffff;
+    border: 1px solid #cecece;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+}
+
+#content .side-bl1 {
+    left: 24px;
+}
+
+#content .side-bl2 {
+    left: 316px;
+}
+
+#content .side-bl3 {
+    left: 608px;
+}
+
+/* Nút more (xem thêm) */
+.more {
+    position: absolute;
+    width: 116px;
+    height: 32px;
+    right: 24px;
+    top: 27px;
+
+    background: #017a5b;
+    border-radius: 25px;
+}
+
+.more .more-txt {
+    color: white;
+    position: absolute;
+    top: 6px;
+    left: 21px;
+    margin: 0;
+}
+
+/* Chữ trong side-block */
+
+#content .side-bl-txt1 {
+    position: absolute;
+    width: 51px;
+    height: 22px;
+    left: 16px;
+    top: 16px;
+    margin: 0;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+}
+
+#content .side-bl-txt2 {
+    position: absolute;
+    width: 51px;
+    height: 17px;
+    left: 16px;
+    top: 42px;
+    margin: 0;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+}
+
+#content .side-bl-txt3 {
+    position: absolute;
+    width: 25px;
+    height: 15px;
+    left: 232px;
+    top: 42px;
+    margin: 0;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+}
+
+/* Thanh bar */
+#content .side-bl-bar-grey {
+    position: absolute;
+    width: 240px;
+    height: 8px;
+    left: 16px;
+    top: 68px;
+    margin: 0;
+    background: #d9d9d9;
+    border-radius: 10px;
+}
+
+#content .side-bl1-bar-color,
+#content .side-bl2-bar-color,
+#content .side-bl3-bar-color {
+    position: absolute;
+    height: 8px;
+    left: 16px;
+    top: 68px;
+    margin: 0;
+    border-radius: 10px;
+}
+
+#content .side-bl1-bar-color {
+    width: 228px;
+    background: #ef2c2c;
+}
+
+#content .side-bl2-bar-color {
+    width: 194px;
+    background: #ffe602;
+}
+
+#content .side-bl3-bar-color {
+    width: 144px;
+    background: #00ff19;
+}
+
+/* Block 2 */
+#content #block2 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 492px;
+    height: 290px;
+    left: 329px;
+    top: 350px;
+    border: 1px solid #017a5b;
+    border-radius: 20px;
+}
+
+/* Message in Block 2*/
+#block2 .bl2-msg1,
+#block2 .bl2-msg2 {
+    position: absolute;
+    height: 72px;
+    left: 24px;
+    right: 24px;
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+#block2 .bl2-msg1 {
+    top: 88px;
+}
+
+#block2 .bl2-msg2 {
+    top: 180px;
+}
+
+#block2 .msg-logo {
+    position: absolute;
+    top: 12px;
+    width: 48px;
+    height: 48px;
+    left: 20px;
+    background: #017a5b;
+    border-radius: 25px;
+}
+
+#block2 .msg-txt {
+    position: absolute;
+    width: 340px;
+    height: 48px;
+    left: 84px;
+    right: 20px;
+    top: 12px;
+    margin: 0;
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: black;
+}
+
+/* Phần hover----- */
+
+/* hover vào tất cả thành phần */
+#nav .message:hover .bg-color {
+    background: #e6e6e6;
+}
+
+#nav .dashboard:hover,
+#nav .message:hover,
+#nav .task:hover,
+#nav .em-mn:hover,
+#nav .fa-mn:hover,
+#nav .setting:hover,
+#nav .log-out:hover {
+    cursor: pointer;
+}
+
+#nav .dashboard:hover .bg-color,
+#nav .task:hover .bg-color,
+#nav .em-mn:hover .bg-color,
+#nav .fa-mn:hover .bg-color,
+#nav .setting:hover .bg-color {
+    background: #f2f2f2;
+    cursor: pointer;
+}
+
+.more:hover {
+    cursor: pointer;
+}
+
+.more:active {
+    background-color: #005943;
+    transform: translateY(5px);
+}
+
+/* ----------CONTENT---------- */
+
+#content .msg {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 360px;
+    height: 98.5%;
+    left: 261px;
+    /* top: -4px; */
+    background: #FFFFFF;
+    border-right: 1px solid #CBCBCB;
+}
+
+#content .msg .head {
+    position: absolute;
+    width: 136px;
+    height: 39px;
+    left: 35px;
+    top: 30px;
+    margin: 0;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 16px;
+    /* or 50% */
+    color: #000000;
+}
+
+#content .msg .search_bar {
+    position: absolute;
+    width: 297px;
+    height: 35px;
+    left: 35px;
+    top: 75px;
+    
+    cursor: pointer;
+
+    border-radius: 13px;
+}
+
+#content .msg .search_bar :hover {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.22));
+}
+
+#content .msg .search_bar .search_text {
+    position: absolute;
+    top: 5px;
+    width: 297px;
+    height: 30px;
+    /* top: -5px; */
+    left: -5px;
+
+    
+    padding-left: 10px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+  
+    border: 2px solid #F5F5F5;
+    border-radius: 20px;
+ 
+    background: #F5F5F5;
+}
+
+#content .msg .search_bar .fa-magnifying-glass {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 90%;
+    top: calc(30% + 4px);
+}
+
+#content .msg .elements__wrapper {
+    top: 130px;
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    background: #FFFFFF;
+
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+    height: 0%;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #CBCBCB;
+    border-radius: 5px;
+}
+
+#content .msg .elements__wrapper .elements {
+    position: relative;
+    width: 320px;
+    height: 80px;
+    left: 10px;
+    display: block;
+    /* top: 140px; */
+
+    cursor: pointer;
+
+    margin: 10px;
+    clear: both;
+    overflow: hidden;
+
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+#content .msg .elements__wrapper :hover {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#content .msg .elements__wrapper .elements .elements__avata {
+    object-fit: cover;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    position: absolute;
+    left: 5%;
+    top: 18%;
+}
+
+#content .msg .elements__wrapper .elements .elements__name {
+    position: absolute;
+    width: 223px;
+    height: 57px;
+    left: 28%;
+    top: 3px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+
+    color: #000000;
+}
+
+#content .msg .elements__wrapper .elements .elements__msg {
+    position: relative;
+    width: 70%;
+    height: fit-content;
+    left: 28%;
+    top: 27px;
+
+
+    align-items: center;
+
+    font-family: 'Inter';
+    font-style: normal;
+    /* font-weight: 600;
+    font-size: 16px; */
+
+    color: #000000;
+}
+
+#content .detail {
+    box-sizing: border-box;
+
+    position: absolute;
+    /* width: max-content; */
+    height: 99%;
+    left: 621px;
+    right: 0px;
+    top: 0px;
+    background: #ffffff;
+}
+
+#content .detail .detail__user {
+    box-sizing: border-box; 
+    position: relative;
+    width: 100%;
+    height: 84px;
+    right: 0px;
+    top: 0px;
+
+    /* background: #F2F2F2; */
+    /* background: linear-gradient(#abffa8, #c8ffc75d); */
+    border: 1px solid #CBCBCB;
+
+    /* border-radius: 10px; */
+}
+/* #content .detail .detail__user :hover {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.44));
+} */
+
+
+#content .detail .detail__user .detail__user--avata {
+    object-fit: cover;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    position: absolute;
+    left: 15px;
+    top: 10px;
+
+
+    cursor: pointer;
+}
+
+#content .detail .detail__user .detail__user--name {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    left: 70px;
+    top: -2px;
+
+    margin: 30px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    /* line-height: 16px; */
+
+    color: #000000;
+
+    cursor: pointer;
+}
+
+#content .detail .detail__user .fa-circle-info {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: 30px;
+    top: 40px;
+
+    cursor: pointer;
+}
+
+#content .detail .detail__msg {
+    position: relative;
+    z-index: 0;
+
+    /* top: -15px; */
+    width: 100%;
+
+    display: block;
+    /* min-height: 80px; */
+    height: calc(100% - 170px);
+    /* background-color: #CBCBCB; */
+
+    overflow-y: scroll;
+}
+
+#content .detail .detail__msg .msg__element {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    /* background-color: #66afe9;    */
+    
+    margin-top: -10px;
+}
+
+#content .detail .detail__msg .msg__element * {
+    position: relative;    
+    height: fit-content;
+    width: fit-content;
+
+    max-width: 60%;
+    padding: 12px;
+    
+    margin: 13px;
+}
+
+#content .detail .detail__msg .msg__element .center {
+    left: 43%;
+    font-weight: 400;
+    font-size: 12px;
+    /* background-color: #BDFBBC; */
+    /* background: linear-gradient(#BDFBBC, #5ccc5a); */
+}
+
+#content .detail .detail__msg .msg__element .left {
+    left: 0%;
+    background-color: #F2F2F2;
+    /* background: #9bfd9894; */
+    border-radius: 30px 30px 30px 5px;
+}
+
+#content .detail .detail__msg .msg__element .right {
+    height: fit-content;
+    margin-left: auto;
+    margin-right: 13px;
+    background: #F2F2F2;
+    border-radius: 30px 30px 5px 30px;
+}
+
+#content .detail .detail__new-msg {
+    position: absolute;
+    width: 99%;
+    height: 80px;
+    left: 10px;
+    bottom: 10px;
+
+    /* background-color: #fc2a2a; */
+}
+
+#content .detail .detail__new-msg .detail__input {
+    position: absolute;
+    width: 88%;
+    height: 40px;
+    left: 10px;
+    bottom: -2px;
+    
+    padding-left: 20px;
+
+    background: #F5F5F5;
+
+    border: 2px solid #F5F5F5;
+    border-radius: 20px;
+
+    text-align: left;
+    font-family: 'Inter';
+    font-size: large;
+}
+
+#content .detail .detail__new-msg .send-icon {
+    position: absolute;
+    top: 25px;
+    left: 91.5%;
+    
+    padding: 20px;
+    cursor: pointer;
+
+    width: 25px;
+    height: 25px;
+    
+}
+
+
+/* Deadly CSS */
+
+.logo {
+    left: 73px !important;
+}
+
+.logoImg {
+    position: absolute;
+    top: 29px;
+    left: 25px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+
+
+.boxAvatar {
+    position: absolute;
+    bottom: 70px;
+    height: 80px;
+    width: 260px;
+    border-top: 1px solid #CBCBCB;
+    border-bottom: 1px solid #CBCBCB;
+    background-color: black;
+    border-radius: 0px 15px 15px 0px;
+    cursor: pointer;
+}
+
+.textBig {
+    position: absolute;
+    left: 26px;
+    font-weight: 600;
+    color: white;
+}
+
+.text1Big {
+    top: 16px;
+    font-size: 20px;
+}
+
+.text2Big {
+    top: 46px;
+    left: 95px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.avatarBig {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 26px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border: 3px solid white;
+}
+
+.trigger {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}

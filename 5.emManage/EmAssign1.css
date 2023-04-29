@@ -1,0 +1,616 @@
+html {
+    height: 0px !important;
+}
+
+.md-exitbtn {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+
+.md-exitbtn:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+
+#content {
+    position: absolute;
+    top: 0px;   
+    left: 260px;
+    height: 100%;
+}
+
+#headingTxt {
+    position: absolute;
+    height: 39px;
+    left: 64px;
+    top: 56px;
+    margin: 0px;
+    width: 200px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+}
+
+#content #border-box {
+    box-sizing: border-box;
+    position: absolute;
+    width: 911px;
+    height: 471px;
+    left: 70px;
+    bottom: 9%;
+
+    border: 1px solid #017A5B;
+    border-radius: 20px;
+}
+#content .inner-box1,
+.inner-box2,.inner-box3
+{
+    box-sizing: border-box;
+    position: absolute;
+    width: 284px;
+    height: 124px;
+    background: #FFFFFF;
+    border: 1px solid #CECECE;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 21px;
+}
+
+#content .inner-box1 {
+    left: 15px;
+    top: 22px;
+}
+#content .inner-box2 {
+    left: 298px;
+    top: 0px;
+}
+#content .inner-box3 {
+    right: 598px;
+    top: 149px;
+}
+
+#content .ava {
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    left: 27px;
+    top: 10px;
+    background: #017A5B;
+    border-radius: 29px;
+}
+
+#content .name {
+    position: absolute;
+    width: 148px;
+    height: 22px;
+    left: 104px;
+    top: 0px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #1B0303;
+}
+
+#content .id {
+    position: absolute;
+    width: 148px;
+    height: 17px;
+    left: 104px;
+    top: 33px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    color: #1B0303;
+}
+
+#content .condition-box {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 130px;
+    height: 29px;
+    left: 18px;
+    top: 85px;
+
+    background: #FFFFFF;
+    border: 1px solid #017A5B;
+    border-radius: 23px;
+}
+
+#content .condition1 {
+    position: absolute;
+    width: 94px;
+    height: 17px;
+    left: 10px;
+    top: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #1B0303;
+}
+
+#content .condition2 {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: 109px;
+    top: 8px;
+    border-radius: 6px;
+    background: #FF0000;
+}
+
+#content .location-box {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 105px;
+    height: 29px;
+    left: 164px;
+    top: 85px;
+
+    background: #FFFFFF;
+    border: 1px solid #017A5B;
+    border-radius: 23px;
+}
+
+#content .location1 {
+    position: absolute;
+    width: 68px;
+    height: 17px;
+    left: 10px;
+    top: 5px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    color: #1B0303;
+}
+
+#content .location2 {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: 82px;
+    top: 4px;
+    border-radius: 6px;
+}
+
+
+#TriaddEmModel {
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#TriaddEmModel-content {
+
+    position: absolute;
+    top: 8%;
+    bottom: 8%;
+    left: 15%;
+    right: 15%;
+    /* background-color: #fefefe; */
+    background-color: #f8f9fd;
+    border-radius: 18px;
+    animation: fadeIn ease 0.5s;
+}
+
+#TriaddEmModel-content .avatar {
+    position: absolute;
+   
+    width: 250px;
+    height: 250px;  /* bằng cách thần kỳ nào đó nó lại đúng */   
+    top: 22%;
+    bottom: 25%;
+    left: 9%;
+    border-radius: 50%;
+    border: 2px solid #888;
+
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+
+#TriaddEmModel-content .information-container {
+    position: absolute;
+    
+    top: 9%;
+    right: 6%;
+
+    width: 56%;
+    height: 70%;
+
+    /* background-color: #017A5B; */
+}
+
+#TriaddEmModel-content .information-container .information {
+    position: relative;
+    
+    top: 3%;
+
+    width: 100%;
+    height: 13%;
+    margin-bottom: 10px;
+
+    left: 0%;
+
+    margin-top: 0.5%;
+    /* background-color: #FFFFFF; */
+}
+
+#TriaddEmModel-content .information-container .information p {
+    position: absolute;
+    margin: 0px;
+    height: 90%;
+
+    /* top: 5%; */
+    left: 7%;
+
+    width: 35%;
+
+    /* background-color: #84e3cc; */
+
+    font-size: 110%;
+    font-weight: 600;
+
+    padding-top: 1%;
+}
+
+#TriaddEmModel-content .information-container .information input {
+    position: absolute;
+
+    width: 297px;
+    height: 55%;
+    right: 2%;
+
+    padding-left: 35px;
+    
+
+    
+
+    border-radius: 10px;
+    border: 1px solid #555;
+
+    font-size: 90%;
+    font-weight: 400;
+}
+#modiChoiceTXT {
+    background-color: #f1f1f1;
+}
+
+#TriaddEmModel-content .information-container .information input:hover {
+    border: 1px solid #1B0303;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.25));
+}
+
+#TriaddEmModel-content .information-container .information input:focus {
+    background-color: #ffffff;
+    border: 1px solid #1B0303;
+}
+
+#TriaddEmModel-content .information-container .information select {
+    position: absolute;
+    
+    width: 40%;
+    height: 50%;
+    right: 3.7%;
+    
+    top: 10%;
+    padding-left: 3%;
+    
+    background-color: #f1f1f1;  
+
+    border-radius: 10px;
+    border: 1px solid #555;
+    
+    font-size: 90%;
+    font-weight: 400;
+}
+
+#TriaddEmModel-content .information-container .information select:hover {
+    border: 1px solid #1B0303;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.25));
+}
+
+#TriaddEmModel-content .information-container .information select:focus {
+    background-color: #ffffff;
+    border: 1px solid #1B0303;
+}
+
+#TriaddEmModel-content .confirm-button {
+    position: absolute;
+
+    bottom: 7%;
+    right: 43%;
+    
+    width: 15%;
+    height: 6%;
+    
+    border-radius: 20px;
+    border: 1px solid #555;
+
+    font-size: 100%;
+    font-weight: 700;
+}
+
+#TriaddEmModel-content .confirm-button:hover {
+    color: #0b9001;
+    background-color: #FFFFFF;
+    border: 1px solid #1B0303;
+}
+
+/* scrollbar shit - do not touch :)) */
+
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 25px;
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+      border-radius: 25px;
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+#readUrl {
+    position: absolute;
+    top: 413px;
+    left: 161px;
+    z-index: 10;
+}
+
+  .custom-file-input, .randGenImg {
+    color: transparent;
+}
+
+    .custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+    }
+  .custom-file-input::before {
+    content: 'Tải ảnh lên';
+    color: black;
+    display: inline-block;
+    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 20px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 13pt;
+  }
+
+  .randGenImg::before {
+    content: 'Chọn ảnh ngẫu nhiên';
+    color: black;
+    display: inline-block;
+    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+  }
+  .custom-file-input:hover::before
+  ,.randGenImg:hover::before {
+    border-color: black;
+  }
+  .custom-file-input:active,
+  .randGenImg:active {
+    outline: 0;
+  }
+  .custom-file-input:active::before,
+  .randGenImg:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+  }
+
+
+  .information i {
+    position: absolute;
+    font-size: 11px;
+    left: 304px;
+    top: 12px;
+  }
+
+
+  /* Phần radio */
+
+  .gender-radio {
+    position: absolute;
+    top: 165px;
+
+}
+
+
+.radio1 {
+    left: 310px
+}
+
+.radio2 {
+    left: 395px
+}
+
+.radio3 {
+    left: 480px
+}
+
+
+
+
+
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    display: none;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: black;
+    font-weight: 700;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #017A5B;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+
+
+
+
+
+
+.genRow {
+    position: absolute !important;
+    top: 7px !important;
+    font-weight: 600;
+    font-size: 15px;
+
+}
+
+.genRow1 {
+    left: 300px !important;
+}
+
+.genRow2 {
+    left: 415px !important;
+}
+
+.genRow3 {
+    left: 510px !important;
+}
+
+.autoFill {
+    width: 78px !important;
+    padding-right: 0px !important;
+    left: 292px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+.idFill {
+    width: 245px !important;
+}
+
+.block-btn {
+    position: absolute;
+    width: 105px;
+    height: 28px;
+    right: 7% !important;
+    bottom: 30px !important;
+    background-color: #017A5B;
+    border-radius: 25px;
+}
+
+.block-btn-txt {
+    position: absolute;
+    color: white;
+    top: 5px;
+    left: 15px;
+    margin: 0px;    
+    font-size: 14px;
+}
+
+.block-btn i {
+    position: absolute;
+    color: white;
+    width: 13.42px;
+    height: 15.24px;
+    right: 14px;
+    top: 7.5px;
+
+    font-size: 13px;
+}
+
+.block-btn:hover{
+    cursor: pointer;
+}
+
+.block-btn:active {
+    background-color: #005943;
+    transform: translateY(5px);
+}

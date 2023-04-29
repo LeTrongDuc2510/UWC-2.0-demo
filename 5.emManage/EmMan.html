@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quản lý nhân viên | UWC 2.0</title>
+        <meta charset="utf-8">
+        <link rel = "icon" href = 
+        "../0.notsignin/not_signin/Logo.png" 
+                type = "image/x-icon">
+        <script src="https://kit.fontawesome.com/74bc185944.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./EmAssign2.css">
+         <link rel="stylesheet" href="./EmAssign1.css">
+        <link rel="stylesheet" href="./EmAssign.css">
+        <link rel="preconnect" href="https://rsms.me/">
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font Link for Icons -->
+    <!-- Google Fonts -->
+        <link
+        href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+        rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <script src="./EmManscript.js"></script>
+        
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet'/>
+
+    </head>
+    <body>
+        
+
+          <div id="nav">
+            <p class="logo">UWC 2.0</p>
+            <img class="logoImg" src="../0.notsignin/not_signin/Logo.png" alt="UWC 2.0 logo">
+            <div class="trigger boxAvatar" onclick="function myFunc5() { window.location.href = '../7.setting/setting.html'; } myFunc5();">
+                <p class="trigger textBig text1Big">Đinh Lê Dũng</p>
+                <p class="trigger textBig text2Big">#BO0909</p>
+                <img class="trigger avatarBig" src="../0.notsignin/not_signin/finalAvatar.jpg" alt="Avatar">
+            </div>
+
+            <div class="sub-page">
+                <a class="dashboard" href="../2.homepage/homepage.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-house"></i>
+                    <p class="db-txt">Trang chủ</p>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a class="message" href="../3.message/message.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-comment"></i>
+                    <p class="mg-txt">Tin nhắn</p>
+                </a>
+                <a class="task" href="../4.taskassign/TaskAssign.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <p class="ts-txt">Nhiệm vụ</p>
+                </a>
+                <a class="em-mn" href="../5.emManage/EmMan.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-regular fa-id-card"></i>
+                    <p class="em-mn-txt">Quản lý nhân viên</p>
+                </a>
+                <a class="fa-mn" href="../6.general management/mcp.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-list-check"></i>
+                    <p class="fa-mn-txt">Quản lý chung</p>
+                </a>
+                <a class="setting" href="../7.setting/setting.html">
+                    <div class="bg-color"></div>
+                    <i class="fa-solid fa-gear"></i>
+                    <p class="st-txt">Cài đặt</p>
+                </a>
+            </div>
+
+            <a class="log-out" href="../index.html">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <p class="lg-txt">Đăng xuất</p>
+            </a>
+        </div>
+
+        <!-- Khúc này trở xuống là của phần content / DO NOT USE :)) -->
+
+        
+
+
+        <div id="content">
+            <p id="blockAllTitle">Danh sách nhân viên</p>
+            <i class="fa-solid fa-user-plus" onclick="openModalee()"></i>
+        </div>
+
+
+        <div id="modal1" class="modal">
+
+            <button id="notiBtn" onclick="">
+                <p id="notiCnt">2</p>
+                <i class="fa-solid fa-bell fa-shake" id="notiIcon"></i>
+            </button>
+
+            <div class="block-btn delMan" id="delBTNMan" onclick="delFUNC()">
+                <p class="block-btn-txt">Xóa</p>
+                <i class="fa-solid fa-list-check"></i>
+            </div>
+
+                <p class="sta-select">Chọn loại nhân viên:</p>
+                <select name="staff-type" id="st-type" onchange="alertx()">
+                    <option value="jan">Janitor</option>
+                    <option value="collector">Collector</option>
+                    
+                </select>
+
+                <p class="sta1-select">Tìm kiếm nhân viên:</p>
+
+                <!-- <div class="bl-btn pop-down" id = "btn2-modal">
+                    <p class="bl-btn-txt txt2-modal1">Collector</p>
+                    <i class="fa-solid fa-caret-up"></i>
+                </div> -->
+
+
+                <form>
+                    <input required='' type='text' class ="search" id="Modal1myInput" onkeyup="searchFunc()">
+                    <label alt='Tìm kiếm theo tên' placeholder=' Đang tìm kiếm '></label>
+                </form>    
+
+                <!-- <input class ="search" id="myInput" type="text" onkeyup="searchFunc()" placeholder="Tìm kiếm tên"> -->
+           
+                <!-- Table -->
+                <table id="Modal1myTable">
+                    <tr class="modal1-table-row-0">
+                    <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->  
+                    
+                        <th>
+                            
+                        </th>
+                        <th class ="tb-row-0" onclick="sortTable(1)">Họ và tên</th>
+                        <th class ="tb-row-0" onclick="sortTable(2)">Mã số nhân viên</th>
+                        <th class ="tb-row-0" onclick="sortTable(3)">MCP gần nhất</th>
+                        <th class ="tb-row-0" onclick="sortTable(4)">Trạng thái</th>
+                        <th class ="tb-row-0" onclick="sortTable(5)">Thông tin</th>
+                    </tr>
+                    
+                    <tr class="modal1-page">
+                        <td class="modal1-tdTag"> <input type="checkbox" name="modal1-tb-row" class="page-1" onchange="countRow()"></td>
+                        <td class="modal1-tdTag">
+                            <img src="./em-face-image/chanhtri.jpg" alt="">
+                            <p class="avatarName">Cao Chánh Trí</p>  
+                        
+                        </td>
+                        <td class="modal1-tdTag">&nbsp &nbsp &nbsp #CL7367</td>
+                        <td class="modal1-tdTag">
+                            <div class="nearestMCP">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="nearestTXT">MCP1</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag infoBOX" >                            
+                            <div class="em-status-busy">
+                                <div class="em-status-dot-busy"></div>
+                                <p class="em-status-txt-busy">Đang làm việc</p>
+                            </div> 
+                        </td>
+                        <td class="modal1-tdTag infoBOX">
+                            <i class="fa-solid fa-circle-info" onclick="openModaled(0)"></i>
+                        </td> 
+                    </tr>
+                    <tr class="modal1-page">
+                        <td class="modal1-tdTag"> <input type="checkbox" name="modal1-tb-row" class="page-1"  onchange="countRow()"></td>
+                        <td class="modal1-tdTag">
+                            <img src="./em-face-image/khoituan.jpg" alt="">
+                            <p class="avatarName">Trần Khôi Tuấn &nbsp &nbsp &nbsp &nbsp &nbsp</p>  
+
+                        </td>
+                        <td class="modal1-tdTag">&nbsp &nbsp &nbsp #JN2334</td>
+                          <td class="modal1-tdTag">
+                            <div class="nearestMCP">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="nearestTXT">MCP3</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag">
+                            <div class="em-status-free">
+                                <div class="em-status-dot-free"></div>
+                                <p class="em-status-txt-free">Đang rảnh</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag infoBOX">
+                            <i class="fa-solid fa-circle-info" onclick="openModaled(1)"></i>
+                        </td> 
+                    </tr>
+                    <tr class="modal1-page">
+                        <td class="modal1-tdTag"> <input type="checkbox" name="modal1-tb-row" class="page-1" onchange="countRow()"></td>
+                        <td class="modal1-tdTag">
+                            <img src="./em-face-image/dangkhanh.jpg" alt="">
+                            <p class="avatarName">Mai Tôn Đăng Khánh</p> 
+                        </td>
+                        <td class="modal1-tdTag">&nbsp &nbsp &nbsp #CL4731</td>
+                          <td class="modal1-tdTag">
+                            <div class="nearestMCP">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="nearestTXT">MCP5</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag">
+                            <div class="em-status-busy">
+                                <div class="em-status-dot-busy"></div>
+                                <p class="em-status-txt-busy">Đang làm việc</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag infoBOX">
+                            <i class="fa-solid fa-circle-info" onclick="openModaled(2)"></i>
+                        </td> 
+                    </tr>
+                    <tr class="modal1-page">
+                        <td class="modal1-tdTag"> <input type="checkbox" name="modal1-tb-row" class="page-1" onchange="countRow()"></td>
+                        <td class="modal1-tdTag">
+                            <img src="./em-face-image/letrongduc.JPG" alt="">
+                            <p class="avatarName">Lê Trọng Đức</p>  
+                        </td>
+                        <td class="modal1-tdTag">&nbsp &nbsp &nbsp #JN8484</td>
+                          <td class="modal1-tdTag">
+                            <div class="nearestMCP">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="nearestTXT">MCP2</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag">
+                            <div class="em-status-busy">
+                                <div class="em-status-dot-busy"></div>
+                                <p class="em-status-txt-busy">Đang làm việc</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag infoBOX">
+                            <i class="fa-solid fa-circle-info" onclick="openModaled(3)"></i>
+                        </td> 
+                    </tr>
+
+                    <tr class="modal1-page">
+                        <td class="modal1-tdTag"> <input type="checkbox" name="modal1-tb-row" class="page-1" onchange="countRow()"></td>
+                        <td class="modal1-tdTag">
+                            <img src="./em-face-image/hienho.jpg" alt="">
+                            <p class="avatarName">Hồ Thị Hiền</p>  
+                        </td>
+                        <td class="modal1-tdTag">&nbsp &nbsp &nbsp #CL6363</td>
+                          <td class="modal1-tdTag">
+                            <div class="nearestMCP">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="nearestTXT">MCP4</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag">
+                            <div class="em-status-free">
+                                <div class="em-status-dot-free"></div>
+                                <p class="em-status-txt-free">Đang rảnh</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag infoBOX">
+                            <i class="fa-solid fa-circle-info" onclick="openModaled(4)"></i>
+                        </td> 
+                    </tr>
+                    <tr class="modal1-page">
+                        <td class="modal1-tdTag"> <input type="checkbox" name="modal1-tb-row" class="page-1" onchange="countRow()"></td>
+                        <td class="modal1-tdTag">
+                            <img src="./em-face-image/damhung.jpg" alt="">
+                            <p class="avatarName">Đàm Vĩnh Hưng</p>  
+                        </td>
+                        <td class="modal1-tdTag">&nbsp &nbsp &nbsp #JN4589</td>
+                          <td class="modal1-tdTag">
+                            <div class="nearestMCP">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="nearestTXT">MCP4</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag">
+                            <div class="em-status-free">
+                                <div class="em-status-dot-free"></div>
+                                <p class="em-status-txt-free">Đang rảnh</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag infoBOX">
+                            <i class="fa-solid fa-circle-info" onclick="openModaled(5)"></i>
+                        </td> 
+                    </tr>
+                    <tr class="modal1-page">
+                        <td class="modal1-tdTag"> <input type="checkbox" name="modal1-tb-row" class="page-1" onchange="countRow()"></td>
+                        <td class="modal1-tdTag">
+                            <img src="./em-face-image/jack.jpeg" alt="">
+                            <p class="avatarName">Trịnh Phương Tuấn</p>  
+                        </td>
+                        <td class="modal1-tdTag">&nbsp &nbsp &nbsp #CL9797</td>
+                          <td class="modal1-tdTag">
+                            <div class="nearestMCP">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="nearestTXT">MCP2</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag">
+                            <div class="em-status-busy">
+                                <div class="em-status-dot-busy"></div>
+                                <p class="em-status-txt-busy">Đang làm việc</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag infoBOX">
+                            <i class="fa-solid fa-circle-info" onclick="openModaled(6)"></i>
+                        </td> 
+                    </tr>
+                    
+                    <tr class="modal1-page">
+                        <td class="modal1-tdTag"> <input type="checkbox" name="modal1-tb-row" class="page-1" onchange="countRow()"></td>
+                        <td class="modal1-tdTag">
+                            <img src="./em-face-image/hoailinh.jpeg" alt="">
+                            <p class="avatarName">Võ Hoài Linh</p>  
+                        </td>
+                        <td class="modal1-tdTag">&nbsp &nbsp &nbsp #JN3475</td>
+                          <td class="modal1-tdTag">
+                            <div class="nearestMCP">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="nearestTXT">MCP1</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag">
+                            <div class="em-status-busy">
+                                <div class="em-status-dot-busy"></div>
+                                <p class="em-status-txt-busy">Đang làm việc</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag infoBOX">
+                            <i class="fa-solid fa-circle-info" onclick="openModaled(7)"></i>
+                        </td> 
+                    </tr>
+                    <tr class="modal1-page">
+                        <td class="modal1-tdTag"> <input type="checkbox" name="modal1-tb-row" class="page-1"  onchange="countRow()"></td>
+                        <td class="modal1-tdTag">
+                            <img src="./em-face-image/sharkbinh.jpg" alt="">
+                            <p class="avatarName">Nguyễn Hòa Bình</p>  
+
+                        </td>
+                        <td class="modal1-tdTag">&nbsp &nbsp &nbsp #CL1294</td>
+                          <td class="modal1-tdTag">
+                            <div class="nearestMCP">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="nearestTXT">MCP3</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag">
+                            <div class="em-status-free">
+                                <div class="em-status-dot-free"></div>
+                                <p class="em-status-txt-free">Đang rảnh</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag infoBOX">
+                            <i class="fa-solid fa-circle-info" onclick="openModaled(8)"></i>
+                        </td> 
+                    </tr>
+                    <tr class="modal1-page">
+                        <td class="modal1-tdTag"> <input type="checkbox" name="modal1-tb-row" class="page-1" onchange="countRow()"></td>
+                        <td class="modal1-tdTag">
+                            <img src="./em-face-image/tranthanh.jpg" alt="">
+                            <p class="avatarName">Huỳnh Trấn Thành</p>  
+                        </td>
+                        <td class="modal1-tdTag">&nbsp &nbsp &nbsp #JN7693</td>
+                          <td class="modal1-tdTag">
+                            <div class="nearestMCP">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="nearestTXT">MCP5</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag">
+                            <div class="em-status-busy">
+                                <div class="em-status-dot-busy"></div>
+                                <p class="em-status-txt-busy">Đang làm việc</p>
+                            </div>
+                        </td>
+                        <td class="modal1-tdTag infoBOX">
+                            <i class="fa-solid fa-circle-info" onclick="openModaled(9)"></i>
+                        </td> 
+                    </tr>
+                    
+                
+                </table>
+                
+                <p id="Modal1-sl-count">Đã chọn: 0</p>
+                <p id="Modal1-page-count">1 - 5 trên 5</p>
+                <div id="Modal1-outterleftPage" onmouseenter="pageBGBtn(0)" onmouseleave="pageBGBtn(2)" onclick="updatepageBtn(0)">
+                    <div class="fa-solid fa-chevron-left" id ="Modal1-leftPage"></div>
+                </div>
+                <div id="Modal1-outterrightPage" onmouseenter="pageBGBtn(1)" onmouseleave="pageBGBtn(3)" onclick="updatepageBtn(1)">
+                    <div class="fa-solid fa-chevron-right" id ="Modal1-rightPage"></div>
+                </div>
+                
+
+           
+        </div>
+
+
+
+
+        <div id="addEmModal">
+            <div id="addEmModal-content">
+                <i class="fa-solid fa-xmark md-exitbtn" onclick="closeModaled()"></i>
+                <img class="trans2" id="circleFace" src="./em-face-image/letrongduc.JPG"></img>
+                <p class="trans2" id="nameInfo">Lê Trọng Đức</p>
+                <p class="trans2" id="idInfo"><span class="bold-text">Mã số nhân viên:</span> 	#CL4731</p>
+                <p class="trans2" id="roleInfo"><span class="bold-text">Chức vụ:</span> Nhân viên lái xe.</p>
+                
+                <div id="dot-wrapper" class="trans2">
+                    <div class="em-status-dot-free"></div>
+                </div>
+
+
+                <p class="bl-TXTrow trans1" id="bl-txtEmail">Email:</p>
+                <input class="inputInfo trans1" id="inputEmail" type="text" placeholder="" value="dinhledung@gmail.com" disabled>
+                <i class="fa-solid fa-envelope icon-bl icon0 trans1"></i>
+                <p class="bl-TXTrow trans1" id="bl-txtPhone">Số điện thoại:</p>
+                <input class="inputInfo trans1" id="inputPhone" type="text" placeholder="" value="0123456789" disabled>
+                <i class="fa-solid fa-phone icon-bl icon1 trans1"></i>
+                
+                <p class="bl-TXTrow" id="bl-txtAddr">Khu vực làm việc:</p>
+                <input class="inputInfo" id="inputAddr" type="text" placeholder="" value="497 Hòa Hảo, phường 7, quận 10, thành phố Hồ Chí Minh" disabled>
+                <i class="fa-solid fa-location icon-bl icon2"></i>
+
+                <p class="bl-TXTrow" id="bl-txtSche">Lịch trình làm việc trong tuần:</p>
+                
+                <i class="fa-solid fa-chevron-left arr1" onclick="gotoLeft()"></i>
+                <i class="fa-solid fa-chevron-right arr2" onclick="gotoRight()"></i>
+
+                <div id="task-wrapper">
+                    <div class="task-scroll" id="task1">
+                        <i class="fa-solid fa-clock icon3"></i>
+                        <i class="fa-solid fa-route icon4"></i>
+                        <p class="task-day">Thứ hai, 1/1/2023 (ca 1).</p>
+                        <p class="task-do doing">(đang thực hiện)</p>
+                        <p class="task-route">MCP1 → MCP2 → MCP3.</p>
+                    </div>
+    
+                    <div class="task-scroll" id="task2">
+                        <i class="fa-solid fa-clock icon3"></i>
+                        <i class="fa-solid fa-route icon4"></i>
+                        <p class="task-day">Thứ ba, 1/1/2023 (ca 1).</p>
+                        <p class="task-do">(chưa đến)</p>
+                        <p class="task-route">MCP1 → MCP2 → MCP3.</p>
+                    </div>
+    
+                    <div class="task-scroll" id="task3">
+                        <i class="fa-solid fa-clock icon3"></i>
+                        <i class="fa-solid fa-route icon4"></i>
+                        <p class="task-day">Thứ tư, 1/1/2023 (ca 1).</p>
+                        <p class="task-do">(chưa đến)</p>
+                        <p class="task-route">MCP1 → MCP2 → MCP3.</p>
+                    </div>
+
+                    <div class="task-scroll" id="task4">
+                        <i class="fa-solid fa-clock icon3"></i>
+                        <i class="fa-solid fa-route icon4"></i>
+                        <p class="task-day">Thứ năm, 1/1/2023 (ca 1).</p>
+                        <p class="task-do">(chưa đến)</p>
+                        <p class="task-route">MCP1 → MCP2 → MCP3.</p>
+                    </div>
+
+                    <div class="task-scroll" id="task5">
+                        <i class="fa-solid fa-clock icon3"></i>
+                        <i class="fa-solid fa-route icon4"></i>
+                        <p class="task-day">Thứ sáu, 1/1/2023 (ca 1).</p>
+                        <p class="task-do">(chưa đến)</p>
+                        <p class="task-route">MCP1 → MCP2 → MCP3.</p>
+                    </div>
+
+                    <div class="task-scroll" id="task6">
+                        <i class="fa-solid fa-clock icon3"></i>
+                        <i class="fa-solid fa-route icon4"></i>
+                        <p class="task-day">Thứ bảy, 1/1/2023 (ca 1).</p>
+                        <p class="task-do">(chưa đến)</p>
+                        <p class="task-route">MCP1 → MCP2 → MCP3.</p>
+                    </div>
+
+                    <div class="task-scroll" id="task7">
+                        <i class="fa-solid fa-clock icon3"></i>
+                        <i class="fa-solid fa-route icon4"></i>
+                        <p class="task-day">Chủ nhật, 1/1/2023 (ca 1).</p>
+                        <p class="task-do">(chưa đến)</p>
+                        <p class="task-route">MCP1 → MCP2 → MCP3.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="TriaddEmModel">
+            <div id="TriaddEmModel-content">
+                <i class="fa-solid fa-xmark md-exitbtn" onclick="closeModal()"></i>
+                
+                <input type='file' id="readUrl" class="custom-file-input">
+            
+                <!-- <p class="more-txt" id="img-TXT-change" onclick="uploadF()">Thay đổi ảnh</p> -->
+                
+                <img class="avatar" id="uploadedImage" src="#" alt="Uploaded Image" accept="image/png, image/jpeg" style="display:none;">
+
+
+
+                <input id="circleFaces" type="image" class="avatar" src="./em-face-image/default-avatar.jpg">
+                    <input type="file" class="avatar-input" style="display: none;"></input>
+                </input>
+                
+                <div class="information-container">
+                    <div class="information">
+                        <p>Họ và Tên:</p>
+                        <input type="text" placeholder="Nhập tên"></input>
+                        <i class="fa-solid fa-signature"></i>
+                    </div>
+                    <div class="information">
+                        <p>Giới tính:</p>
+                        <input id="test1" class="gender-radio radio1" type="radio" name="radio-group" value="male" checked>
+                        <label for="test1" class="genRow genRow1">Nam</label>
+                        <input id="test2" class="gender-radio radio2" type="radio" name="radio-group" value="female">
+                        <label for="test2" class="genRow genRow2">Nữ</label>
+                        <input id="test3" class="gender-radio radio3" type="radio" name="radio-group" value="no">
+                        <label for="test3" class="genRow genRow3">Khác</label>
+                    </div>
+                    <div class="information">
+                        <p>Chức vụ:</p>
+                        <select name="Chức vụ" aria-placeholder="Chọn chức vụ" onchange="modiChoice()" id="modiFill">
+                            <option value="Janitor">Nhân viên quét dọn</option>
+                            <option value="Collector">Nhân viên lái xe</option>
+                        </select>
+                    </div>
+
+                    <div class="information">
+                        <p>Mã số nhân viên:</p>
+                        <input type="text" placeholder="Nhập mã số nhân viên" class="idFill"></input>
+                        <input type="text" value=" #JN" disabled class="autoFill" id="modiChoiceTXT"></input>
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                    
+                    <div class="information">
+                        <p>Số điện thoại:</p>
+                        <input type="text" placeholder="Nhập số điện thoại"></input>
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="information">
+                        <p>Email:</p>
+                        <input type="text" placeholder="Nhập email"></input>
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="information">
+                        <p>Khu vực làm việc:</p>
+                        <input type="text" placeholder="Nhập khu vực làm việc"></input>
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                    </div>
+                </div>
+                <!-- <button class="confirm-button">Xác nhận ✔</button> -->
+                <div class="block-btn continue" onclick="closeModal(1); checkEmptyTextBox()">
+                    <p class="block-btn-txt">Tiếp tục</p>
+                    <i class="fa-solid fa-angles-right"></i>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+
+            const rowTablesee = document.getElementsByClassName("modal1-page");
+            
+
+            for (let i=0; i<10; i++) {
+                if (i%2 ==0 && i < 10) rowTablesee[i].style.display="none";
+                else rowTablesee[i].style.display="";
+                }
+        </script>
+
+
+        <script>
+
+            const addEmModal = document.getElementById("addEmModal");
+            const addEmModal1 = document.getElementById("TriaddEmModel");
+            
+            window.onclick = function(event) {
+                if (event.target == addEmModal) {
+                    addEmModal.style.display = "none";
+                }
+                if (event.target == addEmModal1) {
+                    addEmModal1.style.display = "none";
+                }
+            }
+
+        
+
+        </script>
+
+        <script src="EmManscript2.js"></script>
+
+        <script src="EmManscript1.js"></script>
+        
+    
+    </body>
+</html> 

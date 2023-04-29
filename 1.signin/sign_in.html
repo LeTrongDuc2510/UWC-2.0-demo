@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Đăng nhập | UWC 2.0</title>
+        <meta charset="utf-8">
+        <link rel = "icon" href = 
+        "../0.notsignin/not_signin/Logo.png" 
+                type = "image/x-icon">
+        <link rel="stylesheet" href="./sign_in.css">
+        <link rel="preconnect" href="https://rsms.me/">
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+        <script src="https://kit.fontawesome.com/74bc185944.js" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/74bc185944.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="smallBg">
+        </div>
+        
+        <div id="all">
+          <i class="fa-solid fa-user icon1"></i>
+          <i class="fa-solid fa-eye-slash icon2" id = "passIcon" onclick="showPass()"></i>
+            <div id="left-page"></div>
+            <div id="right-page">
+                <p class="welcome-text1">Chào mừng, </p>
+                <p class="welcome-text2">Đăng nhập tài khoản</p>
+                <div class="login">
+                    <p class="login-text1">Tên đăng nhập</p>
+
+                    <input type="text" class="login-box1" id="usernameInput" required>
+                    <p class="login-text2">Mật khẩu</p>
+                    <input type="password" class="login-box2" id="passInput">
+                    <div class="checkbox-wrapper-12">
+                        <div class="cbx">
+                          <input id="cbx-12" type="checkbox" onclick="clickOn()">
+                          <label for="cbx-12"></label>
+                          <svg width="15" height="14" viewbox="0 0 15 14" fill="none" id="tick">
+                            <path d="M2 8.36364L6.23077 12L13 2"></path>
+                          </svg>
+                        </div>
+                        <!-- Gooey-->
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                          <defs>
+                            <filter id="goo-12">
+                              <fegaussianblur in="SourceGraphic" stddeviation="4" result="blur"></fegaussianblur>
+                              <fecolormatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -7" result="goo-12"></fecolormatrix>
+                              <feblend in="SourceGraphic" in2="goo-12"></feblend>
+                            </filter>
+                          </defs>
+                        </svg>
+                      </div>
+                    <p class="login-text3" onclick="clickOn()">Tự động đăng nhập lần sau</p>
+                    <p class="login-text4">Quên mật khẩu?</p>
+
+
+
+                </div>
+                <p id="error-msg"></p>
+                <div class="button1" onclick="loginCheck()">
+                    <div class="button1-text">Đăng nhập</div>  
+                </div>
+
+                <!-- <div class="button2">
+                    <i class="fab fa-google fa-10x"></i>    
+                    <div class="button2-text">Đăng nhập với Google</div>
+                </div> -->
+
+
+
+                
+            </div>
+        </div>
+
+        <script src="signInScript.js"></script>
+    </body>
+</html> 

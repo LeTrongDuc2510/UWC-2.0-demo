@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html onmouseover="">
+    <head>
+        <title>UWC 2.0</title>
+        <link rel = "icon" href = 
+        "./0.notsignin/not_signin/Logo.png" 
+                type = "image/x-icon">
+        <meta charset="utf-8">
+        <script src="https://kit.fontawesome.com/74bc185944.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./0.notsignin/not_signin.css">
+        <link rel="preconnect" href="https://rsms.me/">
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+
+    </head>
+    <body>
+        <div id="nav">
+            <p class="uwc">UWC 2.0</p>
+            <img class="logoImg" src="./0.notsignin/not_signin/Logo.png" alt="UWC 2.0 logo">
+
+            <a class="signin-btn" href="./1.signin/sign_in.html">
+                <p class="btn-text">Đăng nhập</p>
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+            </a>
+        </div>
+        
+        <div id="bg">
+            <div id="newsNav">
+                <div class="navBall ball1" onmouseover="setxStep()" onclick="clickBtn(1)">
+                    <div class="subnavBall subball1"></div>
+                </div>
+                <div class="navBall ball2" onmouseover="setxStep()" onclick="clickBtn(2)">
+                    <div class="subnavBall subball2"></div>
+                </div>
+                <div class="navBall ball3" onmouseover="setxStep()" onclick="clickBtn(3)">
+                    <div class="subnavBall subball3"></div>
+                </div>
+            </div>
+
+
+            <div id="newsNavArr">
+                <div class="navArr arr1" onmouseover="setxStep()" onclick="movePa(0)">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </div>
+                <div class="navArr arr2" onmouseover="setxStep()" onclick="movePa(1)">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+
+            <div id="news">
+                <p class="news-txt">Tin mới trong ngày</p>
+                <div class="news1" onclick="openNew(1)">
+                    <p class="news1-txt1 news-txt1">TP. HCM: Khuyến khích lựa chọn sản phẩm xanh.</p>
+                    <div class="logo1 logo"></div>
+                    <p class="news1-txt2 news-txt2">Đài truyền hình Việt Nam</p>
+                    <div class="news1-time">
+                        <p class="news1-txt3 time">15 phút trước</p>
+                    </div>
+                </div>
+                <div class="news2" onclick="openNew(2)">
+                    <p class="news2-txt1 news-txt1">Xuất hiện dầu loang bất thường trên biển ở Phú Yên.</p>    
+                    <div class="logo2 logo"></div>
+                    <p class="news2-txt2 news-txt2">Báo Thanh Niên</p>
+                    <div class="news2-time">
+                        <p class="news2-txt3 time">23 phút trước</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="./0.notsignin/not_signinScript.js"></script>
+    </body>
+</html> 
