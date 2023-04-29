@@ -1,3 +1,5 @@
+username: dinhledung
+password: dinhledung
 
 # UWC 2.0 project
 This project aims to develop a web-based application that facilitates the management of urban waste collection. The application provides an efficient and effective way to manage waste collection in a city or community, particularly in developing countries where waste management is often costly and ineffective.
