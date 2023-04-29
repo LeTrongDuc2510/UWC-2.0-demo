@@ -7,7 +7,7 @@ There are some constraints to the development of UWC 2.0. There exists a current
 
 ## Getting Started
 To view the application, simply open the index.html file in a web browser. The application will automatically load and be ready to use.  
-You can also see the website by clicking this link: https://ledung09.github.io/UWC-2.0
+You can also see the website by clicking this link: https://letrongduc2510.github.io/UWC-2.0-demo/
 
 ## Contributing
 If you would like to contribute to the UWC 2.0 project, please follow these steps:
